@@ -9533,5 +9533,5945 @@
       "b"
     ],
     "numerical_answer": null
+  },
+  {
+    "id": "q_x_0189",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "units_measurement",
+    "subtopic": "units_measurement",
+    "content_type": "text",
+    "body": "The SI unit of power is the watt, which is equivalent to:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Power is energy per unit time: $1\\ \\text{W} = 1\\ \\text{J/s}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$\\text{J/s}$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$\\text{J s}$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$\\text{N m}$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$\\text{kg m/s}$"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0190",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "units_measurement",
+    "subtopic": "units_measurement",
+    "content_type": "text",
+    "body": "Which of the following is a dimensionless quantity?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 90,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Strain is a ratio of two lengths, so it has no dimensions."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Pressure"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Strain"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Momentum"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Force"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0191",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "units_measurement",
+    "subtopic": "units_measurement",
+    "content_type": "text",
+    "body": "The dimensional formula of impulse is the same as that of:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Impulse $= F\\,\\Delta t$ has dimensions $[\\text{M L T}^{-1}]$, the same as momentum."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "momentum"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "energy"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "power"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "force"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0192",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "units_measurement",
+    "subtopic": "units_measurement",
+    "content_type": "latex",
+    "body": "A measurement is recorded as $2.50\\ \\text{cm}$. How many significant figures does it have?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 90,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The trailing zero after the decimal point is significant: 2, 5 and 0 — three figures."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 3,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0193",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "vectors",
+    "subtopic": "vectors",
+    "content_type": "latex",
+    "body": "Two forces of $3\\ \\text{N}$ and $4\\ \\text{N}$ act at a point at right angles. Their resultant has magnitude:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\sqrt{3^2 + 4^2} = 5\\ \\text{N}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$1\\ \\text{N}$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$7\\ \\text{N}$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$3.5\\ \\text{N}$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$5\\ \\text{N}$"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0194",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "vectors",
+    "subtopic": "vectors",
+    "content_type": "text",
+    "body": "The dot product of two perpendicular vectors is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\vec{A}\\cdot\\vec{B} = AB\\cos 90^\\circ = 0$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "negative"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "zero"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "their product"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "maximum"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0195",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "fluids",
+    "subtopic": "fluids",
+    "content_type": "text",
+    "body": "A body floats in a liquid when the buoyant force on it equals:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Floating equilibrium: upthrust balances the body's weight (Archimedes' principle)."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "twice its weight"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "zero"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "its weight"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the weight of the liquid"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0196",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "fluids",
+    "subtopic": "fluids",
+    "content_type": "latex",
+    "body": "The gauge pressure at a depth of $10\\ \\text{m}$ in water is (in kPa)? Take $\\rho = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$.",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$P = \\rho g h = 1000 \\times 10 \\times 10 = 100{,}000\\ \\text{Pa} = 100\\ \\text{kPa}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 100,
+      "tolerance": 2,
+      "unit": "kPa"
+    }
+  },
+  {
+    "id": "q_x_0197",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "fluids",
+    "subtopic": "fluids",
+    "content_type": "text",
+    "body": "Bernoulli's principle states that in a streamline flow, where fluid speed is high, the pressure is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "The sum $P + \\tfrac12\\rho v^2 + \\rho g h$ is constant, so higher $v$ means lower $P$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "high"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "zero"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "low"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "unchanged"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0198",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "waves",
+    "subtopic": "waves",
+    "content_type": "latex",
+    "body": "A wave has frequency $500\\ \\text{Hz}$ and wavelength $0.68\\ \\text{m}$. Find its speed in m/s.",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$v = f\\lambda = 500 \\times 0.68 = 340\\ \\text{m/s}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 340,
+      "tolerance": 1,
+      "unit": "m/s"
+    }
+  },
+  {
+    "id": "q_x_0199",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "waves",
+    "subtopic": "waves",
+    "content_type": "text",
+    "body": "Sound cannot travel through:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Sound is a mechanical wave and needs a material medium."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "air"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "steel"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "water"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "a vacuum"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0200",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "waves",
+    "subtopic": "waves",
+    "content_type": "text",
+    "body": "In a stationary wave, the distance between two consecutive nodes is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Nodes are half a wavelength apart."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$\\lambda/4$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$2\\lambda$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$\\lambda/2$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$\\lambda$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0201",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "waves",
+    "subtopic": "waves",
+    "content_type": "text",
+    "body": "The apparent change in the frequency of sound due to relative motion of source and observer is the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "An approaching source raises the pitch; a receding one lowers it."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Compton effect"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Raman effect"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Doppler effect"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "photoelectric effect"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0202",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "magnetism",
+    "subtopic": "magnetism",
+    "content_type": "text",
+    "body": "A charged particle moving parallel to a uniform magnetic field experiences a force of magnitude:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$F = qvB\\sin\\theta$; with $\\theta = 0$ the force is zero."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$mg$"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "zero"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$qE$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$qvB$"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0203",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "magnetism",
+    "subtopic": "magnetism",
+    "content_type": "text",
+    "body": "The magnetic field at the centre of a long straight current-carrying wire is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$B = \\dfrac{\\mu_0 I}{2\\pi r}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "independent of the current"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "proportional to the current and inversely proportional to the distance"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "zero everywhere"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "proportional to the square of the distance"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0204",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "electromagnetic_induction",
+    "subtopic": "electromagnetic_induction",
+    "content_type": "text",
+    "body": "Lenz's law is a statement of the conservation of:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The induced current opposes the change producing it, so work must be done — energy is conserved."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "mass"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "energy"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "charge"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "momentum"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0205",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "electromagnetic_induction",
+    "subtopic": "electromagnetic_induction",
+    "content_type": "latex",
+    "body": "The magnetic flux through a coil changes from $2\\ \\text{Wb}$ to $6\\ \\text{Wb}$ in $2\\ \\text{s}$. Find the magnitude of the average induced emf, in volts.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$|\\varepsilon| = \\Delta\\Phi/\\Delta t = 4/2 = 2\\ \\text{V}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 2,
+      "tolerance": 0.05,
+      "unit": "V"
+    }
+  },
+  {
+    "id": "q_x_0206",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "ray_optics",
+    "subtopic": "ray_optics",
+    "content_type": "text",
+    "body": "A ray of light passing from a denser to a rarer medium bends:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Speed increases in the rarer medium, so the ray bends away from the normal."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "along the normal"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "towards the normal"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "away from the normal"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "back on itself"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0207",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "ray_optics",
+    "subtopic": "ray_optics",
+    "content_type": "latex",
+    "body": "An object is placed $30\\ \\text{cm}$ in front of a concave mirror of focal length $10\\ \\text{cm}$. Find the image distance, in cm (magnitude).",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$ with $u = -30$, $f = -10$ gives $v = -15\\ \\text{cm}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 15,
+      "tolerance": 0.5,
+      "unit": "cm"
+    }
+  },
+  {
+    "id": "q_x_0208",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "ray_optics",
+    "subtopic": "ray_optics",
+    "content_type": "latex",
+    "body": "The power of a lens of focal length $50\\ \\text{cm}$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Power (dioptres) $= 1/f\\ (\\text{m}) = 1/0.5 = 2\\ \\text{D}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$+0.5\\ \\text{D}$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$-2\\ \\text{D}$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$+50\\ \\text{D}$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$+2\\ \\text{D}$"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0209",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "wave_optics",
+    "subtopic": "wave_optics",
+    "content_type": "text",
+    "body": "In Young's double-slit experiment, the fringe width increases if:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Fringe width $\\beta = \\lambda D/d$: it grows with $D$ and $\\lambda$, and shrinks as $d$ increases."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "the slit separation is increased"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "the slits are made narrower"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "the wavelength is decreased"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the screen is moved farther away"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0210",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "modern_physics",
+    "subtopic": "modern_physics",
+    "content_type": "text",
+    "body": "In the photoelectric effect, increasing the intensity of light (frequency fixed, above threshold) increases:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Intensity sets the photon rate, hence the photocurrent; the max KE depends only on frequency."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "the threshold frequency"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "the number of emitted electrons"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "the maximum kinetic energy of electrons"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the work function"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0211",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "modern_physics",
+    "subtopic": "modern_physics",
+    "content_type": "text",
+    "body": "The de Broglie wavelength of a particle is inversely proportional to its:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\lambda = h/p$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "momentum"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "charge"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "kinetic energy"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "mass only"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0212",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "modern_physics",
+    "subtopic": "modern_physics",
+    "content_type": "latex",
+    "body": "A radioactive sample has a half-life of $4\\ \\text{days}$. What fraction of the original nuclei remains after $12\\ \\text{days}$? Give the answer as a decimal.",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$12\\ \\text{days} = 3$ half-lives, so $(1/2)^3 = 1/8 = 0.125$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 0.125,
+      "tolerance": 0.005,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0213",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "modern_physics",
+    "subtopic": "modern_physics",
+    "content_type": "text",
+    "body": "The nucleus of an atom contains:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Nucleons = protons + neutrons; electrons orbit outside."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "neutrons and electrons"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "protons and electrons"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "only protons"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "protons and neutrons"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0214",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "semiconductor",
+    "subtopic": "semiconductor",
+    "content_type": "text",
+    "body": "Doping pure silicon with a pentavalent impurity (e.g. phosphorus) produces:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The extra fifth electron becomes a free (negative) carrier — n-type."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "an n-type semiconductor"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a p-type semiconductor"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "an insulator"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "a superconductor"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0215",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "semiconductor",
+    "subtopic": "semiconductor",
+    "content_type": "text",
+    "body": "A p–n junction diode conducts appreciably only when it is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Forward bias lowers the barrier and allows majority carriers to cross."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "forward biased"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "reverse biased"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "at absolute zero"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "unbiased"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0216",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "kinetic_theory",
+    "subtopic": "kinetic_theory",
+    "content_type": "text",
+    "body": "The average kinetic energy of the molecules of an ideal gas depends only on:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\langle KE \\rangle = \\tfrac32 k_B T$ per molecule."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "pressure"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "volume"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "temperature"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "molar mass"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0217",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "thermal_properties",
+    "subtopic": "thermal_properties",
+    "content_type": "latex",
+    "body": "How much heat (in joules) is needed to raise the temperature of $2\\ \\text{kg}$ of water by $10\\ ^\\circ\\text{C}$? Specific heat of water $= 4200\\ \\text{J/(kg K)}$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$Q = mc\\Delta T = 2 \\times 4200 \\times 10 = 84{,}000\\ \\text{J}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 84000,
+      "tolerance": 200,
+      "unit": "J"
+    }
+  },
+  {
+    "id": "q_x_0218",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "physics",
+    "topic": "thermal_properties",
+    "subtopic": "thermal_properties",
+    "content_type": "text",
+    "body": "Heat transfer through a vacuum occurs only by:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Conduction and convection need matter; radiation (electromagnetic waves) does not."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "convection"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "conduction"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "diffusion"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "radiation"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0219",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "states_of_matter",
+    "subtopic": "states_of_matter",
+    "content_type": "text",
+    "body": "At constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure. This is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$PV = \\text{constant}$ at constant $T$ and $n$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Charles's law"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Dalton's law"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Boyle's law"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Avogadro's law"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0220",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "states_of_matter",
+    "subtopic": "states_of_matter",
+    "content_type": "latex",
+    "body": "A gas occupies $2\\ \\text{L}$ at $1\\ \\text{atm}$. At constant temperature, what volume (in L) does it occupy at $4\\ \\text{atm}$?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$P_1V_1 = P_2V_2 \\Rightarrow V_2 = (1)(2)/4 = 0.5\\ \\text{L}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 0.5,
+      "tolerance": 0.01,
+      "unit": "L"
+    }
+  },
+  {
+    "id": "q_x_0221",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "solid_state",
+    "subtopic": "solid_state",
+    "content_type": "text",
+    "body": "The number of atoms per unit cell in a body-centred cubic (bcc) lattice is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$8 \\times \\tfrac18$ (corners) $+ 1$ (centre) $= 2$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "4"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "2"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "6"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0222",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "solid_state",
+    "subtopic": "solid_state",
+    "content_type": "text",
+    "body": "A face-centred cubic (fcc) unit cell contains how many atoms?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$8 \\times \\tfrac18$ (corners) $+ 6 \\times \\tfrac12$ (faces) $= 1 + 3 = 4$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "4"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0223",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "solutions",
+    "subtopic": "solutions",
+    "content_type": "latex",
+    "body": "What is the molality of a solution containing $0.5\\ \\text{mol}$ of solute in $250\\ \\text{g}$ of solvent? Answer in mol/kg.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Molality $= 0.5\\ \\text{mol} / 0.25\\ \\text{kg} = 2\\ \\text{m}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 2,
+      "tolerance": 0.02,
+      "unit": "mol/kg"
+    }
+  },
+  {
+    "id": "q_x_0224",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "solutions",
+    "subtopic": "solutions",
+    "content_type": "text",
+    "body": "The colligative property that depends on the number of solute particles is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Freezing-point depression, boiling-point elevation, osmotic pressure and vapour-pressure lowering are all colligative."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "colour"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "depression of freezing point"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "refractive index"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "density"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0225",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "solutions",
+    "subtopic": "solutions",
+    "content_type": "text",
+    "body": "For a dilute solution, Raoult's law states that the vapour pressure of the solvent is proportional to its:",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$p_{\\text{solvent}} = x_{\\text{solvent}}\\, p^\\circ_{\\text{solvent}}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "mole fraction in the solution"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "molar mass"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "mass"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "boiling point"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0226",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "electrochemistry",
+    "subtopic": "electrochemistry",
+    "content_type": "text",
+    "body": "In a galvanic (voltaic) cell, oxidation occurs at the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Anode = oxidation (electrons leave); cathode = reduction. In a galvanic cell the anode is negative."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "voltmeter"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "salt bridge"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "anode"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "cathode"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0227",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "electrochemistry",
+    "subtopic": "electrochemistry",
+    "content_type": "text",
+    "body": "The standard hydrogen electrode is assigned a standard electrode potential of:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "It is the reference against which all other potentials are measured."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$0.76\\ \\text{V}$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$-1.00\\ \\text{V}$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$0.00\\ \\text{V}$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$1.00\\ \\text{V}$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0228",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "electrochemistry",
+    "subtopic": "electrochemistry",
+    "content_type": "text",
+    "body": "During the electrolysis of molten NaCl, the product at the cathode is:",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Na$^+$ is reduced to Na at the cathode; Cl$^-$ is oxidised to Cl$_2$ at the anode."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "oxygen gas"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "chlorine gas"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "hydrogen gas"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "sodium metal"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0229",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "chemical_kinetics",
+    "subtopic": "chemical_kinetics",
+    "content_type": "text",
+    "body": "The rate of most chemical reactions increases with temperature mainly because:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The Maxwell–Boltzmann distribution shifts, so more collisions are effective."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "collisions stop occurring"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a larger fraction of molecules have energy above the activation energy"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "the enthalpy change increases"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the activation energy decreases"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0230",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "chemical_kinetics",
+    "subtopic": "chemical_kinetics",
+    "content_type": "latex",
+    "body": "A first-order reaction has a half-life of $20\\ \\text{minutes}$. How long (in minutes) does it take for the reactant to fall to one quarter of its initial value?",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "One quarter remaining = two half-lives $= 40\\ \\text{minutes}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 40,
+      "tolerance": 0.5,
+      "unit": "min"
+    }
+  },
+  {
+    "id": "q_x_0231",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "chemical_kinetics",
+    "subtopic": "chemical_kinetics",
+    "content_type": "text",
+    "body": "For a zero-order reaction, the rate is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Rate $= k[A]^0 = k$, a constant."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "proportional to time"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "independent of the reactant concentration"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "proportional to the square of the concentration"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "proportional to the concentration"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0232",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "hydrocarbons",
+    "subtopic": "hydrocarbons",
+    "content_type": "text",
+    "body": "The general formula of an alkane is:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Alkenes are $C_nH_{2n}$ and alkynes $C_nH_{2n-2}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$C_nH_{2n+2}$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$C_nH_{2n}$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$C_nH_n$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$C_nH_{2n-2}$"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0233",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "hydrocarbons",
+    "subtopic": "hydrocarbons",
+    "content_type": "latex",
+    "body": "Ethene (C$_2$H$_4$) contains:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Ethene has a carbon–carbon double bond; the carbons are $sp^2$ hybridised."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "an aromatic ring"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "one C=C double bond"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "only single bonds"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "one C≡C triple bond"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0234",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "hydrocarbons",
+    "subtopic": "hydrocarbons",
+    "content_type": "text",
+    "body": "Benzene is unusually stable because of:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The six π electrons are delocalised (aromatic), lowering the energy substantially."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "delocalisation of π electrons over the ring"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "hydrogen bonding"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "sp$^3$ hybridised carbons"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the presence of three isolated double bonds"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0235",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "organic_basics",
+    "subtopic": "organic_basics",
+    "content_type": "text",
+    "body": "The functional group –OH is characteristic of:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Aldehydes have –CHO, ketones >C=O, acids –COOH."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "aldehydes"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "alcohols"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "carboxylic acids"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "ketones"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0236",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "organic_basics",
+    "subtopic": "organic_basics",
+    "content_type": "text",
+    "body": "Compounds with the same molecular formula but different structural arrangements are called:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "e.g. n-butane and isobutane, both C$_4$H$_{10}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "homologues"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "isotopes"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "isomers"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "allotropes"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0237",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "organic_basics",
+    "subtopic": "organic_basics",
+    "content_type": "text",
+    "body": "A carbon atom bonded to four different groups is:",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Such a carbon gives rise to optical isomerism (enantiomers)."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "sp hybridised"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a chiral (asymmetric) centre"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "part of a double bond"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "always aromatic"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0238",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "s_block",
+    "subtopic": "s_block",
+    "content_type": "text",
+    "body": "Which metal is stored under kerosene because it reacts vigorously with water and air?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Alkali metals like sodium react violently with moisture, so they are kept under oil."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Sodium"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Gold"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Iron"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Copper"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0239",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "s_block",
+    "subtopic": "s_block",
+    "content_type": "text",
+    "body": "The flame colour imparted by potassium salts is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Sodium gives golden yellow, calcium brick red, barium apple green."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "golden yellow"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "apple green"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "brick red"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "lilac (violet)"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0240",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "p_block",
+    "subtopic": "p_block",
+    "content_type": "text",
+    "body": "The most abundant gas in the Earth's atmosphere is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "About 78% N$_2$, 21% O$_2$, ~1% Ar."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "oxygen"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "nitrogen"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "argon"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "carbon dioxide"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0241",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "p_block",
+    "subtopic": "p_block",
+    "content_type": "text",
+    "body": "Which allotrope of carbon is the hardest known natural material?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Diamond's rigid 3-D tetrahedral network makes it extremely hard; graphite is soft and layered."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "diamond"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "fullerene"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "graphite"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "coke"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0242",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "d_block",
+    "subtopic": "d_block",
+    "content_type": "text",
+    "body": "Transition metals often show variable oxidation states because:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Both sets of electrons can participate in bonding, giving several stable oxidation states."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "they have full d subshells"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "the (n-1)d and ns electrons have similar energies"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "they never form ions"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "they are non-metals"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0243",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "d_block",
+    "subtopic": "d_block",
+    "content_type": "text",
+    "body": "The coloured nature of most transition-metal ions in solution is due to:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Absorption of visible light promotes a d electron between split d levels; the complementary colour is seen."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "rotation of molecules"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "hydrogen bonding"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "d–d electronic transitions"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "nuclear transitions"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0244",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "coordination",
+    "subtopic": "coordination",
+    "content_type": "latex",
+    "body": "In the complex $[\\text{Cu(NH}_3)_4]^{2+}$, the coordination number of copper is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Four ammonia ligands are bonded to the central Cu$^{2+}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "4"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0245",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "surface_chemistry",
+    "subtopic": "surface_chemistry",
+    "content_type": "text",
+    "body": "The adsorption of a gas on the surface of a solid is generally:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Bonds form between adsorbate and surface, releasing heat, so adsorption decreases at higher temperature."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "endothermic"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "independent of temperature"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "exothermic"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "accompanied by no energy change"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0246",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "environmental_chem",
+    "subtopic": "environmental_chem",
+    "content_type": "text",
+    "body": "The main gas responsible for the greenhouse effect enhancement from human activity is:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "CO$_2$ from fossil-fuel combustion is the dominant anthropogenic greenhouse gas."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "argon"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "nitrogen"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "oxygen"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "carbon dioxide"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0247",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "polymers",
+    "subtopic": "polymers",
+    "content_type": "text",
+    "body": "Which of the following is a natural polymer?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Cellulose (a polymer of glucose) is natural; the others are synthetic."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "polythene"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "PVC"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "cellulose"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "nylon-6,6"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0248",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "chemistry",
+    "topic": "biomolecules_chem",
+    "subtopic": "biomolecules_chem",
+    "content_type": "text",
+    "body": "Glucose and fructose are:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Sucrose (glucose + fructose) is the disaccharide; starch and cellulose are polysaccharides."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "proteins"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "disaccharides"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "polysaccharides"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "monosaccharides"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0249",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "sets_relations_functions",
+    "subtopic": "sets_relations_functions",
+    "content_type": "latex",
+    "body": "If a set has $4$ elements, how many subsets does it have?",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Number of subsets $= 2^n = 2^4 = 16$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 16,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0250",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "sets_relations_functions",
+    "subtopic": "sets_relations_functions",
+    "content_type": "latex",
+    "body": "If $n(A) = 3$ and $n(B) = 4$, the number of elements in $A \\times B$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$n(A \\times B) = n(A)\\,n(B) = 12$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$7$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$1$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$12$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$81$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0251",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "sets_relations_functions",
+    "subtopic": "sets_relations_functions",
+    "content_type": "latex",
+    "body": "The function $f(x) = x^2$ from $\\mathbb{R}$ to $\\mathbb{R}$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$f(-2) = f(2)$ so not one-one; negative numbers are not images, so not onto."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "onto but not one-one"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "one-one but not onto"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "neither one-one nor onto"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "a bijection"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0252",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "permutations_combinations",
+    "subtopic": "permutations_combinations",
+    "content_type": "text",
+    "body": "In how many ways can 4 people be seated in a row?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$4! = 24$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 24,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0253",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "permutations_combinations",
+    "subtopic": "permutations_combinations",
+    "content_type": "text",
+    "body": "How many ways are there to choose a committee of 2 from 5 people?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\binom{5}{2} = \\dfrac{5!}{2!\\,3!} = 10$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 10,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0254",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "permutations_combinations",
+    "subtopic": "permutations_combinations",
+    "content_type": "text",
+    "body": "How many distinct arrangements are there of the letters of the word \"LEVEL\"?",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "5 letters with L twice and E twice: $\\dfrac{5!}{2!\\,2!} = \\dfrac{120}{4} = 30$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 30,
+      "tolerance": 0.5,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0255",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "binomial_theorem",
+    "subtopic": "binomial_theorem",
+    "content_type": "latex",
+    "body": "The number of terms in the expansion of $(x + y)^{10}$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$(x+y)^n$ has $n + 1$ terms."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$12$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$10$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$11$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$9$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0256",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "binomial_theorem",
+    "subtopic": "binomial_theorem",
+    "content_type": "latex",
+    "body": "Find the coefficient of $x^2$ in the expansion of $(1 + x)^5$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\binom{5}{2} = 10$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 10,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0257",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "matrices_determinants",
+    "subtopic": "matrices_determinants",
+    "content_type": "latex",
+    "body": "Evaluate the determinant $\\begin{vmatrix} 2 & 3 \\\\ 1 & 4 \\end{vmatrix}$.",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$(2)(4) - (3)(1) = 8 - 3 = 5$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 5,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0258",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "matrices_determinants",
+    "subtopic": "matrices_determinants",
+    "content_type": "latex",
+    "body": "For a square matrix $A$, $A$ is invertible if and only if:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "A zero determinant means the matrix is singular (no inverse)."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$A$ is a diagonal matrix"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$A$ is symmetric"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$\\det A \\neq 0$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$\\det A = 0$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0259",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "matrices_determinants",
+    "subtopic": "matrices_determinants",
+    "content_type": "latex",
+    "body": "If $A$ is a $2 \\times 3$ matrix and $B$ is a $3 \\times 4$ matrix, then $AB$ is of order:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Inner dimensions match (3 = 3); the product takes the outer dimensions $2 \\times 4$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$3 \\times 3$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$4 \\times 2$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$2 \\times 4$"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "not defined"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0260",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "differentiation",
+    "subtopic": "differentiation",
+    "content_type": "latex",
+    "body": "The derivative of $x^3$ with respect to $x$ is:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Power rule: $\\frac{d}{dx}x^n = nx^{n-1}$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$3x$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$x^2$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$\\dfrac{x^4}{4}$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$3x^2$"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0261",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "differentiation",
+    "subtopic": "differentiation",
+    "content_type": "latex",
+    "body": "If $f(x) = x^2 - 4x + 1$, find $f'(3)$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$f'(x) = 2x - 4$, so $f'(3) = 2$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 2,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0262",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "differentiation",
+    "subtopic": "differentiation",
+    "content_type": "latex",
+    "body": "The derivative of $\\sin x$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Standard derivative."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$\\tan x$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$\\cos x$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$-\\cos x$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$-\\sin x$"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0263",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "application_derivatives",
+    "subtopic": "application_derivatives",
+    "content_type": "text",
+    "body": "At a local maximum of a differentiable function, the first derivative is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "The tangent is horizontal; the second derivative is $\\le 0$ there."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "negative"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "positive"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "zero"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "undefined"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0264",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "application_derivatives",
+    "subtopic": "application_derivatives",
+    "content_type": "latex",
+    "body": "A particle's position is $s(t) = t^2 - 6t + 5$. At what time $t$ (in seconds) is the particle momentarily at rest?",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 130,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Velocity $s'(t) = 2t - 6 = 0 \\Rightarrow t = 3\\ \\text{s}$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 3,
+      "tolerance": 0.02,
+      "unit": "s"
+    }
+  },
+  {
+    "id": "q_x_0265",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "integrals",
+    "subtopic": "integrals",
+    "content_type": "latex",
+    "body": "$\\displaystyle\\int x\\,dx$ equals:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Reverse the power rule."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$\\dfrac{x^3}{3} + C$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$\\dfrac{x^2}{2} + C$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$x^2 + C$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$1 + C$"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0266",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "integrals",
+    "subtopic": "integrals",
+    "content_type": "latex",
+    "body": "Evaluate $\\displaystyle\\int_0^2 3x^2\\,dx$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$[x^3]_0^2 = 8 - 0 = 8$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 8,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0267",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "integrals",
+    "subtopic": "integrals",
+    "content_type": "latex",
+    "body": "$\\displaystyle\\int \\dfrac{1}{x}\\,dx$ equals:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "A standard integral."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$\\dfrac{-1}{x^2} + C$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$\\ln|x| + C$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$\\dfrac{x^2}{2} + C$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$x + C$"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0268",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "three_d_geometry",
+    "subtopic": "three_d_geometry",
+    "content_type": "latex",
+    "body": "Find the distance of the point $(2, 3, 6)$ from the origin.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\sqrt{2^2 + 3^2 + 6^2} = \\sqrt{4 + 9 + 36} = \\sqrt{49} = 7$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 7,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0269",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "three_d_geometry",
+    "subtopic": "three_d_geometry",
+    "content_type": "latex",
+    "body": "The direction cosines of a line make angles $\\alpha, \\beta, \\gamma$ with the axes. Then $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma$ equals:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "A fundamental identity for direction cosines."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$0$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$3$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$2$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$1$"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0270",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "vectors3d",
+    "subtopic": "vectors3d",
+    "content_type": "latex",
+    "body": "Find the magnitude of the vector $\\vec{a} = 2\\hat{i} - \\hat{j} + 2\\hat{k}$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$\\sqrt{2^2 + (-1)^2 + 2^2} = \\sqrt{9} = 3$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 3,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0271",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "vectors3d",
+    "subtopic": "vectors3d",
+    "content_type": "latex",
+    "body": "The cross product $\\vec{a} \\times \\vec{b}$ of two parallel vectors is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$|\\vec a \\times \\vec b| = ab\\sin\\theta$; with $\\theta = 0$ it is $\\vec 0$."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "the zero vector"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a unit vector"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "undefined"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "equal to $\\vec{a}\\cdot\\vec{b}$"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0272",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "statistics",
+    "subtopic": "statistics",
+    "content_type": "latex",
+    "body": "Find the mean of the numbers $4, 8, 6, 10, 2$.",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$(4 + 8 + 6 + 10 + 2)/5 = 30/5 = 6$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 6,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0273",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "statistics",
+    "subtopic": "statistics",
+    "content_type": "latex",
+    "body": "Find the median of $7, 3, 9, 1, 5$.",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Sorted: $1, 3, 5, 7, 9$ — the middle value is $5$."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 5,
+      "tolerance": 0.01,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0274",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "statistics",
+    "subtopic": "statistics",
+    "content_type": "text",
+    "body": "The standard deviation of a data set is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Variance is the mean squared deviation; standard deviation is its positive square root."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "the mean of the data"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "the square of the variance"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "always zero"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "the square root of the variance"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0275",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "conic_sections",
+    "subtopic": "conic_sections",
+    "content_type": "latex",
+    "body": "The equation $x^2 + y^2 = 25$ represents:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Standard form $x^2 + y^2 = r^2$ with $r = 5$, centred at the origin."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "an ellipse"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a hyperbola"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "a circle of radius 5"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "a parabola"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0276",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "conic_sections",
+    "subtopic": "conic_sections",
+    "content_type": "text",
+    "body": "The eccentricity of a parabola is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "$e = 0$ for a circle, $0 < e < 1$ for an ellipse, $e = 1$ for a parabola, $e > 1$ for a hyperbola."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "greater than $1$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "between $0$ and $1$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "exactly $1$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "exactly $0$"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0277",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "differential_equations",
+    "subtopic": "differential_equations",
+    "content_type": "latex",
+    "body": "The order of the differential equation $\\dfrac{d^2y}{dx^2} + 3\\dfrac{dy}{dx} + 2y = 0$ is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The order is that of the highest derivative present."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "$2$"
+      },
+      {
+        "id": "b",
+        "content_type": "latex",
+        "body": "$3$"
+      },
+      {
+        "id": "c",
+        "content_type": "latex",
+        "body": "$1$"
+      },
+      {
+        "id": "d",
+        "content_type": "latex",
+        "body": "$0$"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0278",
+    "track": "entrance",
+    "exam": "jee_main",
+    "subject": "maths",
+    "topic": "mathematical_reasoning",
+    "subtopic": "mathematical_reasoning",
+    "content_type": "text",
+    "body": "The contrapositive of \"If it rains, then the ground is wet\" is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Contrapositive of $p \\Rightarrow q$ is $\\lnot q \\Rightarrow \\lnot p$, and it is logically equivalent."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "If it does not rain, then the ground is not wet"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "It rains and the ground is wet"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "If the ground is wet, then it rained"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "If the ground is not wet, then it did not rain"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0279",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "biological_classification",
+    "subtopic": "biological_classification",
+    "content_type": "text",
+    "body": "The five-kingdom classification was proposed by:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Whittaker (1969): Monera, Protista, Fungi, Plantae, Animalia."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "R. H. Whittaker"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Carl Linnaeus"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Charles Darwin"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Robert Hooke"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0280",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "biological_classification",
+    "subtopic": "biological_classification",
+    "content_type": "text",
+    "body": "Bacteria are placed in the kingdom:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Monera contains all prokaryotes."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Plantae"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Protista"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Fungi"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Monera"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0281",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "biological_classification",
+    "subtopic": "biological_classification",
+    "content_type": "text",
+    "body": "The basic unit of biological classification is the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Species is the smallest, most fundamental taxonomic rank."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "species"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "genus"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "kingdom"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "family"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0282",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "plant_kingdom",
+    "subtopic": "plant_kingdom",
+    "content_type": "text",
+    "body": "Which group of plants is known as \"amphibians of the plant kingdom\"?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Bryophytes (mosses, liverworts) live on land but need water for fertilisation."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "gymnosperms"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "bryophytes"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "pteridophytes"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "angiosperms"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0283",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "plant_kingdom",
+    "subtopic": "plant_kingdom",
+    "content_type": "text",
+    "body": "Gymnosperms are distinguished from angiosperms by having:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "\"Gymno-sperm\" = naked seed; ovules are not enclosed in an ovary."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "naked (uncovered) seeds"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "no seeds"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "flowers"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "fruits"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0284",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "animal_kingdom",
+    "subtopic": "animal_kingdom",
+    "content_type": "text",
+    "body": "The largest phylum in the animal kingdom, in terms of number of species, is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Arthropods (insects, crustaceans, arachnids) make up over two-thirds of all known animal species."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Annelida"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Mollusca"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Chordata"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Arthropoda"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0285",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "animal_kingdom",
+    "subtopic": "animal_kingdom",
+    "content_type": "text",
+    "body": "Which of these animals has a water vascular system?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The water vascular system with tube feet is unique to echinoderms."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "cockroach"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "frog"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "starfish"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "earthworm"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0286",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "morphology_plants",
+    "subtopic": "morphology_plants",
+    "content_type": "text",
+    "body": "The part of the plant that anchors it and absorbs water and minerals is the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Roots also store food and provide support."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "leaf"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "root"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "flower"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "stem"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0287",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "anatomy_plants",
+    "subtopic": "anatomy_plants",
+    "content_type": "text",
+    "body": "The tissue that transports water and minerals from roots to leaves is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Phloem transports the products of photosynthesis (mainly sugars)."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "phloem"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "xylem"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "epidermis"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "cambium"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0288",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "anatomy_plants",
+    "subtopic": "anatomy_plants",
+    "content_type": "text",
+    "body": "Guard cells surround and control the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Turgor changes in guard cells open and close the stomatal pore."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "stomata"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "root hairs"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "xylem vessels"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "sieve tubes"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0289",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "cell_cycle_division",
+    "subtopic": "cell_cycle_division",
+    "content_type": "text",
+    "body": "DNA replication occurs during which phase of the cell cycle?",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "S (\"synthesis\") phase of interphase is when the genome is duplicated."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "S phase"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "M phase"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "G1 phase"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "G2 phase"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0290",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "cell_cycle_division",
+    "subtopic": "cell_cycle_division",
+    "content_type": "text",
+    "body": "Meiosis produces:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Two successive divisions halve the chromosome number, giving four haploid gametes."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "four haploid cells"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "two haploid cells"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "two diploid cells"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "four diploid cells"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0291",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "subtopic": "photosynthesis",
+    "content_type": "text",
+    "body": "The light reactions of photosynthesis take place in the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Light reactions occur on the thylakoids; the Calvin cycle runs in the stroma."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "mitochondrial matrix"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "stroma"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "nucleus"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "thylakoid membranes"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0292",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "subtopic": "photosynthesis",
+    "content_type": "text",
+    "body": "The final electron acceptor in the light reactions of photosynthesis is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "NADP$^+$ is reduced to NADPH, which then drives the Calvin cycle."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "NADP$^+$"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "oxygen"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "carbon dioxide"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "water"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0293",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "respiration",
+    "subtopic": "respiration",
+    "content_type": "text",
+    "body": "In aerobic respiration, the final electron acceptor in the electron transport chain is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "latex",
+      "body": "Oxygen accepts electrons and combines with H$^+$ to form water."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "latex",
+        "body": "NAD$^+$"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "oxygen"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "carbon dioxide"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "pyruvate"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0294",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "respiration",
+    "subtopic": "respiration",
+    "content_type": "text",
+    "body": "The complete aerobic oxidation of one molecule of glucose yields a net of about how many ATP molecules (commonly quoted figure)?",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": 0,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The classic textbook figure is ~36–38 ATP per glucose (2 glycolysis + 2 Krebs + ~34 oxidative phosphorylation)."
+    },
+    "question_type": "numerical",
+    "options": null,
+    "correct_option_ids": null,
+    "numerical_answer": {
+      "value": 38,
+      "tolerance": 2,
+      "unit": null
+    }
+  },
+  {
+    "id": "q_x_0295",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "digestion",
+    "subtopic": "digestion",
+    "content_type": "text",
+    "body": "Bile, which emulsifies fats, is produced by the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The liver makes bile; the gall bladder stores it and releases it into the duodenum."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "stomach"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "liver"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "pancreas"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "small intestine"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0296",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "breathing",
+    "subtopic": "breathing",
+    "content_type": "text",
+    "body": "During inhalation, the diaphragm:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Its contraction increases the thoracic volume, lowering pressure so air flows in."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "relaxes and domes upward"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "contracts and flattens"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "contracts and domes upward"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "does not move"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0297",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "body_fluids_circulation",
+    "subtopic": "body_fluids_circulation",
+    "content_type": "text",
+    "body": "The universal blood donor group is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "O negative red cells carry neither A/B antigens nor the Rh antigen."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "AB positive"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "O negative"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "B negative"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "A positive"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0298",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "body_fluids_circulation",
+    "subtopic": "body_fluids_circulation",
+    "content_type": "text",
+    "body": "Blood vessels that carry blood away from the heart are:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Arteries carry blood away from the heart (usually oxygenated; the pulmonary artery is the exception)."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "capillaries"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "veins"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "arteries"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "venules"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0299",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "excretion",
+    "subtopic": "excretion",
+    "content_type": "text",
+    "body": "The main nitrogenous waste excreted by humans is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Humans are ureotelic; birds and reptiles are mainly uricotelic."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "urea"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "ammonia"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "creatine"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "uric acid"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0300",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "neural_control",
+    "subtopic": "neural_control",
+    "content_type": "text",
+    "body": "The gap between two neurons across which impulses are transmitted is the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Neurotransmitters diffuse across the synaptic cleft to the next neuron."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "node of Ranvier"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "synapse"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "axon hillock"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "dendrite"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0301",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "neural_control",
+    "subtopic": "neural_control",
+    "content_type": "text",
+    "body": "The part of the human brain that controls balance and coordination is the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The cerebellum fine-tunes posture, balance and voluntary movement."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "cerebrum"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "medulla oblongata"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "cerebellum"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "hypothalamus"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0302",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "chemical_coordination",
+    "subtopic": "chemical_coordination",
+    "content_type": "text",
+    "body": "The hormone that regulates the body's metabolic rate is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Thyroxine from the thyroid gland (needs iodine) sets basal metabolic rate."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "insulin"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "adrenaline"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "oxytocin"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "thyroxine"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0303",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "chemical_coordination",
+    "subtopic": "chemical_coordination",
+    "content_type": "text",
+    "body": "The \"fight or flight\" hormone released by the adrenal medulla is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "It raises heart rate, blood pressure and blood glucose in response to stress."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "melatonin"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "insulin"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "adrenaline (epinephrine)"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "thyroxine"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0304",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "human_reproduction",
+    "subtopic": "human_reproduction",
+    "content_type": "text",
+    "body": "Fertilisation in humans normally occurs in the:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "The sperm meets the egg in the ampullary region of the oviduct; the zygote then implants in the uterus."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "fallopian tube (oviduct)"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "vagina"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "uterus"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "ovary"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0305",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "sexual_reproduction_flowering",
+    "subtopic": "sexual_reproduction_flowering",
+    "content_type": "text",
+    "body": "The transfer of pollen from the anther to the stigma is called:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Pollination precedes fertilisation, which happens after the pollen tube reaches the ovule."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "germination"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "fertilisation"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "double fertilisation"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "pollination"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0306",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "molecular_basis_inheritance",
+    "subtopic": "molecular_basis_inheritance",
+    "content_type": "text",
+    "body": "In DNA, adenine always pairs with:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "A–T (two hydrogen bonds) and G–C (three) — Chargaff's base-pairing rules."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "cytosine"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "thymine"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "guanine"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "uracil"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0307",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "molecular_basis_inheritance",
+    "subtopic": "molecular_basis_inheritance",
+    "content_type": "text",
+    "body": "The process of making an RNA copy from a DNA template is called:",
+    "image_url": null,
+    "difficulty": 3,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 120,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Transcription (DNA → mRNA) is followed by translation (mRNA → protein) at the ribosome."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "transcription"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "replication"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "transformation"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "translation"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0308",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "microbes_human_welfare",
+    "subtopic": "microbes_human_welfare",
+    "content_type": "text",
+    "body": "The microorganism used to make curd (yoghurt) from milk is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Lactic acid bacteria ferment lactose to lactic acid, curdling the milk."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "yeast"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Penicillium"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Lactobacillus"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rhizobium"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0309",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "biotechnology_principles",
+    "subtopic": "biotechnology_principles",
+    "content_type": "text",
+    "body": "Restriction enzymes are used in genetic engineering to:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 110,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "They act as \"molecular scissors\"; DNA ligase then joins fragments."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "translate mRNA"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "join DNA fragments"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "copy DNA"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "cut DNA at specific sequences"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0310",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "biodiversity_conservation",
+    "subtopic": "biodiversity_conservation",
+    "content_type": "text",
+    "body": "Conservation of a species within its natural habitat is called:",
+    "image_url": null,
+    "difficulty": 1,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 70,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "National parks and biosphere reserves are in situ; zoos and seed banks are ex situ."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "cryopreservation"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "ex situ conservation"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "in situ conservation"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "tissue culture"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
+  },
+  {
+    "id": "q_x_0311",
+    "track": "entrance",
+    "exam": "neet",
+    "subject": "biology",
+    "topic": "organisms_populations",
+    "subtopic": "organisms_populations",
+    "content_type": "text",
+    "body": "A relationship in which one organism benefits and the other is unaffected is:",
+    "image_url": null,
+    "difficulty": 2,
+    "marks": 4,
+    "negative_marks": -1,
+    "avg_time_seconds": 100,
+    "source": "original",
+    "year": null,
+    "times_attempted": 0,
+    "times_correct": 0,
+    "reports_open": 0,
+    "status": "live",
+    "explanation": {
+      "content_type": "text",
+      "body": "Mutualism benefits both; parasitism harms the host; commensalism is +/0."
+    },
+    "question_type": "mcq",
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "competition"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "mutualism"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "commensalism"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "parasitism"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null
   }
 ]

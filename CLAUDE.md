@@ -2,7 +2,7 @@
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
 Android, iOS and the web from one codebase. Phase 1 covers JEE Main, NEET and
-Class 11–12 Science (Physics, Chemistry, Maths, Biology) with a ~200-question
+Class 11–12 Science (Physics, Chemistry, Maths, Biology) with a ~320-question
 starter bank.
 
 This file is the project's working memory. Claude Code reads it automatically at
@@ -71,7 +71,7 @@ subscriptions, timed mock tests, and the school / engineering / govt tracks.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                design tokens
-src/data/questions.json     ~200 original questions (4 subjects)
+src/data/questions.json     ~320 original questions (4 subjects)
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -207,7 +207,7 @@ leave the rest locked.
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
 standard textbook facts and computations, `source: "original"`. The bank is a
-~200-question starter set (~25–35 per subject). Spot-check answer keys before any
+~320-question starter set (70–100 per subject). Spot-check answer keys before any
 store release. MCQ option order is shuffled per question
 (seeded by id) so the correct answer isn't always in the same slot.
 
@@ -243,7 +243,7 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank is a ~200-question starter set (~25–35 per subject)
+- Question bank is a ~320-question starter set (70–100 per subject)
 - No test suite
 
 ---
