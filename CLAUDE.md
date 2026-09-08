@@ -25,15 +25,16 @@ entrance exams (JEE, NEET, CAT); engineering (B.Tech semesters, GATE); governmen
 exams (SSC, banking, railways). Entrance (JEE Main, NEET) and Class 11–12 Science
 are unlocked and populated; the rest are still locked tiles.
 
-**Navigation.** category (track) → exam → subject → topic, chosen explicitly:
+**Navigation.** category (track) → exam → subject, chosen explicitly:
 Home → ExamPicker → SubjectPicker → Subject → Quiz. A step is skipped only when
-there is genuinely one option behind it.
+there is genuinely one option behind it. **There is no topic level in the UI** —
+the student picks a subject and gets a mixed set from the whole subject.
 
-**Shared question pool.** Subjects and topics use the same ids across exams
-(`physics` / `kinematics` is one pool, drawn on by JEE, NEET and Class 11–12). A
-subject-node's topic list is a per-exam subset. The `exam` field on a question is
-metadata — never a practice filter. Practice queries are "this subject + one of
-these topics" (`questionsForSubject` in `quiz.js`).
+**Shared question pool.** Subjects use the same id across exams (`physics` is one
+pool, drawn on by JEE, NEET and Class 11–12); the `exam` field on a question is
+metadata, never a practice filter. `questionsForSubject(subjectId)` in `quiz.js`
+is the whole pool for a subject. Questions still carry a hidden `topic` tag, used
+*only* to weight the adaptive set — never shown to the student.
 
 ---
 
@@ -42,20 +43,20 @@ these topics" (`questionsForSubject` in `quiz.js`).
 Working today:
 
 - Home screen with track list, locked "coming soon" tiles, streak display
-- Subject screen: topics with question counts, per-topic accuracy, weak-topic flag
+- Subject screen: a launch pad — question count + "Start practice" (10) / "Longer set" (20)
 - Quiz player handling MCQ, multi-select, and numerical entry with tolerance
 - LaTeX rendering through KaTeX in a self-sizing WebView
 - Scoring with per-question negative marking
 - Result screen with per-question review and explanations
 - Adaptive mixed practice weighted by past accuracy
 - Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak, reports
-- Progress screen: streak (current + longest), overall + per-topic accuracy,
-  recent quizzes, reported-questions list, and a two-step "reset progress"
+- Progress screen: streak (current + longest), overall accuracy, recent quizzes,
+  reported-questions list, and a two-step "reset progress"
 - Working report button: a reported question is stored locally (with reasons) and
-  dropped from that device's future quizzes (`buildTopicQuiz` / `buildAdaptiveQuiz`
-  take an `excludeIds` set); each report carries `sync: false` for a later push
-- Home routes by the real taxonomy — straight into a subject, or to `SubjectPicker`
-  when a track has more than one. Subject header title is derived, not hard-coded.
+  dropped from that device's future quizzes (`buildSubjectQuiz` takes an
+  `excludeIds` set); each report carries `sync: false` for a later push
+- Home routes by the real taxonomy — category → exam → subject via ExamPicker /
+  SubjectPicker. Every screen title is derived, not hard-coded.
 - Web target: runs in a browser as a responsive mobile-first site (full-bleed on
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
@@ -149,10 +150,11 @@ Composite indexes needed before seeding real data:
 
 ## Decisions worth keeping
 
-**Adaptive weighting.** Weight rises as accuracy falls, so a topic at 40% is drawn
-roughly twice as often as one at 90%. Topics with fewer than 3 attempts get a
-middling weight — worth sampling, but not ahead of a topic already known to be
-weak.
+**Adaptive weighting.** `buildSubjectQuiz` leans the set towards a question's
+hidden `topic` tag when the student answers that area poorly — weight rises as
+accuracy falls (an area at 40% is drawn ~2× as often as one at 90%); areas with
+fewer than 3 attempts get a middling weight. The student never sees or picks
+these areas; it's just "practice more of what you get wrong".
 
 **Streaks use local calendar dates, not UTC.** A 1 a.m. session should count as
 that night. UTC would roll the streak over mid-session.
@@ -205,8 +207,8 @@ leave the rest locked.
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
 standard textbook facts and computations, `source: "original"`. The bank is a
-~200-question starter set (~6–9 per topic); target is 15+ per topic. Spot-check
-answer keys before any store release. MCQ option order is shuffled per question
+~200-question starter set (~25–35 per subject). Spot-check answer keys before any
+store release. MCQ option order is shuffled per question
 (seeded by id) so the correct answer isn't always in the same slot.
 
 **Don't put "JEE" or "NEET" in the app's store name.** Play treats exam names as
@@ -241,7 +243,7 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank is a ~200-question starter set (~6-9 per topic); target is 15+
+- Question bank is a ~200-question starter set (~25–35 per subject)
 - No test suite
 
 ---

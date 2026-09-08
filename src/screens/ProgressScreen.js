@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getTopicName } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
 
@@ -26,18 +25,12 @@ export default function ProgressScreen({ navigation }) {
   const { topicStats, attempts, streak, reports, clearAll } = useProgress();
   const [confirmingReset, setConfirmingReset] = useState(false);
 
-  const topics = Object.entries(topicStats)
-    .map(([id, s]) => ({
-      id,
-      name: getTopicName(id),
-      attempted: s.attempted,
-      correct: s.correct,
-      accuracy: s.attempted > 0 ? Math.round((s.correct / s.attempted) * 100) : null,
-    }))
-    .sort((a, b) => (a.accuracy ?? 101) - (b.accuracy ?? 101));
-
-  const totalAnswered = topics.reduce((n, t) => n + t.attempted, 0);
-  const totalCorrect = topics.reduce((n, t) => n + t.correct, 0);
+  const totals = Object.values(topicStats).reduce(
+    (acc, s) => ({ attempted: acc.attempted + s.attempted, correct: acc.correct + s.correct }),
+    { attempted: 0, correct: 0 }
+  );
+  const totalAnswered = totals.attempted;
+  const totalCorrect = totals.correct;
   const overall = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : null;
 
   const reportedList = Object.entries(reports);
@@ -89,41 +82,6 @@ export default function ProgressScreen({ navigation }) {
                 }}
               />
             </View>
-          </View>
-        )}
-
-        {topics.length > 0 && (
-          <View style={{ marginTop: space.lg }}>
-            <Text style={[type.small, { marginBottom: space.sm }]}>By topic</Text>
-            {topics.map((t) => (
-              <View
-                key={t.id}
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  paddingVertical: space.sm,
-                  borderBottomWidth: 1,
-                  borderBottomColor: color.rule,
-                }}
-              >
-                <View style={{ flex: 1 }}>
-                  <Text style={[type.body, { fontWeight: '500' }]}>{t.name}</Text>
-                  <Text style={[type.small, { marginTop: 2 }]}>
-                    {t.correct}/{t.attempted} correct
-                  </Text>
-                </View>
-                <Text
-                  style={{
-                    fontSize: 15,
-                    fontWeight: '600',
-                    color: t.accuracy !== null && t.accuracy < 60 ? color.flag : color.inkSoft,
-                    fontVariant: ['tabular-nums'],
-                  }}
-                >
-                  {t.accuracy}%
-                </Text>
-              </View>
-            ))}
           </View>
         )}
 

@@ -1,10 +1,11 @@
 # Cutoff
 
-Exam practice for Indian competitive exams. Phase 1: JEE Main Physics.
+Exam practice for Indian competitive exams — JEE Main, NEET and Class 11–12
+Science (Physics, Chemistry, Maths, Biology), ~200 original questions.
 
 An Expo (React Native) app for Android, iOS **and the web** — one codebase, three
-targets. The taxonomy already has slots for NEET, CAT, school classes, engineering
-and government exams, shown as locked tiles until questions exist for them.
+targets. The taxonomy also has locked slots for CAT, school classes 1–10,
+engineering and government exams.
 
 ## Running it
 
@@ -77,7 +78,7 @@ decisions change.
 ```
 src/
   data/questions.json    ~200 original questions across 4 subjects — mcq, numerical, LaTeX
-  data/taxonomy.json     navigation tree: category -> exam -> subject -> topic
+  data/taxonomy.json     navigation tree: category -> exam -> subject
   lib/quiz.js            the only file that knows where questions come from
   lib/storage.js         AsyncStorage reads and writes, all failure-tolerant
   lib/ProgressContext.js progress state, hydrated once at launch
@@ -102,13 +103,12 @@ Firestore, you rewrite that file and the screens don't change.
   is stored locally and dropped from that device's future quizzes — but until
   there's a backend, reports don't reach you. Each stored report carries
   `sync: false` so a later Firestore push knows what to send.
-- **Question bank is a starter set.** ~200 questions across JEE Main / NEET /
-  Class 11–12 (Physics, Chemistry, Maths, Biology), roughly 6–9 per topic — enough
-  to exercise every screen, not yet enough for serious prep. Aim is ~15+ per topic;
-  add to `src/data/questions.json` (or the authoring notes below).
-- **Subjects and topics are shared across exams by id.** JEE / NEET / Class 11–12
-  draw from the same physics pool, etc.; the `exam` field is metadata, never a
-  practice filter. Differentiate later with `difficulty` if needed.
+- **Question bank is a starter set.** ~200 questions across Physics, Chemistry,
+  Maths and Biology (~25–35 per subject) — enough to exercise every screen, not
+  yet enough for serious prep. Add to `src/data/questions.json`.
+- **Subjects are shared across exams by id.** JEE / NEET / Class 11–12 draw from
+  the same per-subject pool; the `exam` field is metadata, never a practice filter.
+  No topic-picking in the UI — a subject gives one mixed set.
 
 ## Roadmap
 

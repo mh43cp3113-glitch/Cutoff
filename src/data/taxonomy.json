@@ -11,50 +11,9 @@
           "name": "JEE Main",
           "locked": false,
           "subjects": [
-            {
-              "id": "physics",
-              "name": "Physics",
-              "locked": false,
-              "topics": [
-                { "id": "kinematics", "name": "Kinematics" },
-                { "id": "laws_of_motion", "name": "Laws of motion" },
-                { "id": "work_energy_power", "name": "Work, energy and power" },
-                { "id": "rotational_motion", "name": "Rotational motion" },
-                { "id": "gravitation", "name": "Gravitation" },
-                { "id": "thermodynamics", "name": "Thermodynamics" },
-                { "id": "oscillations", "name": "Oscillations" },
-                { "id": "electrostatics", "name": "Electrostatics" },
-                { "id": "current_electricity", "name": "Current electricity" }
-              ]
-            },
-            {
-              "id": "chemistry",
-              "name": "Chemistry",
-              "locked": false,
-              "topics": [
-                { "id": "mole_concept", "name": "Mole concept and stoichiometry" },
-                { "id": "atomic_structure", "name": "Atomic structure" },
-                { "id": "periodic_classification", "name": "Periodic classification" },
-                { "id": "chemical_bonding", "name": "Chemical bonding" },
-                { "id": "chemical_thermodynamics", "name": "Chemical thermodynamics" },
-                { "id": "equilibrium", "name": "Equilibrium" },
-                { "id": "redox_reactions", "name": "Redox reactions" }
-              ]
-            },
-            {
-              "id": "maths",
-              "name": "Mathematics",
-              "locked": false,
-              "topics": [
-                { "id": "quadratic_equations", "name": "Quadratic equations" },
-                { "id": "complex_numbers", "name": "Complex numbers" },
-                { "id": "sequences_series", "name": "Sequences and series" },
-                { "id": "trigonometry", "name": "Trigonometry" },
-                { "id": "straight_lines", "name": "Straight lines" },
-                { "id": "limits_continuity", "name": "Limits and continuity" },
-                { "id": "probability", "name": "Probability" }
-              ]
-            }
+            { "id": "physics", "name": "Physics", "locked": false },
+            { "id": "chemistry", "name": "Chemistry", "locked": false },
+            { "id": "maths", "name": "Mathematics", "locked": false }
           ]
         },
         {
@@ -62,47 +21,9 @@
           "name": "NEET",
           "locked": false,
           "subjects": [
-            {
-              "id": "physics",
-              "name": "Physics",
-              "locked": false,
-              "topics": [
-                { "id": "kinematics", "name": "Kinematics" },
-                { "id": "laws_of_motion", "name": "Laws of motion" },
-                { "id": "work_energy_power", "name": "Work, energy and power" },
-                { "id": "gravitation", "name": "Gravitation" },
-                { "id": "thermodynamics", "name": "Thermodynamics" },
-                { "id": "oscillations", "name": "Oscillations" },
-                { "id": "current_electricity", "name": "Current electricity" }
-              ]
-            },
-            {
-              "id": "chemistry",
-              "name": "Chemistry",
-              "locked": false,
-              "topics": [
-                { "id": "mole_concept", "name": "Mole concept and stoichiometry" },
-                { "id": "atomic_structure", "name": "Atomic structure" },
-                { "id": "periodic_classification", "name": "Periodic classification" },
-                { "id": "chemical_bonding", "name": "Chemical bonding" },
-                { "id": "equilibrium", "name": "Equilibrium" },
-                { "id": "redox_reactions", "name": "Redox reactions" }
-              ]
-            },
-            {
-              "id": "biology",
-              "name": "Biology",
-              "locked": false,
-              "topics": [
-                { "id": "cell_unit_of_life", "name": "Cell: the unit of life" },
-                { "id": "biomolecules", "name": "Biomolecules" },
-                { "id": "plant_physiology", "name": "Plant physiology" },
-                { "id": "human_physiology", "name": "Human physiology" },
-                { "id": "genetics_inheritance", "name": "Genetics and inheritance" },
-                { "id": "evolution", "name": "Evolution" },
-                { "id": "ecology_ecosystem", "name": "Ecology and ecosystem" }
-              ]
-            }
+            { "id": "physics", "name": "Physics", "locked": false },
+            { "id": "chemistry", "name": "Chemistry", "locked": false },
+            { "id": "biology", "name": "Biology", "locked": false }
           ]
         },
         { "id": "cat", "name": "CAT", "locked": true, "subjects": [] }
@@ -119,64 +40,10 @@
           "name": "Science",
           "locked": false,
           "subjects": [
-            {
-              "id": "physics",
-              "name": "Physics",
-              "locked": false,
-              "topics": [
-                { "id": "kinematics", "name": "Kinematics" },
-                { "id": "laws_of_motion", "name": "Laws of motion" },
-                { "id": "work_energy_power", "name": "Work, energy and power" },
-                { "id": "rotational_motion", "name": "Rotational motion" },
-                { "id": "gravitation", "name": "Gravitation" },
-                { "id": "thermodynamics", "name": "Thermodynamics" },
-                { "id": "oscillations", "name": "Oscillations" },
-                { "id": "electrostatics", "name": "Electrostatics" },
-                { "id": "current_electricity", "name": "Current electricity" }
-              ]
-            },
-            {
-              "id": "chemistry",
-              "name": "Chemistry",
-              "locked": false,
-              "topics": [
-                { "id": "mole_concept", "name": "Mole concept and stoichiometry" },
-                { "id": "atomic_structure", "name": "Atomic structure" },
-                { "id": "periodic_classification", "name": "Periodic classification" },
-                { "id": "chemical_bonding", "name": "Chemical bonding" },
-                { "id": "chemical_thermodynamics", "name": "Chemical thermodynamics" },
-                { "id": "equilibrium", "name": "Equilibrium" },
-                { "id": "redox_reactions", "name": "Redox reactions" }
-              ]
-            },
-            {
-              "id": "maths",
-              "name": "Mathematics",
-              "locked": false,
-              "topics": [
-                { "id": "quadratic_equations", "name": "Quadratic equations" },
-                { "id": "complex_numbers", "name": "Complex numbers" },
-                { "id": "sequences_series", "name": "Sequences and series" },
-                { "id": "trigonometry", "name": "Trigonometry" },
-                { "id": "straight_lines", "name": "Straight lines" },
-                { "id": "limits_continuity", "name": "Limits and continuity" },
-                { "id": "probability", "name": "Probability" }
-              ]
-            },
-            {
-              "id": "biology",
-              "name": "Biology",
-              "locked": false,
-              "topics": [
-                { "id": "cell_unit_of_life", "name": "Cell: the unit of life" },
-                { "id": "biomolecules", "name": "Biomolecules" },
-                { "id": "plant_physiology", "name": "Plant physiology" },
-                { "id": "human_physiology", "name": "Human physiology" },
-                { "id": "genetics_inheritance", "name": "Genetics and inheritance" },
-                { "id": "evolution", "name": "Evolution" },
-                { "id": "ecology_ecosystem", "name": "Ecology and ecosystem" }
-              ]
-            }
+            { "id": "physics", "name": "Physics", "locked": false },
+            { "id": "chemistry", "name": "Chemistry", "locked": false },
+            { "id": "maths", "name": "Mathematics", "locked": false },
+            { "id": "biology", "name": "Biology", "locked": false }
           ]
         }
       ]

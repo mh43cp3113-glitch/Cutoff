@@ -1,15 +1,11 @@
 import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {
-  getExam,
-  getSubject,
-  countByTopic,
-  buildTopicQuiz,
-  buildAdaptiveQuiz,
-} from '../lib/quiz';
+import { getExam, getSubject, countForSubject, buildSubjectQuiz } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
+
+const LENGTHS = [10, 20];
 
 export default function SubjectScreen({ route, navigation }) {
   const { trackId, examId, subjectId } = route.params;
@@ -17,9 +13,7 @@ export default function SubjectScreen({ route, navigation }) {
   const exam = getExam(trackId, examId);
   const { topicStats: stats, reportedIds } = useProgress();
 
-  const topicIds = (subject?.topics || []).map((t) => t.id);
-  const totalQuestions = topicIds.reduce((n, id) => n + countByTopic(id, reportedIds), 0);
-  const mixedCount = Math.min(10, Math.max(5, totalQuestions));
+  const available = countForSubject(subjectId, reportedIds);
 
   useLayoutEffect(() => {
     if (subject) {
@@ -37,73 +31,61 @@ export default function SubjectScreen({ route, navigation }) {
     );
   }
 
-  const startTopic = (topicId, topicName) => {
-    const questionList = buildTopicQuiz(topicId, 8, reportedIds);
+  const start = (requested) => {
+    const count = Math.min(requested, available);
+    if (count === 0) return;
+    const questionList = buildSubjectQuiz(subjectId, count, stats, reportedIds);
     if (!questionList.length) return;
-    navigation.navigate('Quiz', { questionList, label: topicName });
-  };
-
-  const startMixed = () => {
-    const questionList = buildAdaptiveQuiz(subjectId, topicIds, mixedCount, stats, reportedIds);
-    if (!questionList.length) return;
-    navigation.navigate('Quiz', { questionList, label: `${subject.name} · mixed` });
+    navigation.navigate('Quiz', { questionList, label: subject.name });
   };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
-        <Pressable
-          onPress={startMixed}
-          style={({ pressed }) => ({
-            backgroundColor: color.ink,
-            borderRadius: radius.md,
-            padding: space.md,
-            marginBottom: space.lg,
-            opacity: pressed ? 0.85 : 1,
-          })}
-        >
-          <Text style={{ fontSize: 17, fontWeight: '650', color: color.paper }}>Mixed practice</Text>
-          <Text style={{ fontSize: 13, color: color.rule, marginTop: 2 }}>
-            {mixedCount} questions across {subject.name}, weighted towards your weaker topics
-          </Text>
-        </Pressable>
+        <Text style={type.display}>{subject.name}</Text>
+        <Text style={[type.small, { marginTop: space.xs, marginBottom: space.xl }]}>
+          {available} question{available === 1 ? '' : 's'} available. Each set leans towards
+          the kind of question you get wrong.
+        </Text>
 
-        <Text style={[type.small, { marginBottom: space.sm }]}>By topic</Text>
-
-        {subject.topics.map((topic) => {
-          const count = countByTopic(topic.id, reportedIds);
-          const stat = stats[topic.id];
-          const accuracy =
-            stat && stat.attempted > 0
-              ? Math.round((stat.correct / stat.attempted) * 100)
-              : null;
-
+        {LENGTHS.map((len, i) => {
+          const count = Math.min(len, available);
+          const disabled = available === 0;
+          const primary = i === 0;
           return (
             <Pressable
-              key={topic.id}
-              disabled={count === 0}
-              onPress={() => startTopic(topic.id, topic.name)}
+              key={len}
+              disabled={disabled}
+              onPress={() => start(len)}
               style={({ pressed }) => ({
-                flexDirection: 'row',
-                alignItems: 'center',
-                paddingVertical: space.md,
-                borderBottomWidth: 1,
-                borderBottomColor: color.rule,
-                opacity: count === 0 ? 0.45 : pressed ? 0.6 : 1,
+                backgroundColor: primary ? color.ink : color.card,
+                borderWidth: primary ? 0 : 1,
+                borderColor: color.rule,
+                borderRadius: radius.md,
+                padding: space.md,
+                marginBottom: space.sm,
+                opacity: disabled ? 0.5 : pressed ? 0.85 : 1,
               })}
             >
-              <View style={{ flex: 1 }}>
-                <Text style={[type.body, { fontWeight: '500' }]}>{topic.name}</Text>
-                <Text style={[type.small, { marginTop: 2 }]}>
-                  {count === 0 ? 'No questions yet' : `${count} question${count > 1 ? 's' : ''}`}
-                  {accuracy !== null ? ` · ${accuracy}% correct so far` : ''}
-                </Text>
-              </View>
-              {accuracy !== null && accuracy < 60 && (
-                <View
-                  style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: color.flag }}
-                />
-              )}
+              <Text
+                style={{
+                  fontSize: 17,
+                  fontWeight: '650',
+                  color: primary ? color.paper : color.ink,
+                }}
+              >
+                {primary ? 'Start practice' : 'Longer set'}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 13,
+                  marginTop: 2,
+                  color: primary ? color.rule : color.inkSoft,
+                }}
+              >
+                {count} question{count === 1 ? '' : 's'}
+                {count < len ? ' (all that are available)' : ''}
+              </Text>
             </Pressable>
           );
         })}

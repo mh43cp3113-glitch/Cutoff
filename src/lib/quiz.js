@@ -13,27 +13,33 @@ export function getTrack(trackId) {
   return taxonomy.tracks.find((t) => t.id === trackId) || null;
 }
 
-export function getSubject(trackId, examId, subjectId) {
-  const exam = getTrack(trackId)?.exams.find((e) => e.id === examId);
-  return exam?.subjects.find((s) => s.id === subjectId) || null;
-}
-
 export function getExam(trackId, examId) {
   return getTrack(trackId)?.exams.find((e) => e.id === examId) || null;
 }
 
-// A subject-node lists a subset of that subject's topics per exam (NEET Physics
-// skips rotational motion, etc). Questions are tagged by subject + topic and
-// shared across exams — the `exam` field is metadata, never a practice filter —
-// so a subject's question pool is "this subject, and one of these topics".
-function topicIdsOf(subjectNode) {
-  return new Set((subjectNode.topics || []).map((t) => t.id));
+export function getSubject(trackId, examId, subjectId) {
+  return getExam(trackId, examId)?.subjects.find((s) => s.id === subjectId) || null;
 }
 
-export function questionsForSubject(subjectId, topicIds, excludeIds) {
-  return questions.filter(
-    (q) => playable(q, excludeIds) && q.subject === subjectId && topicIds.has(q.topic)
-  );
+function live(q) {
+  return q.status === 'live';
+}
+
+/** A question is playable if it's live and not reported on this device. */
+function playable(q, excludeIds) {
+  return live(q) && !(excludeIds && excludeIds.has(q.id));
+}
+
+// Questions are tagged with a subject and pooled across every exam that teaches
+// that subject — JEE, NEET and Class 11–12 physics are one pool. The `exam`
+// field on a question is metadata, never a practice filter. (Questions still
+// carry a hidden `topic` tag, used only to weight the adaptive set below.)
+export function questionsForSubject(subjectId, excludeIds) {
+  return questions.filter((q) => playable(q, excludeIds) && q.subject === subjectId);
+}
+
+export function countForSubject(subjectId, excludeIds) {
+  return questionsForSubject(subjectId, excludeIds).length;
 }
 
 /**
@@ -50,7 +56,7 @@ export function getPlayableExams(trackId) {
     const subjects = [];
     for (const subject of exam.subjects || []) {
       if (subject.locked) continue;
-      const count = questionsForSubject(subject.id, topicIdsOf(subject)).length;
+      const count = countForSubject(subject.id);
       if (count === 0) continue;
       subjects.push({ subjectId: subject.id, subjectName: subject.name, count });
     }
@@ -59,46 +65,6 @@ export function getPlayableExams(trackId) {
     }
   }
   return out;
-}
-
-/** Flat list of every playable subject under a track (across its exams). */
-export function getPlayableSubjects(trackId) {
-  return getPlayableExams(trackId).flatMap((exam) =>
-    exam.subjects.map((s) => ({
-      trackId: exam.trackId,
-      examId: exam.examId,
-      examName: exam.examName,
-      subjectId: s.subjectId,
-      subjectName: s.subjectName,
-      count: s.count,
-    }))
-  );
-}
-
-/** Human-readable topic name from its id, searched across the whole taxonomy. */
-export function getTopicName(topicId) {
-  for (const track of taxonomy.tracks) {
-    for (const exam of track.exams || []) {
-      for (const subject of exam.subjects || []) {
-        const topic = (subject.topics || []).find((t) => t.id === topicId);
-        if (topic) return topic.name;
-      }
-    }
-  }
-  return topicId;
-}
-
-function live(q) {
-  return q.status === 'live';
-}
-
-/** A question is playable if it's live and not reported on this device. */
-function playable(q, excludeIds) {
-  return live(q) && !(excludeIds && excludeIds.has(q.id));
-}
-
-export function countByTopic(topicId, excludeIds) {
-  return questions.filter((q) => playable(q, excludeIds) && q.topic === topicId).length;
 }
 
 function shuffle(list) {
@@ -111,27 +77,16 @@ function shuffle(list) {
 }
 
 /**
- * Practice set drawn from a single topic. Reported questions (`excludeIds`) are
- * left out — unless that would empty the set, in which case the student's own
- * report shouldn't lock them out of practising the topic.
- */
-export function buildTopicQuiz(topicId, count = 5, excludeIds) {
-  const inTopic = questions.filter((q) => live(q) && q.topic === topicId);
-  const filtered = inTopic.filter((q) => playable(q, excludeIds));
-  return shuffle(filtered.length ? filtered : inTopic).slice(0, count);
-}
-
-/**
- * Mixed set biased toward topics the user answers poorly.
- * topicStats: { [topicId]: { attempted, correct } }
+ * A practice set for one subject. Selection leans towards areas the student
+ * answers poorly — weight rises as accuracy on a question's (hidden) topic
+ * falls, so a weak area at 40% is drawn about twice as often as one at 90%.
+ * Areas with fewer than 3 attempts get a middling weight.
  *
- * Weight rises as accuracy falls, so a topic at 40% is picked roughly twice as
- * often as one at 90%. Unseen topics get a middling weight — worth sampling,
- * but not at the expense of a topic already known to be weak.
+ * topicStats: { [topicId]: { attempted, correct } } — kept internally, never
+ * shown to the student.
  */
-export function buildAdaptiveQuiz(subjectId, topicIds, count = 10, topicStats = {}, excludeIds) {
-  const set = topicIds instanceof Set ? topicIds : new Set(topicIds);
-  const all = questions.filter((q) => live(q) && q.subject === subjectId && set.has(q.topic));
+export function buildSubjectQuiz(subjectId, count = 10, topicStats = {}, excludeIds) {
+  const all = questions.filter((q) => live(q) && q.subject === subjectId);
   const filtered = all.filter((q) => playable(q, excludeIds));
   const pool = filtered.length ? filtered : all;
 
@@ -144,7 +99,7 @@ export function buildAdaptiveQuiz(subjectId, topicIds, count = 10, topicStats = 
 
   const scored = pool.map((q) => ({ q, score: Math.random() * weightFor(q.topic) }));
   scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, count).map((s) => s.q);
+  return shuffle(scored.slice(0, count).map((s) => s.q));
 }
 
 /** Grade one response. `answer` is an array of option ids, or a number. */
@@ -184,7 +139,7 @@ export function scoreAttempt(questionList, answers) {
   return { score, max, correctCount, total: questionList.length };
 }
 
-/** Roll an attempt into per-topic accuracy, for the adaptive weighting above. */
+/** Roll an attempt into per-area accuracy, for the adaptive weighting above. */
 export function updateTopicStats(prevStats, questionList, answers) {
   const next = { ...prevStats };
   questionList.forEach((q, i) => {
