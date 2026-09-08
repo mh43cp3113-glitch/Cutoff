@@ -56,6 +56,20 @@ export default function MathText({
     try {
       if (window.renderMathInElement) {
         window.renderMathInElement(el, { delimiters: DELIMITERS, throwOnError: false });
+        // Keep trailing punctuation glued to its formula, so a sentence-ending
+        // "." after $…$ never wraps onto its own line.
+        el.querySelectorAll('.katex').forEach((k) => {
+          const next = k.nextSibling;
+          if (next && next.nodeType === 3 && /^[.,;:!?)]/.test(next.textContent)) {
+            const m = next.textContent.match(/^([.,;:!?)]+)([\s\S]*)$/);
+            const wrap = document.createElement('span');
+            wrap.style.whiteSpace = 'nowrap';
+            k.parentNode.insertBefore(wrap, k);
+            wrap.appendChild(k);
+            wrap.appendChild(document.createTextNode(m[1]));
+            next.textContent = m[2];
+          }
+        });
       }
     } catch (e) {
       // leave the raw text in place
