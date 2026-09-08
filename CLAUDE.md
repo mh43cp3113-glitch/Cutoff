@@ -163,6 +163,10 @@ and `Platform.OS === 'web'` branches (the centred phone-width frame in `App.js`)
 `react-native-webview` is never bundled on web — the `.web.js` override means its
 import is never reached. `app.json` → `expo.web` sets `bundler: metro`, `output:
 single`. `npm run build:web` emits a static `dist/` for any static host.
+`.github/workflows/deploy-web.yml` auto-deploys that to GitHub Pages on push to
+main (needs Settings → Pages → Source: GitHub Actions once). `app.config.js`
+computes `experiments.baseUrl` from `EXPO_PUBLIC_BASE_URL` — the Pages build sets
+it to `/Cutoff`; local dev leaves it empty.
 
 **Design direction:** a physics lab notebook. Pale paper `#EDF0EC`, deep petrol ink
 `#1B2A2E`, hairline rules. Colour is reserved strictly for signal — green correct,

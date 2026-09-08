@@ -37,6 +37,17 @@ Web needs `react-native-web`, `react-dom` and `@expo/metro-runtime` — already 
 `package.json`, so a plain `npm install` covers it. `dist/` is a folder of static
 files; drop it on Netlify, Vercel, GitHub Pages, EAS Hosting, or `npx serve dist`.
 
+### GitHub Pages (automatic)
+
+`.github/workflows/deploy-web.yml` builds and publishes the site on every push to
+`main`. One-time setup: repo **Settings → Pages → Source: "GitHub Actions"**. After
+that it's live at **https://mh43cp3113-glitch.github.io/Cutoff/** and redeploys
+itself on each push.
+
+The Pages build sets `EXPO_PUBLIC_BASE_URL=/Cutoff` (see `app.config.js`) because
+a project site is served from a subpath. Local `npm run web` leaves it unset and
+serves from the root.
+
 On web, LaTeX renders straight into the DOM via `src/components/MathText.web.js`
 (the native build uses a WebView per formula; that file is the web override). The
 vendored KaTeX assets are shared, so there's still no network dependency.
