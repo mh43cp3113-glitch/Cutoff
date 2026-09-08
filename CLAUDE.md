@@ -1,7 +1,7 @@
 # Cutoff
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
-Android and iOS from one codebase. Phase 1 ships JEE Main Physics only.
+Android, iOS and the web from one codebase. Phase 1 ships JEE Main Physics only.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -37,6 +37,9 @@ Working today:
 - Result screen with per-question review and explanations
 - Adaptive mixed practice weighted by past accuracy
 - Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak
+- Web target: runs in a browser as a responsive mobile-first site (full-bleed on
+  a phone, phone-width centred column on desktop). `npm run web` / `npm run
+  build:web`. AsyncStorage falls back to localStorage on web.
 
 Not built yet: authentication, any backend, subscriptions, timed mock tests, a
 working report button, and every track other than JEE Main Physics.
@@ -53,7 +56,8 @@ src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
 src/lib/ProgressContext.js  progress state, hydrated once at launch
-src/components/MathText.js  LaTeX renderer
+src/components/MathText.js  LaTeX renderer — WebView per formula (native)
+src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
 src/screens/                Home, Subject, Quiz, Result
 ```
@@ -152,6 +156,13 @@ network needed, matching the audience's patchy connectivity. See
 declares `<meta charset="utf-8">`; without it, non-ASCII characters in question
 text (en dashes, µ, °, etc.) can render as mojibake since `file://`-sourced HTML
 doesn't reliably default to UTF-8.
+
+**Web is a first-class target, via `react-native-web`.** No separate web codebase.
+Platform differences live in `.web.js` overrides (only `MathText.web.js` so far)
+and `Platform.OS === 'web'` branches (the centred phone-width frame in `App.js`).
+`react-native-webview` is never bundled on web — the `.web.js` override means its
+import is never reached. `app.json` → `expo.web` sets `bundler: metro`, `output:
+single`. `npm run build:web` emits a static `dist/` for any static host.
 
 **Design direction:** a physics lab notebook. Pale paper `#EDF0EC`, deep petrol ink
 `#1B2A2E`, hairline rules. Colour is reserved strictly for signal — green correct,

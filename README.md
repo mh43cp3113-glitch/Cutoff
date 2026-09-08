@@ -2,8 +2,9 @@
 
 Exam practice for Indian competitive exams. Phase 1: JEE Main Physics.
 
-An Expo (React Native) app for Android and iOS. The taxonomy already has slots for NEET, CAT, school classes, engineering and
-government exams, shown as locked tiles until questions exist for them.
+An Expo (React Native) app for Android, iOS **and the web** — one codebase, three
+targets. The taxonomy already has slots for NEET, CAT, school classes, engineering
+and government exams, shown as locked tiles until questions exist for them.
 
 ## Running it
 
@@ -21,6 +22,24 @@ SDK. Plain `npm install` will let you install a version that crashes on device.
 
 Then install **Expo Go** on your phone and scan the QR code. Same code runs on
 Android and iOS.
+
+## Running it as a website
+
+The same app also runs in a browser — as a responsive mobile-first site: full-bleed
+on a phone, centred in a phone-width column on a desktop.
+
+```bash
+npm run web          # dev server at http://localhost:8081
+npm run build:web    # static export to dist/ — deploy to any static host
+```
+
+Web needs `react-native-web`, `react-dom` and `@expo/metro-runtime` — already in
+`package.json`, so a plain `npm install` covers it. `dist/` is a folder of static
+files; drop it on Netlify, Vercel, GitHub Pages, EAS Hosting, or `npx serve dist`.
+
+On web, LaTeX renders straight into the DOM via `src/components/MathText.web.js`
+(the native build uses a WebView per formula; that file is the web override). The
+vendored KaTeX assets are shared, so there's still no network dependency.
 
 ## Putting it on GitHub
 
@@ -51,7 +70,8 @@ src/
   lib/quiz.js            the only file that knows where questions come from
   lib/storage.js         AsyncStorage reads and writes, all failure-tolerant
   lib/ProgressContext.js progress state, hydrated once at launch
-  components/MathText.js LaTeX via KaTeX in a self-sizing WebView
+  components/MathText.js LaTeX via KaTeX in a self-sizing WebView (native)
+  components/MathText.web.js  same, rendering KaTeX straight into the DOM (web)
   components/ProgressRail.js
   screens/               Home, Subject, Quiz, Result
 ```
