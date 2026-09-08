@@ -84,7 +84,7 @@ src/
   components/MathText.js LaTeX via KaTeX in a self-sizing WebView (native)
   components/MathText.web.js  same, rendering KaTeX straight into the DOM (web)
   components/ProgressRail.js
-  screens/               Home, Subject, Quiz, Result
+  screens/               Home, SubjectPicker, Subject, Quiz, Result, Progress
 ```
 
 `lib/quiz.js` is deliberately the single data boundary. When you move questions to
@@ -92,15 +92,19 @@ Firestore, you rewrite that file and the screens don't change.
 
 ## Known gaps
 
-- **Progress is device-only.** Topic stats, attempt history and streak persist
-  through AsyncStorage, but they don't follow the user to a new phone. Sign-in and
-  Firestore sync are the next step.
+- **Progress is device-only.** Topic stats, attempt history, streak and reports
+  persist through AsyncStorage and are all shown on the Progress screen, but they
+  don't follow the user to a new phone. Sign-in and Firestore sync are the next step.
 - **Answers ship to the device.** Fine now, since the questions are yours and
   public. Before launch, move `correct_option_ids` and `explanation` behind a Cloud
   Function that only returns them after submission.
-- **Report button is a stub.** It renders but does nothing yet.
-- Every track except JEE Main Physics is locked, and Home routes all taps to that
-  subject.
+- **Reports have nowhere to go yet.** The report button works — a reported question
+  is stored locally and dropped from that device's future quizzes — but until
+  there's a backend, reports don't reach you. Each stored report carries
+  `sync: false` so a later Firestore push knows what to send.
+- **Only JEE Main Physics has questions.** Every other track is locked. Home now
+  routes by the real taxonomy (and shows a subject picker when a track has more
+  than one), so nothing is hard-coded — the tiles just have nothing behind them yet.
 
 ## Roadmap
 
@@ -109,7 +113,7 @@ Firestore, you rewrite that file and the screens don't change.
 3. Cloud Function that serves questions without the answer key
 4. Timed mock tests with a full paper structure
 5. Free tier limits, Play Billing for Pro
-6. Report triage — auto-hide a question once reports come in
+6. Report triage — server-side, once reports sync
 
 ## Content
 

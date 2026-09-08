@@ -6,9 +6,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import HomeScreen from './src/screens/HomeScreen';
+import SubjectPickerScreen from './src/screens/SubjectPickerScreen';
 import SubjectScreen from './src/screens/SubjectScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
+import ProgressScreen from './src/screens/ProgressScreen';
 import { ProgressProvider } from './src/lib/ProgressContext';
 import { color } from './src/theme';
 
@@ -70,9 +72,14 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name="SubjectPicker"
+            component={SubjectPickerScreen}
+            options={{ title: 'Choose a subject' }}
+          />
+          <Stack.Screen
             name="Subject"
             component={SubjectScreen}
-            options={{ title: 'JEE Main · Physics' }}
+            options={{ title: 'Practice' }}
           />
           <Stack.Screen
             name="Quiz"
@@ -83,6 +90,11 @@ export default function App() {
             name="Result"
             component={ResultScreen}
             options={{ title: 'Your result', headerBackVisible: false }}
+          />
+          <Stack.Screen
+            name="Progress"
+            component={ProgressScreen}
+            options={{ title: 'Your progress' }}
           />
         </Stack.Navigator>
         </NavigationContainer>

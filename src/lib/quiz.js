@@ -18,12 +18,61 @@ export function getSubject(trackId, examId, subjectId) {
   return exam?.subjects.find((s) => s.id === subjectId) || null;
 }
 
+/**
+ * Every unlocked subject under a track that actually has live questions, each as
+ * `{ trackId, examId, subjectId, examName, subjectName, count }`. Home uses this
+ * to decide where a track tile leads: straight into the subject when there's only
+ * one, or to a picker when there's a choice.
+ */
+export function getPlayableSubjects(trackId) {
+  const track = getTrack(trackId);
+  if (!track || track.locked) return [];
+  const out = [];
+  for (const exam of track.exams || []) {
+    if (exam.locked) continue;
+    for (const subject of exam.subjects || []) {
+      if (subject.locked) continue;
+      const count = questions.filter(
+        (q) => live(q) && q.exam === exam.id && q.subject === subject.id
+      ).length;
+      if (count === 0) continue;
+      out.push({
+        trackId: track.id,
+        examId: exam.id,
+        subjectId: subject.id,
+        examName: exam.name,
+        subjectName: subject.name,
+        count,
+      });
+    }
+  }
+  return out;
+}
+
+/** Human-readable topic name from its id, searched across the whole taxonomy. */
+export function getTopicName(topicId) {
+  for (const track of taxonomy.tracks) {
+    for (const exam of track.exams || []) {
+      for (const subject of exam.subjects || []) {
+        const topic = (subject.topics || []).find((t) => t.id === topicId);
+        if (topic) return topic.name;
+      }
+    }
+  }
+  return topicId;
+}
+
 function live(q) {
   return q.status === 'live';
 }
 
-export function countByTopic(topicId) {
-  return questions.filter((q) => live(q) && q.topic === topicId).length;
+/** A question is playable if it's live and not reported on this device. */
+function playable(q, excludeIds) {
+  return live(q) && !(excludeIds && excludeIds.has(q.id));
+}
+
+export function countByTopic(topicId, excludeIds) {
+  return questions.filter((q) => playable(q, excludeIds) && q.topic === topicId).length;
 }
 
 function shuffle(list) {
@@ -35,9 +84,15 @@ function shuffle(list) {
   return out;
 }
 
-/** Practice set drawn from a single topic. */
-export function buildTopicQuiz(topicId, count = 5) {
-  return shuffle(questions.filter((q) => live(q) && q.topic === topicId)).slice(0, count);
+/**
+ * Practice set drawn from a single topic. Reported questions (`excludeIds`) are
+ * left out — unless that would empty the set, in which case the student's own
+ * report shouldn't lock them out of practising the topic.
+ */
+export function buildTopicQuiz(topicId, count = 5, excludeIds) {
+  const inTopic = questions.filter((q) => live(q) && q.topic === topicId);
+  const filtered = inTopic.filter((q) => playable(q, excludeIds));
+  return shuffle(filtered.length ? filtered : inTopic).slice(0, count);
 }
 
 /**
@@ -48,8 +103,10 @@ export function buildTopicQuiz(topicId, count = 5) {
  * often as one at 90%. Unseen topics get a middling weight — worth sampling,
  * but not at the expense of a topic already known to be weak.
  */
-export function buildAdaptiveQuiz(subjectId, count = 10, topicStats = {}) {
-  const pool = questions.filter((q) => live(q) && q.subject === subjectId);
+export function buildAdaptiveQuiz(subjectId, count = 10, topicStats = {}, excludeIds) {
+  const all = questions.filter((q) => live(q) && q.subject === subjectId);
+  const filtered = all.filter((q) => playable(q, excludeIds));
+  const pool = filtered.length ? filtered : all;
 
   const weightFor = (topicId) => {
     const s = topicStats[topicId];

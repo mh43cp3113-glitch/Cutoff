@@ -8,6 +8,7 @@ const KEYS = {
   topicStats: 'progress:topic_stats:v1',
   attempts: 'progress:attempts:v1',
   streak: 'progress:streak:v1',
+  reports: 'progress:reports:v1',
 };
 
 const MAX_ATTEMPTS = 50; // keep history bounded; older attempts fall off
@@ -80,6 +81,29 @@ export async function touchStreak() {
     lastActiveDate: today,
   };
   await writeJson(KEYS.streak, next);
+  return next;
+}
+
+// Reported questions. Until there's a backend to receive reports, they're held
+// locally: a reported question is pulled from future quizzes on this device
+// (mirrors the `reports_open > 0` rule in the data model), and the list is shown
+// back to the student on the Progress screen. `sync: false` marks a report the
+// server hasn't seen yet, so a future Firestore push knows what to send.
+export const loadReports = () => readJson(KEYS.reports, {});
+
+export async function saveReport(questionId, reason) {
+  const reports = await loadReports();
+  const prev = reports[questionId];
+  const next = {
+    ...reports,
+    [questionId]: {
+      count: (prev?.count || 0) + 1,
+      reasons: [...new Set([...(prev?.reasons || []), reason])],
+      lastAt: new Date().toISOString(),
+      sync: false,
+    },
+  };
+  await writeJson(KEYS.reports, next);
   return next;
 }
 

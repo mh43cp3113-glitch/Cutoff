@@ -1,23 +1,39 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getSubject, countByTopic, buildTopicQuiz, buildAdaptiveQuiz } from '../lib/quiz';
+import {
+  getTrack,
+  getSubject,
+  countByTopic,
+  buildTopicQuiz,
+  buildAdaptiveQuiz,
+} from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
 
 export default function SubjectScreen({ route, navigation }) {
   const { trackId, examId, subjectId } = route.params;
   const subject = getSubject(trackId, examId, subjectId);
-  const { topicStats: stats } = useProgress();
+  const exam = getTrack(trackId)?.exams.find((e) => e.id === examId);
+  const { topicStats: stats, reportedIds } = useProgress();
+
+  useLayoutEffect(() => {
+    if (subject) {
+      navigation.setOptions({
+        title: exam ? `${exam.name} · ${subject.name}` : subject.name,
+      });
+    }
+  }, [navigation, exam, subject]);
 
   const startTopic = (topicId, topicName) => {
-    const questionList = buildTopicQuiz(topicId, 5);
+    const questionList = buildTopicQuiz(topicId, 5, reportedIds);
     if (!questionList.length) return;
     navigation.navigate('Quiz', { questionList, label: topicName });
   };
 
   const startMixed = () => {
-    const questionList = buildAdaptiveQuiz(subjectId, 8, stats);
+    const questionList = buildAdaptiveQuiz(subjectId, 8, stats, reportedIds);
+    if (!questionList.length) return;
     navigation.navigate('Quiz', { questionList, label: 'Mixed practice' });
   };
 
@@ -45,7 +61,7 @@ export default function SubjectScreen({ route, navigation }) {
         <Text style={[type.small, { marginBottom: space.sm }]}>By topic</Text>
 
         {subject.topics.map((topic) => {
-          const count = countByTopic(topic.id);
+          const count = countByTopic(topic.id, reportedIds);
           const stat = stats[topic.id];
           const accuracy =
             stat && stat.attempted > 0

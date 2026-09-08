@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+} from 'react';
 import { updateTopicStats } from './quiz';
 import {
   loadTopicStats,
@@ -7,29 +14,36 @@ import {
   saveAttempt,
   loadStreak,
   touchStreak,
+  loadReports,
+  saveReport,
   resetProgress,
 } from './storage';
 
 const ProgressContext = createContext(null);
 
+const EMPTY_STREAK = { current: 0, longest: 0, lastActiveDate: null };
+
 export function ProgressProvider({ children }) {
   const [ready, setReady] = useState(false);
   const [topicStats, setTopicStats] = useState({});
   const [attempts, setAttempts] = useState([]);
-  const [streak, setStreak] = useState({ current: 0, longest: 0, lastActiveDate: null });
+  const [streak, setStreak] = useState(EMPTY_STREAK);
+  const [reports, setReports] = useState({});
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [stats, history, s] = await Promise.all([
+      const [stats, history, s, r] = await Promise.all([
         loadTopicStats(),
         loadAttempts(),
         loadStreak(),
+        loadReports(),
       ]);
       if (cancelled) return;
       setTopicStats(stats);
       setAttempts(history);
       setStreak(s);
+      setReports(r);
       setReady(true);
     })();
     return () => {
@@ -43,7 +57,7 @@ export function ProgressProvider({ children }) {
    * not the session.
    */
   const recordAttempt = useCallback(
-    async ({ questionList, answers, label, score, max }) => {
+    async ({ questionList, answers, label, score, max, correctCount, total }) => {
       const nextStats = updateTopicStats(topicStats, questionList, answers);
       setTopicStats(nextStats);
 
@@ -52,6 +66,8 @@ export function ProgressProvider({ children }) {
         label,
         score,
         max,
+        correctCount,
+        total: total ?? questionList.length,
         question_ids: questionList.map((q) => q.id),
         completed_at: new Date().toISOString(),
       };
@@ -68,20 +84,38 @@ export function ProgressProvider({ children }) {
     [topicStats]
   );
 
+  /** Flag a question as broken. Held on-device until there's a backend to receive it. */
+  const reportQuestion = useCallback(async (questionId, reason) => {
+    const next = await saveReport(questionId, reason);
+    setReports(next);
+  }, []);
+
   const clearAll = useCallback(async () => {
     await resetProgress();
     setTopicStats({});
     setAttempts([]);
-    setStreak({ current: 0, longest: 0, lastActiveDate: null });
+    setStreak(EMPTY_STREAK);
+    setReports({});
   }, []);
 
-  return (
-    <ProgressContext.Provider
-      value={{ ready, topicStats, attempts, streak, recordAttempt, clearAll }}
-    >
-      {children}
-    </ProgressContext.Provider>
+  const reportedIds = useMemo(() => new Set(Object.keys(reports)), [reports]);
+
+  const value = useMemo(
+    () => ({
+      ready,
+      topicStats,
+      attempts,
+      streak,
+      reports,
+      reportedIds,
+      recordAttempt,
+      reportQuestion,
+      clearAll,
+    }),
+    [ready, topicStats, attempts, streak, reports, reportedIds, recordAttempt, reportQuestion, clearAll]
   );
+
+  return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
 
 export function useProgress() {

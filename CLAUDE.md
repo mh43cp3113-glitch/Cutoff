@@ -36,13 +36,20 @@ Working today:
 - Scoring with per-question negative marking
 - Result screen with per-question review and explanations
 - Adaptive mixed practice weighted by past accuracy
-- Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak
+- Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak, reports
+- Progress screen: streak (current + longest), overall + per-topic accuracy,
+  recent quizzes, reported-questions list, and a two-step "reset progress"
+- Working report button: a reported question is stored locally (with reasons) and
+  dropped from that device's future quizzes (`buildTopicQuiz` / `buildAdaptiveQuiz`
+  take an `excludeIds` set); each report carries `sync: false` for a later push
+- Home routes by the real taxonomy — straight into a subject, or to `SubjectPicker`
+  when a track has more than one. Subject header title is derived, not hard-coded.
 - Web target: runs in a browser as a responsive mobile-first site (full-bleed on
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
 
-Not built yet: authentication, any backend, subscriptions, timed mock tests, a
-working report button, and every track other than JEE Main Physics.
+Not built yet: authentication, any backend (so reports don't leave the device),
+subscriptions, timed mock tests, and every track other than JEE Main Physics.
 
 ---
 
@@ -59,7 +66,7 @@ src/lib/ProgressContext.js  progress state, hydrated once at launch
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
-src/screens/                Home, Subject, Quiz, Result
+src/screens/                Home, SubjectPicker, Subject, Quiz, Result, Progress
 ```
 
 **`src/lib/quiz.js` is the single data boundary.** It is the only module that knows
@@ -217,22 +224,28 @@ means no Mac is required.
 ## Known gaps
 
 - Progress is device-only; it doesn't follow a user to a new phone
-- The report button renders but does nothing
-- Home routes every tap to JEE Main Physics regardless of which tile is pressed
+- Reports are stored locally only — no backend to receive them yet
+- Only JEE Main Physics has questions; every other track is locked
 - No test suite
 
 ---
 
 ## Immediate next step
 
-Run it in Expo Go and confirm LaTeX renders correctly on a real device — the last
-mile (WebView font/encoding behavior on real Android/iOS) hasn't been checked on
-hardware yet, even though the rendering pipeline itself is now verified headless
-(see below).
+The client app is feature-complete for what it can do offline (practice flows,
+adaptive mixing, scoring, review, progress, reports, web + native). The two things
+left are both backend, and both need your Firebase project:
+
+1. **Firebase Auth + Firestore** (roadmap 1–3) — so progress and reports follow the
+   user, and the answer key stops shipping to the device.
+2. **Timed mock tests** (roadmap 4) — can be built client-side but wants a real
+   paper structure and question volume first.
+
+Still worth doing on hardware before any of that: run in Expo Go and confirm LaTeX
+renders correctly on a real device — the WebView font/encoding last mile on real
+Android/iOS hasn't been checked, though the pipeline is verified headless.
 
 ```bash
 npm install
-npx expo install react-native-screens react-native-safe-area-context \
-  react-native-webview @react-native-async-storage/async-storage
 npx expo start
 ```
