@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Cutoff",
+    "slug": "cutoff",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#EDF0EC"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mh43cp3113.cutoff"
+    },
+    "android": {
+      "package": "com.mh43cp3113.cutoff",
+      "adaptiveIcon": {
+        "backgroundColor": "#1B2A2E"
+      }
+    }
+  }
+}

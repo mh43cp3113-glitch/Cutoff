@@ -1,0 +1,190 @@
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  Pressable,
+  ScrollView,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MathText from '../components/MathText';
+import ProgressRail from '../components/ProgressRail';
+import { color, type, space, radius } from '../theme';
+
+export default function QuizScreen({ route, navigation }) {
+  const { questionList, label } = route.params;
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState(() => questionList.map(() => null));
+
+  const question = questionList[index];
+  const answer = answers[index];
+  const isLast = index === questionList.length - 1;
+
+  const setAnswer = (value) => {
+    setAnswers((prev) => {
+      const next = [...prev];
+      next[index] = value;
+      return next;
+    });
+  };
+
+  const toggleOption = (optionId) => {
+    if (question.question_type === 'multi_select') {
+      const current = answer || [];
+      setAnswer(
+        current.includes(optionId)
+          ? current.filter((id) => id !== optionId)
+          : [...current, optionId]
+      );
+    } else {
+      setAnswer([optionId]);
+    }
+  };
+
+  const finish = () => {
+    navigation.replace('Result', { questionList, answers, label });
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <View style={{ paddingHorizontal: space.md, paddingTop: space.sm }}>
+          <ProgressRail
+            total={questionList.length}
+            current={index}
+            answered={answers}
+            onJump={setIndex}
+          />
+          <Text style={[type.small, { marginTop: space.sm }]}>
+            Question {index + 1} of {questionList.length}
+            {question.question_type === 'multi_select' ? ' · select all that apply' : ''}
+            {question.question_type === 'numerical' ? ' · type your answer' : ''}
+          </Text>
+        </View>
+
+        <ScrollView
+          contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <MathText
+            body={question.body}
+            contentType={question.content_type}
+            fontSize={17}
+            style={{ marginBottom: space.lg }}
+          />
+
+          {question.question_type === 'numerical' ? (
+            <View>
+              <TextInput
+                value={answer ?? ''}
+                onChangeText={setAnswer}
+                keyboardType="numeric"
+                placeholder="Your answer"
+                placeholderTextColor={color.locked}
+                style={{
+                  borderWidth: 1,
+                  borderColor: color.rule,
+                  borderRadius: radius.sm,
+                  backgroundColor: color.card,
+                  padding: space.md,
+                  fontSize: 18,
+                  color: color.ink,
+                }}
+              />
+              {question.numerical_answer?.unit ? (
+                <Text style={[type.small, { marginTop: space.xs }]}>
+                  Answer in {question.numerical_answer.unit}
+                </Text>
+              ) : null}
+            </View>
+          ) : (
+            question.options.map((option) => {
+              const selected = (answer || []).includes(option.id);
+              return (
+                <Pressable
+                  key={option.id}
+                  onPress={() => toggleOption(option.id)}
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'flex-start',
+                    borderWidth: 1,
+                    borderColor: selected ? color.ink : color.rule,
+                    backgroundColor: selected ? '#E3E9E4' : color.card,
+                    borderRadius: radius.sm,
+                    padding: space.md,
+                    marginBottom: space.sm,
+                  }}
+                >
+                  <View
+                    style={{
+                      width: 22,
+                      height: 22,
+                      borderRadius: question.question_type === 'multi_select' ? 4 : 11,
+                      borderWidth: 1.5,
+                      borderColor: selected ? color.ink : color.rule,
+                      backgroundColor: selected ? color.ink : 'transparent',
+                      marginRight: space.sm,
+                      marginTop: 1,
+                    }}
+                  />
+                  <View style={{ flex: 1 }}>
+                    <MathText
+                      body={option.body}
+                      contentType={option.content_type}
+                      fontSize={16}
+                    />
+                  </View>
+                </Pressable>
+              );
+            })
+          )}
+        </ScrollView>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: space.sm,
+            padding: space.md,
+            borderTopWidth: 1,
+            borderTopColor: color.rule,
+          }}
+        >
+          <Pressable
+            disabled={index === 0}
+            onPress={() => setIndex((i) => i - 1)}
+            style={{
+              paddingVertical: space.md,
+              paddingHorizontal: space.lg,
+              borderRadius: radius.sm,
+              borderWidth: 1,
+              borderColor: color.rule,
+              opacity: index === 0 ? 0.4 : 1,
+            }}
+          >
+            <Text style={{ color: color.ink, fontWeight: '600' }}>Back</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={() => (isLast ? finish() : setIndex((i) => i + 1))}
+            style={{
+              flex: 1,
+              paddingVertical: space.md,
+              borderRadius: radius.sm,
+              backgroundColor: color.ink,
+              alignItems: 'center',
+            }}
+          >
+            <Text style={{ color: color.paper, fontWeight: '600', fontSize: 16 }}>
+              {isLast ? 'Finish and see score' : 'Next'}
+            </Text>
+          </Pressable>
+        </View>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  );
+}

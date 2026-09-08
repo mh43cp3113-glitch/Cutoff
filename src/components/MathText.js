@@ -1,0 +1,89 @@
+import React, { useMemo, useState } from 'react';
+import { Text, View } from 'react-native';
+import { WebView } from 'react-native-webview';
+import { color, type } from '../theme';
+
+// Plain strings never touch a WebView — that path is reserved for maths, since
+// each WebView is an expensive instance and a question screen can hold five.
+
+const KATEX_CDN = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist';
+
+function buildHtml(body, fontSize, textColor) {
+  const escaped = body
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  return `<!DOCTYPE html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="${KATEX_CDN}/katex.min.css">
+<script defer src="${KATEX_CDN}/katex.min.js"></script>
+<script defer src="${KATEX_CDN}/contrib/auto-render.min.js"></script>
+<style>
+  html,body{margin:0;padding:0;background:transparent;}
+  #root{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:${fontSize}px;line-height:1.55;color:${textColor};
+    padding:0;overflow-wrap:break-word;
+  }
+  .katex{font-size:1.05em;}
+</style></head><body>
+<div id="root">${escaped}</div>
+<script>
+  function report(){
+    var h = document.getElementById('root').getBoundingClientRect().height;
+    window.ReactNativeWebView.postMessage(String(Math.ceil(h)));
+  }
+  window.addEventListener('load', function(){
+    try{
+      renderMathInElement(document.getElementById('root'), {
+        delimiters:[
+          {left:'$$',right:'$$',display:true},
+          {left:'$',right:'$',display:false}
+        ],
+        throwOnError:false
+      });
+    }catch(e){}
+    report();
+    setTimeout(report, 250);
+  });
+</script></body></html>`;
+}
+
+export default function MathText({
+  body,
+  contentType = 'text',
+  fontSize = type.body.fontSize,
+  textColor = color.ink,
+  style,
+}) {
+  const [height, setHeight] = useState(fontSize * 1.6);
+
+  const html = useMemo(
+    () => buildHtml(body, fontSize, textColor),
+    [body, fontSize, textColor]
+  );
+
+  if (contentType !== 'latex') {
+    return (
+      <Text style={[type.body, { fontSize, color: textColor }, style]}>{body}</Text>
+    );
+  }
+
+  return (
+    <View style={[{ height }, style]}>
+      <WebView
+        originWhitelist={['*']}
+        source={{ html }}
+        style={{ backgroundColor: 'transparent', height }}
+        scrollEnabled={false}
+        showsVerticalScrollIndicator={false}
+        androidLayerType="software"
+        onMessage={(event) => {
+          const next = Number(event.nativeEvent.data);
+          if (next > 0 && Math.abs(next - height) > 1) setHeight(next);
+        }}
+      />
+    </View>
+  );
+}

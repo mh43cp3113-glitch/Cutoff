@@ -1,0 +1,65 @@
+{
+  "tracks": [
+    {
+      "id": "entrance",
+      "name": "Entrance exams",
+      "hint": "JEE, NEET, CAT",
+      "locked": false,
+      "exams": [
+        {
+          "id": "jee_main",
+          "name": "JEE Main",
+          "locked": false,
+          "subjects": [
+            {
+              "id": "physics",
+              "name": "Physics",
+              "locked": false,
+              "topics": [
+                { "id": "kinematics", "name": "Kinematics" },
+                { "id": "work_energy_power", "name": "Work, energy and power" },
+                { "id": "rotational_motion", "name": "Rotational motion" },
+                { "id": "thermodynamics", "name": "Thermodynamics" },
+                { "id": "oscillations", "name": "Oscillations" },
+                { "id": "electrostatics", "name": "Electrostatics" },
+                { "id": "current_electricity", "name": "Current electricity" }
+              ]
+            },
+            { "id": "chemistry", "name": "Chemistry", "locked": true, "topics": [] },
+            { "id": "maths", "name": "Mathematics", "locked": true, "topics": [] }
+          ]
+        },
+        { "id": "neet", "name": "NEET", "locked": true, "subjects": [] },
+        { "id": "cat", "name": "CAT", "locked": true, "subjects": [] }
+      ]
+    },
+    {
+      "id": "school",
+      "name": "Class 1 to 10",
+      "hint": "All subjects",
+      "locked": true,
+      "exams": []
+    },
+    {
+      "id": "stream",
+      "name": "Class 11 and 12",
+      "hint": "Science, Commerce, Arts",
+      "locked": true,
+      "exams": []
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "hint": "B.Tech semesters, GATE",
+      "locked": true,
+      "exams": []
+    },
+    {
+      "id": "govt",
+      "name": "Government exams",
+      "hint": "SSC, banking, railways",
+      "locked": true,
+      "exams": []
+    }
+  ]
+}
