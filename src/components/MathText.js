@@ -2,11 +2,19 @@ import React, { useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { color, type } from '../theme';
+import katexStyle from '../vendor/katex/katexStyle';
+import katexScript from '../vendor/katex/katexScript';
+import autoRenderScript from '../vendor/katex/autoRenderScript';
 
 // Plain strings never touch a WebView — that path is reserved for maths, since
 // each WebView is an expensive instance and a question screen can hold five.
 
-const KATEX_CDN = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist';
+// KaTeX ships vendored (src/vendor/katex) instead of from a CDN, so maths
+// renders with no network — see src/vendor/katex/README.md.
+
+// Defensive: a literal "</script" inside injected content would close the
+// tag early when spliced into the HTML string below.
+const inlineScript = (js) => js.replace(/<\/script/gi, '<\\/script');
 
 function buildHtml(body, fontSize, textColor) {
   const escaped = body
@@ -15,10 +23,9 @@ function buildHtml(body, fontSize, textColor) {
     .replace(/>/g, '&gt;');
 
   return `<!DOCTYPE html><html><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" href="${KATEX_CDN}/katex.min.css">
-<script defer src="${KATEX_CDN}/katex.min.js"></script>
-<script defer src="${KATEX_CDN}/contrib/auto-render.min.js"></script>
+<style>${katexStyle}</style>
 <style>
   html,body{margin:0;padding:0;background:transparent;}
   #root{
@@ -29,6 +36,8 @@ function buildHtml(body, fontSize, textColor) {
   .katex{font-size:1.05em;}
 </style></head><body>
 <div id="root">${escaped}</div>
+<script>${inlineScript(katexScript)}</script>
+<script>${inlineScript(autoRenderScript)}</script>
 <script>
   function report(){
     var h = document.getElementById('root').getBoundingClientRect().height;

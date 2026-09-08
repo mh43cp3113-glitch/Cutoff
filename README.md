@@ -64,9 +64,6 @@ Firestore, you rewrite that file and the screens don't change.
 - **Progress is device-only.** Topic stats, attempt history and streak persist
   through AsyncStorage, but they don't follow the user to a new phone. Sign-in and
   Firestore sync are the next step.
-- **KaTeX loads from a CDN**, so maths needs a connection on first render. For
-  offline support, bundle `katex.min.js` and the CSS as local assets and load them
-  from the file system instead.
 - **Answers ship to the device.** Fine now, since the questions are yours and
   public. Before launch, move `correct_option_ids` and `explanation` behind a Cloud
   Function that only returns them after submission.

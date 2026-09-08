@@ -143,6 +143,16 @@ effects in development and would otherwise double-count every topic.
 **WebViews only for LaTeX.** Each one is an expensive instance and a question
 screen can hold five. Plain text takes the `<Text>` path.
 
+**KaTeX ships vendored, not from a CDN.** `src/vendor/katex/` holds KaTeX 0.16.9
+(`katex.min.js`, `auto-render.min.js`, `katex.min.css`) as JS modules exporting
+the file contents as strings, with `.woff2` fonts inlined as base64 `data:` URIs
+in the CSS. `MathText.js` injects them straight into the WebView's HTML — no
+network needed, matching the audience's patchy connectivity. See
+`src/vendor/katex/README.md` to upgrade the version. The WebView HTML also
+declares `<meta charset="utf-8">`; without it, non-ASCII characters in question
+text (en dashes, µ, °, etc.) can render as mojibake since `file://`-sourced HTML
+doesn't reliably default to UTF-8.
+
 **Design direction:** a physics lab notebook. Pale paper `#EDF0EC`, deep petrol ink
 `#1B2A2E`, hairline rules. Colour is reserved strictly for signal — green correct,
 red incorrect, amber flagged — and never used as decoration. The one bold element
@@ -192,8 +202,6 @@ means no Mac is required.
 ## Known gaps
 
 - Progress is device-only; it doesn't follow a user to a new phone
-- KaTeX loads from CDN, so maths needs a connection on first render. For offline,
-  bundle `katex.min.js` and the CSS as local assets
 - The report button renders but does nothing
 - Home routes every tap to JEE Main Physics regardless of which tile is pressed
 - No test suite
@@ -202,9 +210,10 @@ means no Mac is required.
 
 ## Immediate next step
 
-Run it in Expo Go and confirm LaTeX renders correctly on a real device. That's the
-riskiest technical piece in the build, and there's no point layering auth on top
-until it's proven.
+Run it in Expo Go and confirm LaTeX renders correctly on a real device — the last
+mile (WebView font/encoding behavior on real Android/iOS) hasn't been checked on
+hardware yet, even though the rendering pipeline itself is now verified headless
+(see below).
 
 ```bash
 npm install
