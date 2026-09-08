@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import HomeScreen from './src/screens/HomeScreen';
+import ExamPickerScreen from './src/screens/ExamPickerScreen';
 import SubjectPickerScreen from './src/screens/SubjectPickerScreen';
 import SubjectScreen from './src/screens/SubjectScreen';
 import QuizScreen from './src/screens/QuizScreen';
@@ -70,6 +71,11 @@ export default function App() {
             name="Home"
             component={HomeScreen}
             options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ExamPicker"
+            component={ExamPickerScreen}
+            options={{ title: 'Choose an exam' }}
           />
           <Stack.Screen
             name="SubjectPicker"

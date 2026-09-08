@@ -1,7 +1,9 @@
 # Cutoff
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
-Android, iOS and the web from one codebase. Phase 1 ships JEE Main Physics only.
+Android, iOS and the web from one codebase. Phase 1 covers JEE Main, NEET and
+Class 11–12 Science (Physics, Chemistry, Maths, Biology) with a ~200-question
+starter bank.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -20,8 +22,18 @@ polish.
 
 **Planned tracks.** Classes 1–10; Classes 11–12 across Science, Commerce and Arts;
 entrance exams (JEE, NEET, CAT); engineering (B.Tech semesters, GATE); government
-exams (SSC, banking, railways). All of these already exist in the taxonomy as
-locked tiles. Only JEE Main Physics has questions.
+exams (SSC, banking, railways). Entrance (JEE Main, NEET) and Class 11–12 Science
+are unlocked and populated; the rest are still locked tiles.
+
+**Navigation.** category (track) → exam → subject → topic, chosen explicitly:
+Home → ExamPicker → SubjectPicker → Subject → Quiz. A step is skipped only when
+there is genuinely one option behind it.
+
+**Shared question pool.** Subjects and topics use the same ids across exams
+(`physics` / `kinematics` is one pool, drawn on by JEE, NEET and Class 11–12). A
+subject-node's topic list is a per-exam subset. The `exam` field on a question is
+metadata — never a practice filter. Practice queries are "this subject + one of
+these topics" (`questionsForSubject` in `quiz.js`).
 
 ---
 
@@ -49,7 +61,7 @@ Working today:
   build:web`. AsyncStorage falls back to localStorage on web.
 
 Not built yet: authentication, any backend (so reports don't leave the device),
-subscriptions, timed mock tests, and every track other than JEE Main Physics.
+subscriptions, timed mock tests, and the school / engineering / govt tracks.
 
 ---
 
@@ -58,7 +70,7 @@ subscriptions, timed mock tests, and every track other than JEE Main Physics.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                design tokens
-src/data/questions.json     10 seed questions
+src/data/questions.json     ~200 original questions (4 subjects)
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -66,7 +78,7 @@ src/lib/ProgressContext.js  progress state, hydrated once at launch
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
-src/screens/                Home, SubjectPicker, Subject, Quiz, Result, Progress
+src/screens/                Home, ExamPicker, SubjectPicker, Subject, Quiz, Result, Progress
 ```
 
 **`src/lib/quiz.js` is the single data boundary.** It is the only module that knows
@@ -191,7 +203,11 @@ leave the rest locked.
 
 **Never copy questions from published books or other apps.** It's infringement and
 the fastest route to removal from the Play Store. Write them, license them, or
-commission them. The 10 seed questions are original.
+commission them. Every question in `questions.json` is original — written from
+standard textbook facts and computations, `source: "original"`. The bank is a
+~200-question starter set (~6–9 per topic); target is 15+ per topic. Spot-check
+answer keys before any store release. MCQ option order is shuffled per question
+(seeded by id) so the correct answer isn't always in the same slot.
 
 **Don't put "JEE" or "NEET" in the app's store name.** Play treats exam names as
 third-party marks and it's a common rejection reason.
@@ -225,7 +241,7 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Only JEE Main Physics has questions; every other track is locked
+- Question bank is a ~200-question starter set (~6-9 per topic); target is 15+
 - No test suite
 
 ---

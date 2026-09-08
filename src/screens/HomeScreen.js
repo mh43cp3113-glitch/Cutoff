@@ -1,9 +1,31 @@
 import React from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getTracks, getPlayableSubjects } from '../lib/quiz';
+import { getTracks, getPlayableExams } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
+
+// category (track) -> exam -> subject -> topics. Home only makes the first
+// choice; it hands off to ExamPicker / SubjectPicker for the rest, skipping a
+// step only when there's genuinely one option behind it.
+export function routeIntoTrack(navigation, trackId) {
+  const exams = getPlayableExams(trackId);
+  if (exams.length === 0) return;
+  if (exams.length > 1) {
+    navigation.navigate('ExamPicker', { trackId });
+    return;
+  }
+  const exam = exams[0];
+  if (exam.subjects.length === 1) {
+    navigation.navigate('Subject', {
+      trackId,
+      examId: exam.examId,
+      subjectId: exam.subjects[0].subjectId,
+    });
+  } else {
+    navigation.navigate('SubjectPicker', { trackId, examId: exam.examId });
+  }
+}
 
 export default function HomeScreen({ navigation }) {
   const tracks = getTracks();
@@ -15,20 +37,7 @@ export default function HomeScreen({ navigation }) {
     ? `${streak.current} day${streak.current > 1 ? 's' : ''} in a row · ${attempts.length} quiz${
         attempts.length === 1 ? '' : 'zes'
       } finished`
-    : 'Pick a track to begin. More open up as questions are added.';
-
-  // A track tile leads straight into its subject when there's only one to
-  // practise, or to a picker when there's a choice. No hard-coded route.
-  const openTrack = (track) => {
-    const playable = getPlayableSubjects(track.id);
-    if (playable.length === 0) return;
-    if (playable.length === 1) {
-      const { trackId, examId, subjectId } = playable[0];
-      navigation.navigate('Subject', { trackId, examId, subjectId });
-    } else {
-      navigation.navigate('SubjectPicker', { trackId: track.id });
-    }
-  };
+    : 'Choose a category, then the exam and subject you want to practise.';
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['top']}>
@@ -68,14 +77,17 @@ export default function HomeScreen({ navigation }) {
         </Text>
 
         {tracks.map((track) => {
-          const playable = getPlayableSubjects(track.id);
-          const disabled = track.locked || playable.length === 0;
-          const questionCount = playable.reduce((n, s) => n + s.count, 0);
+          const exams = getPlayableExams(track.id);
+          const disabled = track.locked || exams.length === 0;
+          const questionCount = exams.reduce(
+            (n, e) => n + e.subjects.reduce((m, s) => m + s.count, 0),
+            0
+          );
           return (
             <Pressable
               key={track.id}
               disabled={disabled}
-              onPress={() => openTrack(track)}
+              onPress={() => routeIntoTrack(navigation, track.id)}
               style={({ pressed }) => ({
                 backgroundColor: color.card,
                 borderWidth: 1,

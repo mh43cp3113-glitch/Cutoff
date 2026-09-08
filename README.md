@@ -76,15 +76,15 @@ decisions change.
 
 ```
 src/
-  data/questions.json    10 seed questions — mcq, multi-select, numerical, LaTeX
-  data/taxonomy.json     navigation tree, with locked branches
+  data/questions.json    ~200 original questions across 4 subjects — mcq, numerical, LaTeX
+  data/taxonomy.json     navigation tree: category -> exam -> subject -> topic
   lib/quiz.js            the only file that knows where questions come from
   lib/storage.js         AsyncStorage reads and writes, all failure-tolerant
   lib/ProgressContext.js progress state, hydrated once at launch
   components/MathText.js LaTeX via KaTeX in a self-sizing WebView (native)
   components/MathText.web.js  same, rendering KaTeX straight into the DOM (web)
   components/ProgressRail.js
-  screens/               Home, SubjectPicker, Subject, Quiz, Result, Progress
+  screens/               Home, ExamPicker, SubjectPicker, Subject, Quiz, Result, Progress
 ```
 
 `lib/quiz.js` is deliberately the single data boundary. When you move questions to
@@ -102,9 +102,13 @@ Firestore, you rewrite that file and the screens don't change.
   is stored locally and dropped from that device's future quizzes — but until
   there's a backend, reports don't reach you. Each stored report carries
   `sync: false` so a later Firestore push knows what to send.
-- **Only JEE Main Physics has questions.** Every other track is locked. Home now
-  routes by the real taxonomy (and shows a subject picker when a track has more
-  than one), so nothing is hard-coded — the tiles just have nothing behind them yet.
+- **Question bank is a starter set.** ~200 questions across JEE Main / NEET /
+  Class 11–12 (Physics, Chemistry, Maths, Biology), roughly 6–9 per topic — enough
+  to exercise every screen, not yet enough for serious prep. Aim is ~15+ per topic;
+  add to `src/data/questions.json` (or the authoring notes below).
+- **Subjects and topics are shared across exams by id.** JEE / NEET / Class 11–12
+  draw from the same physics pool, etc.; the `exam` field is metadata, never a
+  practice filter. Differentiate later with `difficulty` if needed.
 
 ## Roadmap
 
@@ -117,7 +121,14 @@ Firestore, you rewrite that file and the screens don't change.
 
 ## Content
 
-The 10 seed questions are original, written for this repo. Keep it that way:
-copying questions from published books or other apps is infringement, and it is
-the fastest way to get pulled from the Play Store. Write them, license them, or
-commission them.
+Every question in `src/data/questions.json` is original, written for this repo
+from standard textbook facts and computations. Keep it that way: copying questions
+from published books or other apps is infringement, and it is the fastest way to
+get pulled from the Play Store. Write them, license them, or commission them.
+
+Each question follows the data model in `CLAUDE.md`: one flat record with
+`track / exam / subject / topic` tags, a `question_type` (`mcq`, `multi_select`,
+`numerical`), `content_type` (`text` or `latex` — `$…$` for inline maths), an
+options array with `correct_option_ids`, or a `numerical_answer` with tolerance,
+plus an `explanation`. `source` stays `"original"`. Before shipping to a store,
+spot-check the answer keys.

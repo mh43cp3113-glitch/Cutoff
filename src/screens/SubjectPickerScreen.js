@@ -1,33 +1,31 @@
-import React from 'react';
-import { View, Text, Pressable, ScrollView } from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getTrack, getPlayableSubjects } from '../lib/quiz';
+import { getTrack, getExam, getPlayableExams } from '../lib/quiz';
 import { color, type, space, radius } from '../theme';
 
-// Shown only when a track has more than one subject to practise. With the seed
-// content (JEE Main Physics alone) Home skips straight past this, but the flow is
-// here for when Chemistry, Maths, NEET and the rest come online.
 export default function SubjectPickerScreen({ route, navigation }) {
-  const { trackId } = route.params;
+  const { trackId, examId } = route.params;
   const track = getTrack(trackId);
-  const options = getPlayableSubjects(trackId);
+  const exam = getExam(trackId, examId);
+  const playable = getPlayableExams(trackId).find((e) => e.examId === examId);
+  const subjects = playable ? playable.subjects : [];
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: exam ? exam.name : track ? track.name : 'Choose a subject',
+    });
+  }, [navigation, exam, track]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
-        <Text style={[type.small, { marginBottom: space.sm }]}>
-          {track?.name} · choose a subject
-        </Text>
-
-        {options.map((opt) => (
+        <Text style={[type.small, { marginBottom: space.sm }]}>Which subject?</Text>
+        {subjects.map((s) => (
           <Pressable
-            key={`${opt.examId}/${opt.subjectId}`}
+            key={s.subjectId}
             onPress={() =>
-              navigation.navigate('Subject', {
-                trackId: opt.trackId,
-                examId: opt.examId,
-                subjectId: opt.subjectId,
-              })
+              navigation.navigate('Subject', { trackId, examId, subjectId: s.subjectId })
             }
             style={({ pressed }) => ({
               backgroundColor: color.card,
@@ -39,9 +37,9 @@ export default function SubjectPickerScreen({ route, navigation }) {
               opacity: pressed ? 0.7 : 1,
             })}
           >
-            <Text style={type.title}>{opt.subjectName}</Text>
+            <Text style={type.title}>{s.subjectName}</Text>
             <Text style={[type.small, { marginTop: 2 }]}>
-              {opt.examName} · {opt.count} question{opt.count === 1 ? '' : 's'}
+              {s.count} question{s.count === 1 ? '' : 's'}
             </Text>
           </Pressable>
         ))}

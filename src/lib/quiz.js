@@ -18,35 +18,61 @@ export function getSubject(trackId, examId, subjectId) {
   return exam?.subjects.find((s) => s.id === subjectId) || null;
 }
 
+export function getExam(trackId, examId) {
+  return getTrack(trackId)?.exams.find((e) => e.id === examId) || null;
+}
+
+// A subject-node lists a subset of that subject's topics per exam (NEET Physics
+// skips rotational motion, etc). Questions are tagged by subject + topic and
+// shared across exams — the `exam` field is metadata, never a practice filter —
+// so a subject's question pool is "this subject, and one of these topics".
+function topicIdsOf(subjectNode) {
+  return new Set((subjectNode.topics || []).map((t) => t.id));
+}
+
+export function questionsForSubject(subjectId, topicIds, excludeIds) {
+  return questions.filter(
+    (q) => playable(q, excludeIds) && q.subject === subjectId && topicIds.has(q.topic)
+  );
+}
+
 /**
- * Every unlocked subject under a track that actually has live questions, each as
- * `{ trackId, examId, subjectId, examName, subjectName, count }`. Home uses this
- * to decide where a track tile leads: straight into the subject when there's only
- * one, or to a picker when there's a choice.
+ * Every unlocked exam under a track that has at least one playable subject, as
+ * `{ trackId, examId, examName, subjects: [{ subjectId, subjectName, count }] }`.
+ * Home and the pickers walk this to route category → exam → subject.
  */
-export function getPlayableSubjects(trackId) {
+export function getPlayableExams(trackId) {
   const track = getTrack(trackId);
   if (!track || track.locked) return [];
   const out = [];
   for (const exam of track.exams || []) {
     if (exam.locked) continue;
+    const subjects = [];
     for (const subject of exam.subjects || []) {
       if (subject.locked) continue;
-      const count = questions.filter(
-        (q) => live(q) && q.exam === exam.id && q.subject === subject.id
-      ).length;
+      const count = questionsForSubject(subject.id, topicIdsOf(subject)).length;
       if (count === 0) continue;
-      out.push({
-        trackId: track.id,
-        examId: exam.id,
-        subjectId: subject.id,
-        examName: exam.name,
-        subjectName: subject.name,
-        count,
-      });
+      subjects.push({ subjectId: subject.id, subjectName: subject.name, count });
+    }
+    if (subjects.length) {
+      out.push({ trackId: track.id, examId: exam.id, examName: exam.name, subjects });
     }
   }
   return out;
+}
+
+/** Flat list of every playable subject under a track (across its exams). */
+export function getPlayableSubjects(trackId) {
+  return getPlayableExams(trackId).flatMap((exam) =>
+    exam.subjects.map((s) => ({
+      trackId: exam.trackId,
+      examId: exam.examId,
+      examName: exam.examName,
+      subjectId: s.subjectId,
+      subjectName: s.subjectName,
+      count: s.count,
+    }))
+  );
 }
 
 /** Human-readable topic name from its id, searched across the whole taxonomy. */
@@ -103,8 +129,9 @@ export function buildTopicQuiz(topicId, count = 5, excludeIds) {
  * often as one at 90%. Unseen topics get a middling weight — worth sampling,
  * but not at the expense of a topic already known to be weak.
  */
-export function buildAdaptiveQuiz(subjectId, count = 10, topicStats = {}, excludeIds) {
-  const all = questions.filter((q) => live(q) && q.subject === subjectId);
+export function buildAdaptiveQuiz(subjectId, topicIds, count = 10, topicStats = {}, excludeIds) {
+  const set = topicIds instanceof Set ? topicIds : new Set(topicIds);
+  const all = questions.filter((q) => live(q) && q.subject === subjectId && set.has(q.topic));
   const filtered = all.filter((q) => playable(q, excludeIds));
   const pool = filtered.length ? filtered : all;
 

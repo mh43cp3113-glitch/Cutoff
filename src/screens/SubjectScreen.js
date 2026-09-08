@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
-  getTrack,
+  getExam,
   getSubject,
   countByTopic,
   buildTopicQuiz,
@@ -14,8 +14,12 @@ import { color, type, space, radius } from '../theme';
 export default function SubjectScreen({ route, navigation }) {
   const { trackId, examId, subjectId } = route.params;
   const subject = getSubject(trackId, examId, subjectId);
-  const exam = getTrack(trackId)?.exams.find((e) => e.id === examId);
+  const exam = getExam(trackId, examId);
   const { topicStats: stats, reportedIds } = useProgress();
+
+  const topicIds = (subject?.topics || []).map((t) => t.id);
+  const totalQuestions = topicIds.reduce((n, id) => n + countByTopic(id, reportedIds), 0);
+  const mixedCount = Math.min(10, Math.max(5, totalQuestions));
 
   useLayoutEffect(() => {
     if (subject) {
@@ -25,16 +29,24 @@ export default function SubjectScreen({ route, navigation }) {
     }
   }, [navigation, exam, subject]);
 
+  if (!subject) {
+    return (
+      <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }}>
+        <Text style={[type.body, { padding: space.md }]}>Subject not found.</Text>
+      </SafeAreaView>
+    );
+  }
+
   const startTopic = (topicId, topicName) => {
-    const questionList = buildTopicQuiz(topicId, 5, reportedIds);
+    const questionList = buildTopicQuiz(topicId, 8, reportedIds);
     if (!questionList.length) return;
     navigation.navigate('Quiz', { questionList, label: topicName });
   };
 
   const startMixed = () => {
-    const questionList = buildAdaptiveQuiz(subjectId, 8, stats, reportedIds);
+    const questionList = buildAdaptiveQuiz(subjectId, topicIds, mixedCount, stats, reportedIds);
     if (!questionList.length) return;
-    navigation.navigate('Quiz', { questionList, label: 'Mixed practice' });
+    navigation.navigate('Quiz', { questionList, label: `${subject.name} · mixed` });
   };
 
   return (
@@ -50,11 +62,9 @@ export default function SubjectScreen({ route, navigation }) {
             opacity: pressed ? 0.85 : 1,
           })}
         >
-          <Text style={{ fontSize: 17, fontWeight: '650', color: color.paper }}>
-            Mixed practice
-          </Text>
+          <Text style={{ fontSize: 17, fontWeight: '650', color: color.paper }}>Mixed practice</Text>
           <Text style={{ fontSize: 13, color: color.rule, marginTop: 2 }}>
-            8 questions, weighted towards your weaker topics
+            {mixedCount} questions across {subject.name}, weighted towards your weaker topics
           </Text>
         </Pressable>
 
@@ -91,12 +101,7 @@ export default function SubjectScreen({ route, navigation }) {
               </View>
               {accuracy !== null && accuracy < 60 && (
                 <View
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: 4,
-                    backgroundColor: color.flag,
-                  }}
+                  style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: color.flag }}
                 />
               )}
             </Pressable>
