@@ -38,9 +38,6 @@ export default function SubjectPickerScreen({ route, navigation }) {
             })}
           >
             <Text style={type.title}>{s.subjectName}</Text>
-            <Text style={[type.small, { marginTop: 2 }]}>
-              {s.count} question{s.count === 1 ? '' : 's'}
-            </Text>
           </Pressable>
         ))}
       </ScrollView>

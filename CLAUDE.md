@@ -1,9 +1,11 @@
 # Cutoff
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
-Android, iOS and the web from one codebase. Phase 1 covers JEE Main, NEET and
-Class 11–12 Science (Physics, Chemistry, Maths, Biology) and the Government-exam
-track (Quant, Reasoning, General Awareness) with a ~470-question starter bank.
+Android, iOS and the web from one codebase. All five tracks are now unlocked —
+Entrance (JEE Main, NEET), Class 11–12 Science, Government exams, School (Class
+1–10) and Engineering — with a ~870-question bank. Coverage is uneven by design:
+the Science subjects have 70–100 questions each, the newer tracks ~10 per subject
+as a first batch to be topped up.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -20,22 +22,35 @@ actually gets wrong, rather than the shuffle-and-hope that most free quiz apps d
 Android phones with patchy connectivity. Offline capability matters more than
 polish.
 
-**Planned tracks.** Classes 1–10; Classes 11–12 across Science, Commerce and Arts;
-entrance exams (JEE, NEET, CAT); engineering (B.Tech semesters, GATE); government
-exams (SSC, banking, railways). Entrance (JEE Main, NEET), Class 11–12 Science and
-Government exams (SSC CGL, Banking, Railways) are unlocked and populated; the rest
-are still locked tiles.
+**Tracks.** All five are unlocked:
 
-The Government track shares one pool across its three exams (SSC CGL / Banking /
-RRB NTPC) with three subjects — `quant`, `reasoning`, `general_awareness` — the
-same shared-pool pattern as entrance. General Awareness is deliberately static GK
-only (polity, history, geography, science, economy) — no current affairs, so it
-doesn't rot.
+- **Entrance** — JEE Main, NEET (CAT still locked). Shared pools: `physics`,
+  `chemistry`, `maths`, `biology`.
+- **Class 11–12** — Science. Same four shared pools.
+- **Government exams** — SSC CGL, Banking, RRB NTPC. Shared pools across the
+  three exams: `quant`, `reasoning`, `general_awareness`. General Awareness is
+  deliberately static GK only (polity, history, geography, science, economy) —
+  no current affairs, so it doesn't rot.
+- **School (Class 1–10)** — exam level is the grade (`class_1` … `class_10`);
+  subjects are Mathematics and Science. **Pools are per-grade, not shared**:
+  subject ids are `s_math_<grade>` / `s_sci_<grade>`, so Class 3 Maths and Class 9
+  Maths are separate pools. No negative marking.
+- **Engineering** — exam level is the stream (CSE, ECE, Mechanical, Civil,
+  Electrical); each stream has four core subjects with their own pools
+  (`cse_dsa`, `mech_thermo`, …). GATE-style marking (+2 / −0.5). Questions are
+  conceptual, not numerical.
+
+School still to come: Commerce/Arts for 11–12, and the remaining boards.
 
 **Navigation.** category (track) → exam → subject, chosen explicitly:
 Home → ExamPicker → SubjectPicker → Subject → Quiz. A step is skipped only when
 there is genuinely one option behind it. **There is no topic level in the UI** —
 the student picks a subject and gets a mixed set from the whole subject.
+The exam and subject pickers **do not show per-subject question counts** (the
+newer tracks are thin and the number is noise); the Home tiles show only the
+track name and hint. Home was restyled (rounded cards, a streak pill, unlocked
+tracks first then a "Coming soon" group) — HomeScreen only; other screens keep
+the original look.
 
 **Shared question pool.** Subjects use the same id across exams (`physics` is one
 pool, drawn on by JEE, NEET and Class 11–12); the `exam` field on a question is
@@ -78,7 +93,7 @@ subscriptions, timed mock tests, and the school / engineering / govt tracks.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                design tokens
-src/data/questions.json     ~470 original questions (7 subjects)
+src/data/questions.json     ~870 original questions across all five tracks
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -213,9 +228,11 @@ leave the rest locked.
 **Never copy questions from published books or other apps.** It's infringement and
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
-standard textbook facts and computations, `source: "original"`. The bank is a
-~470-question starter set (Science 70–100 per subject, Government ~50 per subject).
-Spot-check answer keys before any store release. The correct option is spread
+standard textbook facts and computations, `source: "original"`. The bank is
+~870 questions: Science 70–100 per subject, Government ~50 per subject, School
+and Engineering ~10 per subject (a first batch — needs topping up to ~20, and
+the answer keys there especially need a review pass). Spot-check answer keys
+before any store release. The correct option is spread
 evenly across the four slots by construction (the app does not shuffle options at
 runtime), so the answer isn't always in the same place.
 
@@ -251,7 +268,9 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank is a ~470-question starter set (Science 70–100/subject, Government ~50/subject)
+- Question bank ~870: Science 70–100/subject, Government ~50/subject, School +
+  Engineering ~10/subject (first batch, top up to ~20 and review the keys)
+- School/Engineering questions are all plain-text MCQ — no numericals, no LaTeX yet
 - No test suite
 
 ---

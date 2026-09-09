@@ -44,11 +44,12 @@ export default function SubjectScreen({ route, navigation }) {
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
         <Text style={type.display}>{subject.name}</Text>
         <Text style={[type.small, { marginTop: space.xs, marginBottom: space.xl }]}>
-          {available} question{available === 1 ? '' : 's'} available. Each set leans towards
-          the kind of question you get wrong.
+          {available === 0
+            ? 'No questions here yet — check back soon.'
+            : 'Each set is mixed from the whole subject and leans towards the kind of question you get wrong.'}
         </Text>
 
-        {LENGTHS.map((len, i) => {
+        {LENGTHS.filter((len, i) => i === 0 || available > LENGTHS[0]).map((len, i) => {
           const count = Math.min(len, available);
           const disabled = available === 0;
           const primary = i === 0;

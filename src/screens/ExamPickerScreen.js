@@ -29,30 +29,26 @@ export default function ExamPickerScreen({ route, navigation }) {
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
         <Text style={[type.small, { marginBottom: space.sm }]}>Which exam?</Text>
-        {exams.map((exam) => {
-          const total = exam.subjects.reduce((n, s) => n + s.count, 0);
-          return (
-            <Pressable
-              key={exam.examId}
-              onPress={() => openExam(exam)}
-              style={({ pressed }) => ({
-                backgroundColor: color.card,
-                borderWidth: 1,
-                borderColor: color.rule,
-                borderRadius: radius.md,
-                padding: space.md,
-                marginBottom: space.sm,
-                opacity: pressed ? 0.7 : 1,
-              })}
-            >
-              <Text style={type.title}>{exam.examName}</Text>
-              <Text style={[type.small, { marginTop: 2 }]}>
-                {exam.subjects.map((s) => s.subjectName).join(' · ')} · {total} question
-                {total === 1 ? '' : 's'}
-              </Text>
-            </Pressable>
-          );
-        })}
+        {exams.map((exam) => (
+          <Pressable
+            key={exam.examId}
+            onPress={() => openExam(exam)}
+            style={({ pressed }) => ({
+              backgroundColor: color.card,
+              borderWidth: 1,
+              borderColor: color.rule,
+              borderRadius: radius.md,
+              padding: space.md,
+              marginBottom: space.sm,
+              opacity: pressed ? 0.7 : 1,
+            })}
+          >
+            <Text style={type.title}>{exam.examName}</Text>
+            <Text style={[type.small, { marginTop: 2 }]}>
+              {exam.subjects.map((s) => s.subjectName).join(' · ')}
+            </Text>
+          </Pressable>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );

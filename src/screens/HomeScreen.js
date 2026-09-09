@@ -5,9 +5,9 @@ import { getTracks, getPlayableExams } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
 
-// category (track) -> exam -> subject -> topics. Home only makes the first
-// choice; it hands off to ExamPicker / SubjectPicker for the rest, skipping a
-// step only when there's genuinely one option behind it.
+// category (track) -> exam -> subject. Home only makes the first choice; it
+// hands off to ExamPicker / SubjectPicker for the rest, skipping a step only
+// when there's genuinely one option behind it.
 export function routeIntoTrack(navigation, trackId) {
   const exams = getPlayableExams(trackId);
   if (exams.length === 0) return;
@@ -27,25 +27,77 @@ export function routeIntoTrack(navigation, trackId) {
   }
 }
 
+function TrackCard({ track, open, onPress }) {
+  return (
+    <Pressable
+      disabled={!open}
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={track.name + (open ? '' : ', coming soon')}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: open ? color.card : 'transparent',
+        borderWidth: 1,
+        borderColor: open ? color.rule : 'transparent',
+        borderRadius: radius.lg,
+        paddingVertical: space.md,
+        paddingHorizontal: space.md,
+        marginBottom: space.sm,
+        opacity: open ? (pressed ? 0.7 : 1) : 0.5,
+      })}
+    >
+      {open && (
+        <View
+          style={{
+            width: 3,
+            alignSelf: 'stretch',
+            borderRadius: 2,
+            backgroundColor: color.ink,
+            marginRight: space.md,
+          }}
+        />
+      )}
+      <View style={{ flex: 1 }}>
+        <Text style={[type.title, !open && { color: color.locked }]}>{track.name}</Text>
+        <Text style={[type.small, { marginTop: 2 }]}>{track.hint}</Text>
+      </View>
+      {open ? (
+        <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
+      ) : (
+        <Text
+          style={{
+            fontSize: 11,
+            fontWeight: '700',
+            letterSpacing: 0.5,
+            textTransform: 'uppercase',
+            color: color.locked,
+            marginLeft: space.sm,
+          }}
+        >
+          Soon
+        </Text>
+      )}
+    </Pressable>
+  );
+}
+
 export default function HomeScreen({ navigation }) {
   const tracks = getTracks();
   const { streak, attempts, ready } = useProgress();
 
-  const subtitle = !ready
-    ? 'Loading your progress'
-    : streak.current > 0
-    ? `${streak.current} day${streak.current > 1 ? 's' : ''} in a row · ${attempts.length} quiz${
-        attempts.length === 1 ? '' : 'zes'
-      } finished`
-    : 'Choose a category, then the exam and subject you want to practise.';
+  const withOpen = tracks.map((t) => ({ track: t, open: getPlayableExams(t.id).length > 0 }));
+  const openTracks = withOpen.filter((t) => t.open);
+  const lockedTracks = withOpen.filter((t) => !t.open);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['top']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+        {/* Header */}
         <View
           style={{
             flexDirection: 'row',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             justifyContent: 'space-between',
             marginTop: space.md,
           }}
@@ -57,65 +109,58 @@ export default function HomeScreen({ navigation }) {
             accessibilityLabel="Your progress"
             hitSlop={8}
             style={({ pressed }) => ({
-              borderWidth: 1,
-              borderColor: color.rule,
-              borderRadius: radius.sm,
-              paddingVertical: 6,
-              paddingHorizontal: 10,
-              marginTop: 6,
-              opacity: pressed ? 0.6 : 1,
+              backgroundColor: color.ink,
+              borderRadius: radius.pill,
+              paddingVertical: 7,
+              paddingHorizontal: 14,
+              opacity: pressed ? 0.7 : 1,
             })}
           >
-            <Text style={[type.small, { color: color.ink, fontWeight: '600' }]}>
-              {streak.current > 0 ? `${streak.current}-day streak` : 'Progress'}
+            <Text style={{ fontSize: 13, fontWeight: '700', color: color.paper }}>
+              {ready && streak.current > 0 ? `${streak.current}-day streak` : 'Progress'}
             </Text>
           </Pressable>
         </View>
 
-        <Text style={[type.small, { marginTop: space.xs, marginBottom: space.lg }]}>
-          {subtitle}
+        <Text style={[type.small, { marginTop: space.sm, marginBottom: space.lg }]}>
+          {ready && attempts.length > 0
+            ? `${attempts.length} quiz${attempts.length === 1 ? '' : 'zes'} done · pick up where you left off`
+            : 'Choose a category, then the exam and subject you want to practise.'}
         </Text>
 
-        {tracks.map((track) => {
-          const exams = getPlayableExams(track.id);
-          const disabled = track.locked || exams.length === 0;
-          const questionCount = exams.reduce(
-            (n, e) => n + e.subjects.reduce((m, s) => m + s.count, 0),
-            0
-          );
-          return (
-            <Pressable
-              key={track.id}
-              disabled={disabled}
-              onPress={() => routeIntoTrack(navigation, track.id)}
-              style={({ pressed }) => ({
-                backgroundColor: color.card,
-                borderWidth: 1,
-                borderColor: color.rule,
-                borderRadius: radius.md,
-                padding: space.md,
-                marginBottom: space.sm,
-                opacity: disabled ? 0.55 : pressed ? 0.7 : 1,
-              })}
+        {/* Unlocked tracks */}
+        {openTracks.map(({ track, open }) => (
+          <TrackCard
+            key={track.id}
+            track={track}
+            open={open}
+            onPress={() => routeIntoTrack(navigation, track.id)}
+          />
+        ))}
+
+        {/* Locked tracks */}
+        {lockedTracks.length > 0 && (
+          <>
+            <Text
+              style={[
+                type.small,
+                {
+                  marginTop: space.lg,
+                  marginBottom: space.sm,
+                  textTransform: 'uppercase',
+                  letterSpacing: 0.6,
+                  fontSize: 11,
+                  fontWeight: '700',
+                },
+              ]}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={{ flex: 1 }}>
-                  <Text style={[type.title, disabled && { color: color.locked }]}>
-                    {track.name}
-                  </Text>
-                  <Text style={[type.small, { marginTop: 2 }]}>{track.hint}</Text>
-                </View>
-                {disabled ? (
-                  <Text style={[type.small, { color: color.locked }]}>Coming soon</Text>
-                ) : (
-                  <Text style={[type.small, { color: color.inkSoft }]}>
-                    {questionCount} question{questionCount === 1 ? '' : 's'}
-                  </Text>
-                )}
-              </View>
-            </Pressable>
-          );
-        })}
+              Coming soon
+            </Text>
+            {lockedTracks.map(({ track, open }) => (
+              <TrackCard key={track.id} track={track} open={open} onPress={() => {}} />
+            ))}
+          </>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
