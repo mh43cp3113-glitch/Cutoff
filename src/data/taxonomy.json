@@ -66,8 +66,39 @@
       "id": "govt",
       "name": "Government exams",
       "hint": "SSC, banking, railways",
-      "locked": true,
-      "exams": []
+      "locked": false,
+      "exams": [
+        {
+          "id": "ssc_cgl",
+          "name": "SSC CGL",
+          "locked": false,
+          "subjects": [
+            { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
+            { "id": "reasoning", "name": "Reasoning", "locked": false },
+            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+          ]
+        },
+        {
+          "id": "bank_po",
+          "name": "Banking",
+          "locked": false,
+          "subjects": [
+            { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
+            { "id": "reasoning", "name": "Reasoning", "locked": false },
+            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+          ]
+        },
+        {
+          "id": "rrb_ntpc",
+          "name": "Railways (RRB NTPC)",
+          "locked": false,
+          "subjects": [
+            { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
+            { "id": "reasoning", "name": "Reasoning", "locked": false },
+            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+          ]
+        }
+      ]
     }
   ]
 }

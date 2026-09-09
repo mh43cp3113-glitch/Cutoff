@@ -2,8 +2,8 @@
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
 Android, iOS and the web from one codebase. Phase 1 covers JEE Main, NEET and
-Class 11–12 Science (Physics, Chemistry, Maths, Biology) with a ~320-question
-starter bank.
+Class 11–12 Science (Physics, Chemistry, Maths, Biology) and the Government-exam
+track (Quant, Reasoning, General Awareness) with a ~470-question starter bank.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -22,8 +22,15 @@ polish.
 
 **Planned tracks.** Classes 1–10; Classes 11–12 across Science, Commerce and Arts;
 entrance exams (JEE, NEET, CAT); engineering (B.Tech semesters, GATE); government
-exams (SSC, banking, railways). Entrance (JEE Main, NEET) and Class 11–12 Science
-are unlocked and populated; the rest are still locked tiles.
+exams (SSC, banking, railways). Entrance (JEE Main, NEET), Class 11–12 Science and
+Government exams (SSC CGL, Banking, Railways) are unlocked and populated; the rest
+are still locked tiles.
+
+The Government track shares one pool across its three exams (SSC CGL / Banking /
+RRB NTPC) with three subjects — `quant`, `reasoning`, `general_awareness` — the
+same shared-pool pattern as entrance. General Awareness is deliberately static GK
+only (polity, history, geography, science, economy) — no current affairs, so it
+doesn't rot.
 
 **Navigation.** category (track) → exam → subject, chosen explicitly:
 Home → ExamPicker → SubjectPicker → Subject → Quiz. A step is skipped only when
@@ -71,7 +78,7 @@ subscriptions, timed mock tests, and the school / engineering / govt tracks.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                design tokens
-src/data/questions.json     ~320 original questions (4 subjects)
+src/data/questions.json     ~470 original questions (7 subjects)
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -207,9 +214,10 @@ leave the rest locked.
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
 standard textbook facts and computations, `source: "original"`. The bank is a
-~320-question starter set (70–100 per subject). Spot-check answer keys before any
-store release. MCQ option order is shuffled per question
-(seeded by id) so the correct answer isn't always in the same slot.
+~470-question starter set (Science 70–100 per subject, Government ~50 per subject).
+Spot-check answer keys before any store release. The correct option is spread
+evenly across the four slots by construction (the app does not shuffle options at
+runtime), so the answer isn't always in the same place.
 
 **Don't put "JEE" or "NEET" in the app's store name.** Play treats exam names as
 third-party marks and it's a common rejection reason.
@@ -243,7 +251,7 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank is a ~320-question starter set (70–100 per subject)
+- Question bank is a ~470-question starter set (Science 70–100/subject, Government ~50/subject)
 - No test suite
 
 ---

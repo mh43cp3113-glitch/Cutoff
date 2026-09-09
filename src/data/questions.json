@@ -15473,5 +15473,7453 @@
       "c"
     ],
     "numerical_answer": null
+  },
+  {
+    "id": "q_gov_0001",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If 30% of a number is 90, what is 50% of that number?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "120"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "150"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "135"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "180"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "30% of the number is 90, so the number is 300. 50% of 300 is 150."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0002",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A number is first increased by 20% and then decreased by 20%. The net change is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "no change"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "a 4% increase"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "a 4% decrease"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "a 2% decrease"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Net factor = 1.20 x 0.80 = 0.96, i.e. a 4% decrease."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0003",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "profit_loss",
+    "subtopic": "profit_loss",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "An article bought for Rs 400 is sold for Rs 500. The profit percent is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "24%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "30%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "25%"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Profit = 100 on a cost of 400, so profit percent = 100/400 x 100 = 25%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0004",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "profit_loss",
+    "subtopic": "profit_loss",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A shopkeeper marks his goods 40% above cost price and then allows a discount of 10%. His profit percent is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "26%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "30%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "25%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "14%"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "SP = 1.40 x 0.90 = 1.26 times cost, so profit is 26%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0005",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "simple_interest",
+    "subtopic": "simple_interest",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The simple interest on Rs 5000 at 8% per annum for 3 years is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 1000"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 1200"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 1300"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 1400"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "SI = P x R x T / 100 = 5000 x 8 x 3 / 100 = 1200."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0006",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "compound_interest",
+    "subtopic": "compound_interest",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The compound interest on Rs 10000 at 10% per annum for 2 years is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 2000"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 2200"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 2100"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 1000"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Amount = 10000 x 1.1 x 1.1 = 12100, so CI = 2100."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0007",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "compound_interest",
+    "subtopic": "compound_interest",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The difference between the compound interest and the simple interest on Rs 8000 at 5% per annum for 2 years is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 25"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 40"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 10"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 20"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "For 2 years the difference is P(R/100)^2 = 8000 x 0.05 x 0.05 = 20."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0008",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "time_work",
+    "subtopic": "time_work",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A can do a piece of work in 10 days and B in 15 days. Working together, they finish it in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "6 days"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "5 days"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12 days"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "25 days"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Combined one-day work = 1/10 + 1/15 = 1/6, so 6 days."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0009",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "time_work",
+    "subtopic": "time_work",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "12 men build a wall in 10 days. How many days will 15 men take to build the same wall?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "7.5 days"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "8 days"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12 days"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "6 days"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Total work = 120 man-days; 120 / 15 = 8 days."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0010",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "pipes_cisterns",
+    "subtopic": "pipes_cisterns",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "One pipe fills a tank in 6 hours and another empties it in 9 hours. If both are opened together, the tank fills in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "15 hours"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "3.6 hours"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "18 hours"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "12 hours"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Net rate = 1/6 - 1/9 = 1/18 per hour, so 18 hours."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0011",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "time_speed_distance",
+    "subtopic": "time_speed_distance",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A car covers 240 km in 4 hours. Its average speed is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "50 km/h"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "70 km/h"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "80 km/h"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "60 km/h"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Speed = distance / time = 240 / 4 = 60 km/h."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0012",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "time_speed_distance",
+    "subtopic": "time_speed_distance",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A speed of 72 km/h expressed in metres per second is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20 m/s"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "18 m/s"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "25 m/s"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "30 m/s"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Multiply by 5/18: 72 x 5/18 = 20 m/s."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0013",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "trains",
+    "subtopic": "trains",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A train 120 m long is moving at 36 km/h. The time it takes to pass a pole is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "10 seconds"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12 seconds"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "15 seconds"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "20 seconds"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "36 km/h = 10 m/s; time = 120 / 10 = 12 seconds."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0014",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "trains",
+    "subtopic": "trains",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A train 150 m long travelling at 20 m/s crosses a platform 250 m long in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "15 seconds"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "25 seconds"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "20 seconds"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "30 seconds"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Distance = 150 + 250 = 400 m; time = 400 / 20 = 20 seconds."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0015",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "trains",
+    "subtopic": "trains",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Two trains 90 m and 110 m long move towards each other at 12 m/s and 8 m/s. They cross each other in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8 seconds"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12 seconds"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "20 seconds"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "10 seconds"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Relative speed = 20 m/s; combined length = 200 m; time = 200 / 20 = 10 seconds."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0016",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "averages",
+    "subtopic": "averages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The average of the first 10 natural numbers is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "5.5"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "5"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "10"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Sum = 55; average = 55 / 10 = 5.5."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0017",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "averages",
+    "subtopic": "averages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The average of 5 numbers is 20. If one of them, 10, is removed, the average of the rest is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "25"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "22.5"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "18"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "20"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Total = 100; after removing 10, sum = 90 over 4 numbers = 22.5."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0018",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "averages",
+    "subtopic": "averages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The average age of 30 students is 12 years. Including the teacher, the average becomes 13 years. The teacher is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "40 years"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "45 years"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "43 years"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "42 years"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "New total = 31 x 13 = 403; old total = 360; teacher = 43."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0019",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "ratio_proportion",
+    "subtopic": "ratio_proportion",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Rs 600 is divided between two people in the ratio 2 : 3. The smaller share is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 200"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 300"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 360"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 240"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Total parts = 5; smaller share = 600 x 2/5 = 240."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0020",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "ratio_proportion",
+    "subtopic": "ratio_proportion",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If A : B = 2 : 3 and B : C = 4 : 5, then A : C is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8 : 15"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "2 : 5"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "6 : 5"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "8 : 12"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Make B common: A : B = 8 : 12 and B : C = 12 : 15, so A : C = 8 : 15."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0021",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "ratio_proportion",
+    "subtopic": "ratio_proportion",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If 5 pens cost Rs 75, the cost of 8 such pens is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 100"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 120"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 150"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 96"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "One pen costs 15; 8 pens cost 120."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0022",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "ages",
+    "subtopic": "ages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A father is 3 times as old as his son. After 12 years he will be twice as old. The son’s present age is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "10 years"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "14 years"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12 years"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "16 years"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Let son = s. 3s + 12 = 2(s + 12) gives s = 12."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0023",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "number_system",
+    "subtopic": "number_system",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The smallest number that must be added to 1234 to make it divisible by 9 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "5"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "2"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "7"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "8"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Digit sum = 10; next multiple of 9 is 18, so add 8."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0024",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "number_system",
+    "subtopic": "number_system",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The units digit of 7 raised to the power 71 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "3"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "7"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "9"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Units digits of powers of 7 cycle 7, 9, 3, 1. Since 71 = 4 x 17 + 3, the answer is the 3rd term, 3."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0025",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "number_system",
+    "subtopic": "number_system",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The HCF of 36 and 48 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "4"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "24"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "36 = 2^2 x 3^2, 48 = 2^4 x 3; common factors give 2^2 x 3 = 12."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0026",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "number_system",
+    "subtopic": "number_system",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The LCM of 12 and 18 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "72"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "36"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "54"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "12 = 2^2 x 3, 18 = 2 x 3^2; LCM = 2^2 x 3^2 = 36."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0027",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The area of a circle of radius 7 cm (taking pi = 22/7) is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "44 sq cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "22 sq cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "49 sq cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "154 sq cm"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Area = pi r^2 = 22/7 x 7 x 7 = 154 sq cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0028",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The perimeter of a rectangle 12 cm long and 8 cm wide is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "40 cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "96 cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "20 cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "48 cm"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Perimeter = 2(l + b) = 2(12 + 8) = 40 cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0029",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The volume of a cube of side 5 cm is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "25 cubic cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "125 cubic cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "75 cubic cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "150 cubic cm"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Volume = side^3 = 5^3 = 125 cubic cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0030",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The area of a square is 144 sq cm. Its perimeter is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "24 cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12 cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "48 cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "72 cm"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Side = sqrt(144) = 12 cm; perimeter = 4 x 12 = 48 cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0031",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The length of the diagonal of a square of side 10 cm is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20 cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "14 cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "100 cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "10√2 cm"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Diagonal = side x sqrt(2) = 10√2 cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0032",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The population of a town increases by 10% every year. If it is 10000 now, after 2 years it will be:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "12100"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12000"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "11000"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "12200"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "10000 x 1.1 x 1.1 = 12100."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0033",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "profit_loss",
+    "subtopic": "profit_loss",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "By selling an article for Rs 270 a man loses 10%. The cost price is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 297"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 300"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 243"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 330"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "SP = 90% of CP, so CP = 270 / 0.9 = 300."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0034",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "profit_loss",
+    "subtopic": "profit_loss",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The marked price of a shirt is Rs 800 and it is sold for Rs 680. The discount percent is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "12%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "17.6%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "15%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "20%"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Discount = 120 on 800 = 15%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0035",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "mixtures",
+    "subtopic": "mixtures",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In 40 litres of a mixture, milk and water are in the ratio 3 : 1. The water to be added to make the ratio 1 : 1 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "10 litres"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "30 litres"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "15 litres"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "20 litres"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Milk = 30 L, water = 10 L. For 1 : 1 the water must equal 30 L, so add 20 L."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0036",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "partnership",
+    "subtopic": "partnership",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A invests Rs 5000 and B invests Rs 3000 for the same period. A profit of Rs 1600 is shared. A’s share is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 1000"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 600"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 800"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 1200"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Profit is shared 5 : 3; A gets 1600 x 5/8 = 1000."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0037",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The value of 40% of 250 plus 25% of 80 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "110"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "120"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "130"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "100"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "0.40 x 250 = 100 and 0.25 x 80 = 20; total = 120."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0038",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "simplification",
+    "subtopic": "simplification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The value of 15 x 8 / 4 + 6 - 3 is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "30"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "36"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "33"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "27"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "15 x 8 / 4 = 30; 30 + 6 - 3 = 33."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0039",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "fractions",
+    "subtopic": "fractions",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which of these fractions is the largest: 2/3, 3/4, 4/5, 5/6?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "2/3"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "3/4"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "4/5"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "5/6"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "As decimals: 0.667, 0.75, 0.8, 0.833. The largest is 5/6."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0040",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "time_speed_distance",
+    "subtopic": "time_speed_distance",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A man travels to a place at 30 km/h and returns at 20 km/h. His average speed for the whole journey is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "24 km/h"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "25 km/h"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "26 km/h"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "50 km/h"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Average speed = 2xy/(x+y) = 2 x 30 x 20 / 50 = 24 km/h."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0041",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "boats_streams",
+    "subtopic": "boats_streams",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A boat travels at 20 km/h downstream and 12 km/h upstream. The speed of the stream is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8 km/h"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "4 km/h"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "16 km/h"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2 km/h"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Stream speed = (downstream - upstream) / 2 = (20 - 12) / 2 = 4 km/h."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0042",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "simple_interest",
+    "subtopic": "simple_interest",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "At what rate of simple interest will Rs 1200 amount to Rs 1440 in 2 years?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "10%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "20%"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Interest = 240; 240 = 1200 x R x 2 / 100 gives R = 10%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0043",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A student scores 60% of the maximum marks and gets 300 marks. The maximum marks are:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "450"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "360"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "600"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "500"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "60% = 300, so 100% = 500."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0044",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "time_work",
+    "subtopic": "time_work",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A and B can do a work in 6 days and 12 days respectively. They do it together and are paid Rs 90. B’s share is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rs 30"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rs 45"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rs 60"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rs 15"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Work rates are 2 : 1, so wages split 2 : 1; B gets 90 x 1/3 = 30."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0045",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "number_system",
+    "subtopic": "number_system",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The sum of three consecutive even numbers is 42. The largest of them is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "14"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "16"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "18"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "12"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The numbers are 12, 14, 16; the largest is 16."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0046",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A person’s salary rises from Rs 20000 to Rs 25000. The percentage increase is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "5%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "25%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "15%"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Increase = 5000 on 20000 = 25%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0047",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "ratio_proportion",
+    "subtopic": "ratio_proportion",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A bag has Rs 1, Rs 2 and Rs 5 coins in the ratio 3 : 2 : 1, totalling Rs 60. The number of Rs 1 coins is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "18"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "10"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "15"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Value ratio = 3 : 4 : 5 (sum 12 parts = Rs 60, so 1 part = Rs 5). Rs 1 coins are worth 3 parts = Rs 15, i.e. 15 coins."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0048",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "time_work",
+    "subtopic": "time_work",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A and B each finish a job alone in 8 days. A works on day 1, B on day 2, A on day 3, and so on. The fraction of the job done in 4 days is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1/2"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1/4"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "3/8"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "5/8"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Every two days 1/8 + 1/8 = 1/4 is done; in 4 days that is 1/2."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0049",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A town of 8000 people has 60% men. If 25% of the men and 40% of the women are literate, the number of literate people is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "2400"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "2480"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "2500"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2560"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Men = 4800, women = 3200. Literate = 0.25 x 4800 + 0.40 x 3200 = 1200 + 1280 = 2480."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0050",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "quant",
+    "topic": "mensuration",
+    "subtopic": "mensuration",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The area of a triangle with base 10 cm and height 6 cm is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "60 sq cm"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "16 sq cm"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "30 sq cm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "15 sq cm"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Area = 1/2 x base x height = 1/2 x 10 x 6 = 30 sq cm."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0051",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "quant",
+    "topic": "data_interpretation",
+    "subtopic": "data_interpretation",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A shop sold 200 items in a week: 40% on Monday, 25% on Tuesday and the rest split equally over the next five days. How many were sold on Friday?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "10"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "16"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "14"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Monday + Tuesday = 130 items; 70 remain over 5 days = 14 per day."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0052",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "quant",
+    "topic": "percentages",
+    "subtopic": "percentages",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The price of sugar rises by 25%. By what percent must a family cut its consumption to keep the sugar bill unchanged?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "20%"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "25%"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "15%"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "30%"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Required reduction = 25 / (100 + 25) x 100 = 20%."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 60,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0053",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "analogy",
+    "subtopic": "analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Cat is to Kitten as Dog is to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Cub"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Puppy"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Calf"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Foal"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A kitten is a young cat; the young of a dog is a puppy."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0054",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "analogy",
+    "subtopic": "analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Hand is to Glove as Foot is to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Shoe"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Boot"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Sock"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Toe"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A glove is worn directly on the hand; a sock is worn directly on the foot."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0055",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "analogy",
+    "subtopic": "analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Doctor is to Hospital as Teacher is to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Class"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Student"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Book"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "School"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A doctor works in a hospital; a teacher works in a school."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0056",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "number_analogy",
+    "subtopic": "number_analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "2 : 8 :: 3 : ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "27"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "9"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "18"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "12"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The pattern is n : n^3. So 3 gives 27."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0057",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "number_analogy",
+    "subtopic": "number_analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "5 : 26 :: 7 : ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "48"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "50"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "49"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "51"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The pattern is n : n^2 + 1. So 7 gives 50."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0058",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 2, 6, 12, 20, 30, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "40"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "36"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "42"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "44"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Differences are 4, 6, 8, 10, 12, so the next term is 30 + 12 = 42."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0059",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 1, 4, 9, 16, 25, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "30"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "49"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "35"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "36"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "These are perfect squares; the next is 6^2 = 36."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0060",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 3, 6, 12, 24, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "48"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "36"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "30"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "96"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Each term is double the previous one, so 24 x 2 = 48."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0061",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 1, 1, 2, 3, 5, 8, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "11"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "13"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "15"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Each term is the sum of the two before it (Fibonacci): 5 + 8 = 13."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0062",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 100, 96, 88, 76, 60, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "44"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "48"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "40"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "36"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Amounts subtracted are 4, 8, 12, 16, 20, so 60 - 20 = 40."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0063",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "series_letter",
+    "subtopic": "series_letter",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: A, C, E, G, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "H"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "J"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "K"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "I"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The letters advance by 2, so after G comes I."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0064",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "series_letter",
+    "subtopic": "series_letter",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: B, D, G, K, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "P"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "N"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "O"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Q"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Gaps increase: +2, +3, +4, +5. K (11) + 5 = 16, which is P."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0065",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_letter",
+    "subtopic": "series_letter",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: AZ, BY, CX, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "DV"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "DW"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "EW"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "DX"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The first letter moves forward (A, B, C, D) and the second moves backward (Z, Y, X, W)."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0066",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "classification",
+    "subtopic": "classification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Choose the word that does not belong: Rose, Lotus, Marigold, Mango",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rose"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Lotus"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Mango"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Marigold"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The others are flowers; mango is a fruit."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0067",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "classification",
+    "subtopic": "classification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Choose the odd one out: Square, Circle, Rectangle, Triangle",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Square"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rectangle"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Triangle"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Circle"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The others are made of straight sides and have vertices; a circle has neither."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0068",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "classification",
+    "subtopic": "classification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Choose the odd one out: 16, 25, 36, 40",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "40"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "16"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "25"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "36"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "16, 25 and 36 are perfect squares; 40 is not."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0069",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "classification",
+    "subtopic": "classification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Choose the odd one out: January, March, May, June",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "January"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "June"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "March"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "May"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "January, March and May have 31 days; June has 30."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0070",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "coding_decoding",
+    "subtopic": "coding_decoding",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If CAT is coded as DBU, then DOG is coded as:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "CPF"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "EPG"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "EPH"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "DPH"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Each letter is shifted forward by one: D->E, O->P, G->H."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0071",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "coding_decoding",
+    "subtopic": "coding_decoding",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If MANGO is written as NBOHP, then APPLE is written as:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "BQPMF"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "ZOOKD"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "BQQNF"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "BQQMF"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Every letter moves one place forward in the alphabet."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0072",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "coding_decoding",
+    "subtopic": "coding_decoding",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In a code, RED is written as 27 (18 + 5 + 4). Then BLUE is written as:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "40"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "38"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "42"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "36"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Add the position values: B(2) + L(12) + U(21) + E(5) = 40."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0073",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "blood_relations",
+    "subtopic": "blood_relations",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Pointing to a man, a woman said, \"His mother is the only daughter of my mother.\" How is the woman related to the man?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Sister"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Mother"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Aunt"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Grandmother"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The only daughter of the woman’s mother is the woman herself, so the man’s mother is the woman."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0074",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "blood_relations",
+    "subtopic": "blood_relations",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A is B’s brother. C is A’s mother. D is C’s father. How is B related to D?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Son"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Nephew"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Grandchild"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Brother"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "D is the father of C, who is the parent of A and B, so B is D’s grandchild."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0075",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "blood_relations",
+    "subtopic": "blood_relations",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If P + Q means P is the father of Q, and P - Q means P is the mother of Q, which expression shows that A is the grandfather of C?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "A - B + C"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "A + B + C"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "A x B + C"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "A + B - C"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A + B means A is the father of B; B - C means B is the mother of C. So A is C’s grandfather."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0076",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "direction_sense",
+    "subtopic": "direction_sense",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A man walks 5 km north, turns right and walks 3 km, then turns right and walks 5 km. How far is he from the start?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "3 km"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "5 km"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "8 km"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "13 km"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "He ends up 3 km due east of the start."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0077",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "direction_sense",
+    "subtopic": "direction_sense",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A man walks 4 km east and then 3 km north. His straight-line distance from the start is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "7 km"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "5 km"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1 km"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "12 km"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "By the Pythagorean theorem, sqrt(4^2 + 3^2) = 5 km."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0078",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "direction_sense",
+    "subtopic": "direction_sense",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If South-East becomes North, then North-East becomes:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "East"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "South"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "West"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "North-West"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The compass is rotated 135 degrees anticlockwise, which turns North-East into West."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0079",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "syllogism",
+    "subtopic": "syllogism",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Statements: All roses are flowers. Some flowers fade quickly. Which conclusion follows? I. Some roses fade quickly. II. All flowers are roses.",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Only I follows"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Only II follows"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Both I and II follow"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Neither I nor II follows"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The flowers that fade quickly need not be roses, and \"all roses are flowers\" does not reverse."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0080",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "syllogism",
+    "subtopic": "syllogism",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Statements: All pens are pencils. All pencils are erasers. Which conclusion certainly follows?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "All pens are erasers"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "All erasers are pens"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Some erasers are not pens"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "No pen is an eraser"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Pens are a subset of pencils, which are a subset of erasers, so all pens are erasers."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0081",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "ranking_order",
+    "subtopic": "ranking_order",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In a row of 40 students, Ravi is 11th from the left end. His position from the right end is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "29th"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "30th"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "31st"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "28th"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Position from the right = 40 - 11 + 1 = 30."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0082",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "ranking_order",
+    "subtopic": "ranking_order",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In a class, Sita is 7th from the top and 18th from the bottom in a merit list. The number of students is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "25"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "23"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "24"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "26"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Total = 7 + 18 - 1 = 24."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0083",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "ranking_order",
+    "subtopic": "ranking_order",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A is taller than B but shorter than C. D is taller than C. Who is the tallest?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "A"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "C"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "B"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "D"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Order from tallest: D, C, A, B."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0084",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "clocks_calendars",
+    "subtopic": "clocks_calendars",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The angle between the hands of a clock at 3 o’clock is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "90 degrees"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "60 degrees"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "120 degrees"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "30 degrees"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Each hour mark is 30 degrees apart; 3 hour marks give 90 degrees."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0085",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "clocks_calendars",
+    "subtopic": "clocks_calendars",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In 12 hours, the hands of a clock coincide:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "12 times"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "11 times"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "22 times"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "24 times"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The hands overlap once roughly every 65 minutes, giving 11 times in 12 hours."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0086",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "clocks_calendars",
+    "subtopic": "clocks_calendars",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If today is Monday, the day after 61 days will be:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Friday"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Sunday"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Saturday"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Monday"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "61 = 8 x 7 + 5, so count 5 days on from Monday: Saturday."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0087",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "clocks_calendars",
+    "subtopic": "clocks_calendars",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The number of odd days in an ordinary leap year is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "0"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "3"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A leap year has 366 days = 52 weeks + 2 days, so 2 odd days."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0088",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "cubes",
+    "subtopic": "cubes",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A cube painted on all faces is cut into 27 equal smaller cubes. How many small cubes have exactly one face painted?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "8"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The one-face-painted cubes are the centres of each face: 6 in total."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0089",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "cubes",
+    "subtopic": "cubes",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A cube painted on all faces is cut into 27 equal smaller cubes. How many have no face painted?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "0"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "8"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Only the single cube at the very centre has no painted face."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0090",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "cubes",
+    "subtopic": "cubes",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A cube painted on all faces is cut into 27 equal smaller cubes. How many have exactly two faces painted?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "8"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "6"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "4"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The two-face-painted cubes lie along the edges, one per edge: 12 edges, 12 cubes."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0091",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "coding_decoding",
+    "subtopic": "coding_decoding",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In a language, \"pit dnu\" means \"red apple\" and \"dnu sim\" means \"apple juice\". Which word means \"apple\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "pit"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "sim"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "cannot be determined"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "dnu"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "\"dnu\" is the word common to both phrases, and \"apple\" is the common word."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0092",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "coding_decoding",
+    "subtopic": "coding_decoding",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In a language, \"pit dnu\" means \"red apple\" and \"dnu sim\" means \"apple juice\". Which word means \"red\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "pit"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "dnu"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "sim"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "cannot be determined"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "\"dnu\" means apple, so in \"pit dnu\" the remaining word \"pit\" means red."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0093",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "analogy",
+    "subtopic": "analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Book is to Author as Painting is to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Brush"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Artist"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Canvas"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Colour"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A book is created by an author; a painting is created by an artist."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0094",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "analogy",
+    "subtopic": "analogy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Thermometer is to Temperature as Barometer is to:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Humidity"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Altitude"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Pressure"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rain"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "A barometer measures atmospheric pressure."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0095",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "classification",
+    "subtopic": "classification",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Choose the number that does not belong: 3, 5, 11, 14, 17",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "5"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "11"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "17"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "14"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "3, 5, 11 and 17 are prime numbers; 14 is not."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0096",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 2, 3, 5, 7, 11, 13, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "17"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "15"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "19"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "14"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "These are consecutive prime numbers; the next prime after 13 is 17."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0097",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 1, 8, 27, 64, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "100"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "125"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "81"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "216"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "These are perfect cubes; the next is 5^3 = 125."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0098",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "operator_substitution",
+    "subtopic": "operator_substitution",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "If + means -, - means +, x means /, and / means x, then 18 / 6 x 3 + 4 - 2 equals:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "36"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "30"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "34"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "40"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Rewrite: 18 x 6 / 3 - 4 + 2 = 36 - 4 + 2 = 34."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0099",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "reasoning",
+    "topic": "blood_relations",
+    "subtopic": "blood_relations",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Q is the son of P. P is the sister of R. R has a son S. How is Q related to S?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Brother"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Uncle"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Nephew"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Cousin"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "P and R are siblings, so their children Q and S are cousins."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0100",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "direction_sense",
+    "subtopic": "direction_sense",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "In the morning a man walks towards the rising sun and then turns left. He now faces:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "North"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "South"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "West"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "East"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The sun rises in the east; turning left from east faces north."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0101",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "reasoning",
+    "topic": "seating_arrangement",
+    "subtopic": "seating_arrangement",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A, B, C, D and E sit in a row. A is at the left end and E sits next to A. C is exactly in the middle. B is at the right end. Where does D sit?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Second from the left"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Fourth from the left"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Third from the left"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Fifth from the left"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Seats: A(1), E(2), C(3), B(5). D takes the only seat left, seat 4."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0102",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "reasoning",
+    "topic": "series_number",
+    "subtopic": "series_number",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Find the next term: 7, 14, 28, 56, ?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "84"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "98"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "112"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "110"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Each term is double the previous one, so 56 x 2 = 112."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 45,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0103",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "How many Fundamental Rights are guaranteed by the Constitution of India at present?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Seven"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Five"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Eleven"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Six"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Right to Property was removed in 1978, leaving six Fundamental Rights."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0104",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which Part of the Indian Constitution deals with Fundamental Rights?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Part III"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Part II"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Part IV"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Part I"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Fundamental Rights are contained in Part III (Articles 12 to 35)."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0105",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Directive Principles of State Policy in the Indian Constitution are borrowed from the constitution of:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "United States"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Ireland"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "United Kingdom"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Canada"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The idea of Directive Principles was taken from the Irish Constitution."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0106",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Who is the constitutional head of the Indian State?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "The Prime Minister"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "The Chief Justice"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "The President"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "The Speaker"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The President of India is the head of state; the Prime Minister heads the government."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0107",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The minimum age required to become President of India is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "25 years"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "30 years"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "40 years"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "35 years"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Article 58 requires a minimum age of 35 years for the office of President."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0108",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Rajya Sabha is also known as the:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Council of States"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "House of the People"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Lower House"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Council of Ministers"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Rajya Sabha is the upper house and represents the states, hence Council of States."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0109",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The number of members the President can nominate to the Rajya Sabha is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "2"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "12"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "10"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "14"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The President nominates 12 members for their contribution to art, literature, science and social service."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0110",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The words \"Socialist\", \"Secular\" and \"Integrity\" were added to the Preamble by which Constitutional Amendment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "44th Amendment"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1st Amendment"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "42nd Amendment"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "73rd Amendment"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The 42nd Amendment of 1976 inserted these words into the Preamble."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0111",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which Article of the Constitution abolishes untouchability?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Article 14"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Article 19"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Article 21"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Article 17"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Article 17 abolishes untouchability and forbids its practice in any form."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0112",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Right to Education was made a Fundamental Right by which Constitutional Amendment?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "86th Amendment"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "42nd Amendment"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "73rd Amendment"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "44th Amendment"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The 86th Amendment of 2002 added Article 21A, making education a Fundamental Right for children aged 6 to 14."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0113",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_ancient",
+    "subtopic": "history_ancient",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Indus Valley Civilization site of Lothal is located in the present-day state of:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Punjab"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Gujarat"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Rajasthan"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Haryana"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Lothal, known for its dockyard, is in Gujarat."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0114",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "history_ancient",
+    "subtopic": "history_ancient",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Who founded the Maurya Empire?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Ashoka"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Bindusara"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Chandragupta Maurya"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Bimbisara"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Chandragupta Maurya founded the empire around 322 BCE with the help of Chanakya."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0115",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_ancient",
+    "subtopic": "history_ancient",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The ancient treatise Arthashastra was written by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Kalidasa"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Panini"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Vishakhadatta"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Kautilya"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Kautilya, also called Chanakya, wrote the Arthashastra on statecraft and economics."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0116",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "history_ancient",
+    "subtopic": "history_ancient",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Gautama Buddha attained enlightenment at:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Bodh Gaya"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Sarnath"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Kushinagar"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Lumbini"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "He attained enlightenment under the Bodhi tree at Bodh Gaya; his first sermon was at Sarnath."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0117",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_medieval",
+    "subtopic": "history_medieval",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The First Battle of Panipat in 1526 was fought between Babur and:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rana Sanga"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Ibrahim Lodi"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Hemu"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Sher Shah Suri"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Babur defeated Ibrahim Lodi, the last Lodi sultan of Delhi, founding the Mughal Empire."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0118",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "history_medieval",
+    "subtopic": "history_medieval",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The construction of the Qutub Minar in Delhi was begun by:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Iltutmish"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Alauddin Khalji"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Qutb-ud-din Aibak"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Balban"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Qutb-ud-din Aibak began it around 1192; Iltutmish completed the upper storeys."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0119",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "history_medieval",
+    "subtopic": "history_medieval",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Vijayanagara Empire was founded by Harihara and Bukka in the year:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1206"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1526"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1498"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1336"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The brothers founded Vijayanagara on the banks of the Tungabhadra in 1336."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0120",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_medieval",
+    "subtopic": "history_medieval",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Mughal emperor associated with the building of the Taj Mahal is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Shah Jahan"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Akbar"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Jahangir"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Aurangzeb"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Shah Jahan built the Taj Mahal at Agra in memory of Mumtaz Mahal."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0121",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Indian National Congress was founded in the year:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1857"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1885"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1905"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1919"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Congress was founded in Bombay in December 1885, with A.O. Hume playing a key role."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0122",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The first President of the Indian National Congress was:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Dadabhai Naoroji"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "A.O. Hume"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "W.C. Bonnerjee"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Surendranath Banerjee"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Womesh Chandra Bonnerjee presided over the first session in 1885."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0123",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Jallianwala Bagh massacre at Amritsar took place in the year:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1920"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1921"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1930"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1919"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "General Dyer ordered firing on an unarmed gathering on 13 April 1919."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0124",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Dandi March, or Salt March, was led by Mahatma Gandhi in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1930"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1920"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1942"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1928"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The march from Sabarmati to Dandi in 1930 launched the Civil Disobedience Movement."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0125",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The slogan \"Do or Die\" is associated with which movement?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Non-Cooperation Movement"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Quit India Movement"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Civil Disobedience Movement"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Swadeshi Movement"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Gandhi gave the call \"Do or Die\" at the start of the Quit India Movement in 1942."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0126",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Who is known as the \"Iron Man of India\"?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Jawaharlal Nehru"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Subhas Chandra Bose"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Sardar Vallabhbhai Patel"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rajendra Prasad"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Patel earned the title for integrating over 500 princely states into the Indian Union."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0127",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The first Governor-General of independent India was:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "C. Rajagopalachari"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Lord Canning"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Warren Hastings"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Lord Mountbatten"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Lord Mountbatten served from 1947 to 1948; C. Rajagopalachari was the last Governor-General."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0128",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "history_modern",
+    "subtopic": "history_modern",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The first woman Prime Minister of India was:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Indira Gandhi"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Sarojini Naidu"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Pratibha Patil"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Sucheta Kripalani"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Indira Gandhi became Prime Minister in 1966."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0129",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "polity",
+    "subtopic": "polity",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Constitution of India came into effect on:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "15 August 1947"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "26 January 1950"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "26 November 1949"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "2 October 1950"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "It was adopted on 26 November 1949 and came into force on 26 January 1950."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0130",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The longest river flowing entirely within India is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Godavari"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Brahmaputra"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Ganga"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Yamuna"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Ganga is the longest river within India; the Godavari is the longest of the peninsular rivers."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0131",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The highest mountain peak in India is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "K2"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Nanda Devi"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Mount Everest"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Kangchenjunga"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Kangchenjunga on the Sikkim border is the highest peak within India."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0132",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Tropic of Cancer does NOT pass through which of these states?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Odisha"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rajasthan"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Madhya Pradesh"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Jharkhand"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Tropic of Cancer passes through eight Indian states, but not Odisha."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0133",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which Indian state has the longest coastline?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Andhra Pradesh"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Gujarat"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Tamil Nadu"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Maharashtra"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Gujarat has the longest coastline among Indian states."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0134",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Wular Lake, the largest freshwater lake in India, lies in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Rajasthan"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Kerala"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Jammu and Kashmir"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Odisha"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Wular Lake in Jammu and Kashmir is fed by the Jhelum river."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0135",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which type of soil is most suitable for growing cotton?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Alluvial soil"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Red soil"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Laterite soil"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Black soil"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Black soil, also called regur, retains moisture well and is ideal for cotton."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0136",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Sundarbans delta is formed by which river system?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Ganga and Brahmaputra"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Krishna and Godavari"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Narmada and Tapti"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Mahanadi"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Sundarbans is the delta of the combined Ganga-Brahmaputra-Meghna river system."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0137",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "geography_india",
+    "subtopic": "geography_india",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Jog Falls, one of the highest waterfalls in India, is on which river?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Kaveri"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Sharavati"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Krishna"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Tungabhadra"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Jog Falls in Karnataka is formed by the Sharavati river."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0138",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "geography_world",
+    "subtopic": "geography_world",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The largest hot desert in the world is the:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Gobi"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Thar"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Sahara"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Kalahari"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Sahara in North Africa is the largest hot desert."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0139",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "geography_world",
+    "subtopic": "geography_world",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The longest river in the world is the:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Amazon"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Yangtze"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Mississippi"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Nile"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Nile in Africa is generally regarded as the longest river."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0140",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "geography_world",
+    "subtopic": "geography_world",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Mount Everest, the highest mountain on Earth, lies in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Nepal"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "India"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "China"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Bhutan"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Everest is on the border of Nepal and Tibet; its summit is in Nepal."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0141",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "geography_world",
+    "subtopic": "geography_world",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Prime Meridian (0 degrees longitude) passes through:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Paris"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Greenwich"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "New York"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Rome"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Prime Meridian passes through Greenwich, near London."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0142",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "geography_world",
+    "subtopic": "geography_world",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which imaginary line divides the Earth into the Northern and Southern Hemispheres?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "The Tropic of Cancer"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "The Prime Meridian"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "The Equator"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "The International Date Line"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The Equator is the zero-degree line of latitude."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0143",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The chemical symbol for gold is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Ag"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Gd"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Go"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Au"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Gold’s symbol Au comes from its Latin name aurum; Ag is silver."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0144",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The organelle known as the \"powerhouse of the cell\" is the:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Mitochondria"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Nucleus"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Ribosome"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Golgi apparatus"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Mitochondria release energy as ATP through respiration."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0145",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The SI unit of electric current is the:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Volt"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Ampere"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Ohm"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Watt"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Current is measured in amperes; the volt, ohm and watt measure other quantities."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0146",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which vitamin is synthesised by human skin on exposure to sunlight?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Vitamin A"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Vitamin C"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Vitamin D"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Vitamin K"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Ultraviolet light converts a compound in the skin into vitamin D."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0147",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The most abundant gas in the Earth’s atmosphere is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Oxygen"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Carbon dioxide"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Argon"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Nitrogen"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Nitrogen makes up about 78% of the atmosphere by volume."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0148",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The pH value of pure water at 25 degrees Celsius is:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "7"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "0"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "14"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Pure water is neutral, with a pH of 7."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0149",
+    "track": "govt",
+    "exam": "rrb_ntpc",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "Which planet is known as the Red Planet?",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Venus"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Mars"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Jupiter"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Mercury"
+      }
+    ],
+    "correct_option_ids": [
+      "b"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Iron oxide on its surface gives Mars a reddish colour."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0150",
+    "track": "govt",
+    "exam": "ssc_cgl",
+    "subject": "general_awareness",
+    "topic": "general_science",
+    "subtopic": "general_science",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "A deficiency of iron in the human body causes:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Scurvy"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "Rickets"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Anaemia"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Goitre"
+      }
+    ],
+    "correct_option_ids": [
+      "c"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "Iron is needed for haemoglobin; its lack causes anaemia."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0151",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "economy",
+    "subtopic": "economy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The Reserve Bank of India was established in the year:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "1947"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "1949"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "1950"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "1935"
+      }
+    ],
+    "correct_option_ids": [
+      "d"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The RBI began operations on 1 April 1935 and was nationalised in 1949."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
+  },
+  {
+    "id": "q_gov_0152",
+    "track": "govt",
+    "exam": "bank_po",
+    "subject": "general_awareness",
+    "topic": "economy",
+    "subtopic": "economy",
+    "question_type": "mcq",
+    "content_type": "text",
+    "body": "The head office of the Reserve Bank of India is located in:",
+    "image_url": null,
+    "options": [
+      {
+        "id": "a",
+        "content_type": "text",
+        "body": "Mumbai"
+      },
+      {
+        "id": "b",
+        "content_type": "text",
+        "body": "New Delhi"
+      },
+      {
+        "id": "c",
+        "content_type": "text",
+        "body": "Kolkata"
+      },
+      {
+        "id": "d",
+        "content_type": "text",
+        "body": "Chennai"
+      }
+    ],
+    "correct_option_ids": [
+      "a"
+    ],
+    "numerical_answer": null,
+    "explanation": {
+      "content_type": "text",
+      "body": "The RBI was first set up in Kolkata but moved its head office to Mumbai in 1937."
+    },
+    "difficulty": 1,
+    "marks": 2,
+    "negative_marks": -0.5,
+    "avg_time_seconds": 20,
+    "source": "original",
+    "year": null,
+    "status": "live"
   }
 ]
