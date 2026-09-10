@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Pressable } from 'react-native';
-import { color } from '../theme';
+import { useTheme } from '../theme';
 
 // Borrowed from the OMR sheet every candidate already knows: one cell per
 // question, filled as you go. Answered cells are solid ink, the current cell is
 // outlined, untouched cells stay hairline.
 
 export default function ProgressRail({ total, current, answered, onJump }) {
+  const { color } = useTheme();
   return (
     <View style={{ flexDirection: 'row', gap: 4 }}>
       {Array.from({ length: total }).map((_, i) => {

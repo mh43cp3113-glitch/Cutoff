@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Text } from 'react-native';
-import { color, type } from '../theme';
+import { useTheme } from '../theme';
 import katexStyle from '../vendor/katex/katexStyle';
 import katexScript from '../vendor/katex/katexScript';
 import autoRenderScript from '../vendor/katex/autoRenderScript';
@@ -41,10 +41,13 @@ const DELIMITERS = [
 export default function MathText({
   body,
   contentType = 'text',
-  fontSize = type.body.fontSize,
-  textColor = color.ink,
+  fontSize,
+  textColor,
   style,
 }) {
+  const { color, type } = useTheme();
+  const effectiveFontSize = fontSize ?? type.body.fontSize;
+  const effectiveTextColor = textColor ?? color.ink;
   const ref = useRef(null);
 
   useEffect(() => {
@@ -78,7 +81,9 @@ export default function MathText({
 
   if (contentType !== 'latex') {
     return (
-      <Text style={[type.body, { fontSize, color: textColor }, style]}>{body}</Text>
+      <Text style={[type.body, { fontSize: effectiveFontSize, color: effectiveTextColor }, style]}>
+        {body}
+      </Text>
     );
   }
 
@@ -89,9 +94,9 @@ export default function MathText({
     <div
       ref={ref}
       style={{
-        fontSize,
+        fontSize: effectiveFontSize,
         lineHeight: 1.55,
-        color: textColor,
+        color: effectiveTextColor,
         overflowWrap: 'break-word',
         fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
         ...(style || {}),

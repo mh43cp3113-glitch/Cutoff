@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
-import { color, type } from '../theme';
+import { useTheme } from '../theme';
 import katexStyle from '../vendor/katex/katexStyle';
 import katexScript from '../vendor/katex/katexScript';
 import autoRenderScript from '../vendor/katex/autoRenderScript';
@@ -62,20 +62,25 @@ function buildHtml(body, fontSize, textColor) {
 export default function MathText({
   body,
   contentType = 'text',
-  fontSize = type.body.fontSize,
-  textColor = color.ink,
+  fontSize,
+  textColor,
   style,
 }) {
-  const [height, setHeight] = useState(fontSize * 1.6);
+  const { color, type } = useTheme();
+  const effectiveFontSize = fontSize ?? type.body.fontSize;
+  const effectiveTextColor = textColor ?? color.ink;
+  const [height, setHeight] = useState(effectiveFontSize * 1.6);
 
   const html = useMemo(
-    () => buildHtml(body, fontSize, textColor),
-    [body, fontSize, textColor]
+    () => buildHtml(body, effectiveFontSize, effectiveTextColor),
+    [body, effectiveFontSize, effectiveTextColor]
   );
 
   if (contentType !== 'latex') {
     return (
-      <Text style={[type.body, { fontSize, color: textColor }, style]}>{body}</Text>
+      <Text style={[type.body, { fontSize: effectiveFontSize, color: effectiveTextColor }, style]}>
+        {body}
+      </Text>
     );
   }
 

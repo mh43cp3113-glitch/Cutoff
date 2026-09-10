@@ -13,7 +13,7 @@ import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import ProgressScreen from './src/screens/ProgressScreen';
 import { ProgressProvider } from './src/lib/ProgressContext';
-import { color } from './src/theme';
+import { useTheme } from './src/theme';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,9 +21,16 @@ const Stack = createNativeStackNavigator();
 // and centred in a phone-width column on a wider screen so the layout — tuned
 // for a handset — never stretches awkwardly across a desktop monitor.
 function AppFrame({ children }) {
+  const { color, isDark } = useTheme();
   if (Platform.OS !== 'web') return children;
   return (
-    <View style={{ flex: 1, backgroundColor: '#DCE1DC', alignItems: 'center' }}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: isDark ? '#05080A' : '#DCE1DC',
+        alignItems: 'center',
+      }}
+    >
       <View
         style={{
           flex: 1,
@@ -41,22 +48,24 @@ function AppFrame({ children }) {
   );
 }
 
-const navTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: color.paper,
-    card: color.paper,
-    text: color.ink,
-    border: color.rule,
-    primary: color.ink,
-  },
-};
-
 export default function App() {
+  const { color, isDark } = useTheme();
+
+  const navTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: color.paper,
+      card: color.paper,
+      text: color.ink,
+      border: color.rule,
+      primary: color.ink,
+    },
+  };
+
   return (
     <SafeAreaProvider>
-      <StatusBar style="dark" />
+      <StatusBar style={isDark ? 'light' : 'dark'} />
       <ProgressProvider>
         <AppFrame>
         <NavigationContainer theme={navTheme}>

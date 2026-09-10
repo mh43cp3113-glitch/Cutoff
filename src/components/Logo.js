@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { color } from '../theme';
+import { useTheme } from '../theme';
 
 // The wordmark literalises the name: a thin ink rule splits "Cut" from "off",
 // like the line on an answer sheet that separates a qualifying score from a
@@ -13,6 +13,7 @@ const SIZES = {
 };
 
 export default function Logo({ size = 'lg', muted = false }) {
+  const { color } = useTheme();
   const s = SIZES[size];
   const textColor = muted ? color.inkSoft : color.ink;
 

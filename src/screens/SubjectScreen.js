@@ -3,11 +3,12 @@ import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getExam, getSubject, countForSubject, buildSubjectQuiz } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius, shadow } from '../theme';
+import { useTheme } from '../theme';
 
 const LENGTHS = [10, 20];
 
 export default function SubjectScreen({ route, navigation }) {
+  const { color, type, space, radius, shadow } = useTheme();
   const { trackId, examId, subjectId } = route.params;
   const subject = getSubject(trackId, examId, subjectId);
   const exam = getExam(trackId, examId);

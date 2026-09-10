@@ -2,9 +2,10 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTrack, getPlayableExams } from '../lib/quiz';
-import { color, type, space, radius, shadow } from '../theme';
+import { useTheme } from '../theme';
 
 export default function ExamPickerScreen({ route, navigation }) {
+  const { color, type, space, radius, shadow } = useTheme();
   const { trackId } = route.params;
   const track = getTrack(trackId);
   const exams = getPlayableExams(trackId);

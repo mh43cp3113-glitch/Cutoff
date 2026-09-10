@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import MathText from '../components/MathText';
 import { scoreAttempt, grade } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius, shadow } from '../theme';
+import { useTheme } from '../theme';
 
 function answerLabel(question, answer) {
   if (answer === null || answer === undefined || answer === '') return 'Skipped';
@@ -20,6 +20,7 @@ const REPORT_REASONS = [
 ];
 
 function ReportControl({ questionId }) {
+  const { color, type, space, radius } = useTheme();
   const { reportedIds, reportQuestion } = useProgress();
   const alreadyReported = reportedIds.has(questionId);
   const [open, setOpen] = useState(false);
@@ -60,7 +61,7 @@ function ReportControl({ questionId }) {
               borderRadius: radius.sm,
               paddingVertical: 6,
               paddingHorizontal: 10,
-              backgroundColor: pressed ? '#E3E9E4' : color.card,
+              backgroundColor: pressed ? color.rule : color.card,
             })}
           >
             <Text style={[type.small, { color: color.ink }]}>{reason}</Text>
@@ -75,6 +76,7 @@ function ReportControl({ questionId }) {
 }
 
 export default function ResultScreen({ route, navigation }) {
+  const { color, type, space, radius, shadow } = useTheme();
   const { questionList, answers, label } = route.params;
   const { score, max, correctCount, total } = scoreAttempt(questionList, answers);
   const { recordAttempt } = useProgress();

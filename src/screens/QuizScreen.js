@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MathText from '../components/MathText';
 import ProgressRail from '../components/ProgressRail';
-import { color, type, space, radius } from '../theme';
+import { useTheme } from '../theme';
 
 function formatClock(totalSeconds) {
   const m = Math.floor(totalSeconds / 60);
@@ -20,6 +20,7 @@ function formatClock(totalSeconds) {
 }
 
 export default function QuizScreen({ route, navigation }) {
+  const { color, type, space, radius } = useTheme();
   const { questionList, label, timeLimitSeconds } = route.params;
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(() => questionList.map(() => null));
@@ -176,7 +177,7 @@ export default function QuizScreen({ route, navigation }) {
                     alignItems: 'flex-start',
                     borderWidth: 1,
                     borderColor: selected ? color.ink : color.rule,
-                    backgroundColor: selected ? '#E3E9E4' : color.card,
+                    backgroundColor: selected ? color.rule : color.card,
                     borderRadius: radius.sm,
                     padding: space.md,
                     marginBottom: space.sm,

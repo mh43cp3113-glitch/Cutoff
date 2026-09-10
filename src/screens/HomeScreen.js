@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTracks, getPlayableExams } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import Logo from '../components/Logo';
-import { color, type, space, radius, shadow } from '../theme';
+import { useTheme } from '../theme';
 import packageJson from '../../package.json';
 
 // category (track) -> exam -> subject. Home only makes the first choice; it
@@ -30,6 +30,7 @@ export function routeIntoTrack(navigation, trackId) {
 }
 
 function TrackCard({ track, open, onPress }) {
+  const { color, type, space, radius, shadow } = useTheme();
   return (
     <Pressable
       disabled={!open}
@@ -86,6 +87,7 @@ function TrackCard({ track, open, onPress }) {
 }
 
 export default function HomeScreen({ navigation }) {
+  const { color, type, space, radius } = useTheme();
   const tracks = getTracks();
   const { streak, attempts, ready } = useProgress();
 

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius, shadow } from '../theme';
+import { getQuestionById } from '../lib/quiz';
+import { useTheme } from '../theme';
 
 function Stat({ value, label }) {
+  const { color, type } = useTheme();
   return (
     <View style={{ flex: 1 }}>
       <Text style={{ fontSize: 24, fontWeight: '700', color: color.ink, letterSpacing: -0.4 }}>
@@ -22,6 +24,7 @@ function formatDate(iso) {
 }
 
 export default function ProgressScreen({ navigation }) {
+  const { color, type, space, radius, shadow } = useTheme();
   const { topicStats, attempts, streak, reports, clearAll } = useProgress();
   const [confirmingReset, setConfirmingReset] = useState(false);
 
@@ -130,19 +133,27 @@ export default function ProgressScreen({ navigation }) {
             <Text style={[type.small, { marginBottom: space.sm, color: color.inkSoft }]}>
               These are held on this device and left out of your quizzes until they're reviewed.
             </Text>
-            {reportedList.map(([id, r]) => (
-              <View
-                key={id}
-                style={{
-                  paddingVertical: space.sm,
-                  borderBottomWidth: 1,
-                  borderBottomColor: color.rule,
-                }}
-              >
-                <Text style={[type.small, { color: color.ink }]}>{id}</Text>
-                <Text style={[type.small, { marginTop: 2 }]}>{(r.reasons || []).join(', ')}</Text>
-              </View>
-            ))}
+            {reportedList.map(([id, r]) => {
+              const question = getQuestionById(id);
+              return (
+                <View
+                  key={id}
+                  style={{
+                    paddingVertical: space.sm,
+                    borderBottomWidth: 1,
+                    borderBottomColor: color.rule,
+                  }}
+                >
+                  <Text
+                    style={[type.small, { color: color.ink, fontWeight: '500' }]}
+                    numberOfLines={2}
+                  >
+                    {question ? question.body : `Question ${id} (no longer in the bank)`}
+                  </Text>
+                  <Text style={[type.small, { marginTop: 2 }]}>{(r.reasons || []).join(', ')}</Text>
+                </View>
+              );
+            })}
           </View>
         )}
 
