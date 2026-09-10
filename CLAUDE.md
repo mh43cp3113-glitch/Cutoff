@@ -146,6 +146,7 @@ src/lib/ProgressContext.js  progress state, hydrated once at launch
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
+src/components/Logo.js      brand wordmark — Home header/footer only
 src/screens/                Home, ExamPicker, SubjectPicker, Subject, Quiz, Result, Progress
 tests/                       node:test — quiz.js logic + content structural checks
 ```
@@ -272,6 +273,21 @@ it to `/Cutoff`; local dev leaves it empty.
 red incorrect, amber flagged — and never used as decoration. The one bold element
 is the OMR-style progress rail, borrowed from the answer sheet every candidate
 already knows.
+
+**Brand mark:** `src/components/Logo.js` renders the wordmark as "Cut│off" — a
+thin ink rule (45% opacity, no new colour) splitting the name in two, meant to
+read as the qualifying line on a scorecard rather than decoration. `size="lg"`
+in the Home header, `size="sm" muted` in Home's footer alongside the app
+version. It isn't used on any other screen — inner screens show contextual
+titles (an exam or subject name), not the app's own name.
+
+**Elevation:** `theme.js` exports `shadow.card`, one soft shadow (shadowColor
+`#0F1A1C`, low opacity, small radius; `elevation: 2` for Android) applied to
+every raised card and primary button — Home's track cards, ExamPicker,
+SubjectPicker, Subject's practice buttons, Result's CTA, Progress's stats card.
+Before this pass those were flat bordered rectangles; the goal was one
+consistent "surfaces resting on the paper" feel instead of a flat, plain look.
+Quiz is excluded on purpose — see the Random test note above for why.
 
 ---
 
