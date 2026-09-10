@@ -3,7 +3,9 @@ import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTracks, getPlayableExams } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius } from '../theme';
+import Logo from '../components/Logo';
+import { color, type, space, radius, shadow } from '../theme';
+import packageJson from '../../package.json';
 
 // category (track) -> exam -> subject. Home only makes the first choice; it
 // hands off to ExamPicker / SubjectPicker for the rest, skipping a step only
@@ -45,6 +47,7 @@ function TrackCard({ track, open, onPress }) {
         paddingHorizontal: space.md,
         marginBottom: space.sm,
         opacity: open ? (pressed ? 0.7 : 1) : 0.5,
+        ...(open ? shadow.card : null),
       })}
     >
       {open && (
@@ -93,16 +96,16 @@ export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['top']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
-        {/* Header */}
+        {/* Brand header */}
         <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginTop: space.md,
+            marginTop: space.sm,
           }}
         >
-          <Text style={type.display}>Practice</Text>
+          <Logo size="lg" />
           <Pressable
             onPress={() => navigation.navigate('Progress')}
             accessibilityRole="button"
@@ -122,7 +125,9 @@ export default function HomeScreen({ navigation }) {
           </Pressable>
         </View>
 
-        <Text style={[type.small, { marginTop: space.sm, marginBottom: space.lg }]}>
+        {/* Page heading */}
+        <Text style={[type.display, { marginTop: space.lg }]}>Practice</Text>
+        <Text style={[type.small, { marginTop: space.xs, marginBottom: space.lg }]}>
           {ready && attempts.length > 0
             ? `${attempts.length} quiz${attempts.length === 1 ? '' : 'zes'} done · pick up where you left off`
             : 'Choose a category, then the exam and subject you want to practise.'}
@@ -161,6 +166,14 @@ export default function HomeScreen({ navigation }) {
             ))}
           </>
         )}
+
+        {/* Footer */}
+        <View style={{ alignItems: 'center', marginTop: space.xl, gap: space.xs }}>
+          <Logo size="sm" muted />
+          <Text style={[type.small, { color: color.locked }]}>
+            v{packageJson.version} · practice with a purpose
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

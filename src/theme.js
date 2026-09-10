@@ -23,3 +23,17 @@ export const type = {
 export const space = { xs: 4, sm: 8, md: 16, lg: 24, xl: 36 };
 
 export const radius = { sm: 6, md: 10, lg: 16, pill: 999 };
+
+// A single soft elevation, used on every raised card/button so the app reads
+// as "surfaces resting on the paper" rather than flat bordered boxes. iOS and
+// Android pick up shadowColor/Offset/Opacity/Radius vs. elevation respectively;
+// react-native-web translates the shadow* props to a CSS box-shadow.
+export const shadow = {
+  card: {
+    shadowColor: '#0F1A1C',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    elevation: 2,
+  },
+};
