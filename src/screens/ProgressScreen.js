@@ -46,7 +46,7 @@ export default function ProgressScreen({ navigation }) {
             backgroundColor: color.card,
             borderWidth: 1,
             borderColor: color.rule,
-            borderRadius: radius.md,
+            borderRadius: radius.lg,
             padding: space.md,
           }}
         >

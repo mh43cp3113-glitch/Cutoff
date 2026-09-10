@@ -34,19 +34,24 @@ export default function ExamPickerScreen({ route, navigation }) {
             key={exam.examId}
             onPress={() => openExam(exam)}
             style={({ pressed }) => ({
+              flexDirection: 'row',
+              alignItems: 'center',
               backgroundColor: color.card,
               borderWidth: 1,
               borderColor: color.rule,
-              borderRadius: radius.md,
+              borderRadius: radius.lg,
               padding: space.md,
               marginBottom: space.sm,
               opacity: pressed ? 0.7 : 1,
             })}
           >
-            <Text style={type.title}>{exam.examName}</Text>
-            <Text style={[type.small, { marginTop: 2 }]}>
-              {exam.subjects.map((s) => s.subjectName).join(' · ')}
-            </Text>
+            <View style={{ flex: 1 }}>
+              <Text style={type.title}>{exam.examName}</Text>
+              <Text style={[type.small, { marginTop: 2 }]}>
+                {exam.subjects.map((s) => s.subjectName).join(' · ')}
+              </Text>
+            </View>
+            <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
           </Pressable>
         ))}
       </ScrollView>

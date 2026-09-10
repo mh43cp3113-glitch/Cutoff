@@ -62,7 +62,7 @@ export default function SubjectScreen({ route, navigation }) {
                 backgroundColor: primary ? color.ink : color.card,
                 borderWidth: primary ? 0 : 1,
                 borderColor: color.rule,
-                borderRadius: radius.md,
+                borderRadius: radius.lg,
                 padding: space.md,
                 marginBottom: space.sm,
                 opacity: disabled ? 0.5 : pressed ? 0.85 : 1,

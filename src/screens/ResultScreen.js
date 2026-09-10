@@ -152,7 +152,7 @@ export default function ResultScreen({ route, navigation }) {
           onPress={() => navigation.popToTop()}
           style={{
             backgroundColor: color.ink,
-            borderRadius: radius.sm,
+            borderRadius: radius.lg,
             padding: space.md,
             alignItems: 'center',
           }}
