@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MathText from '../components/MathText';
 import ProgressRail from '../components/ProgressRail';
+import ScratchPad from '../components/ScratchPad';
 import { useTheme } from '../theme';
 
 function formatClock(totalSeconds) {
@@ -206,6 +207,8 @@ export default function QuizScreen({ route, navigation }) {
               );
             })
           )}
+
+          <ScratchPad resetKey={index} />
         </ScrollView>
 
         <View
