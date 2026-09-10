@@ -64,9 +64,14 @@ there is genuinely one option behind it. **There is no topic level in the UI** �
 the student picks a subject and gets a mixed set from the whole subject.
 The exam and subject pickers **do not show per-subject question counts** (the
 newer tracks are thin and the number is noise); the Home tiles show only the
-track name and hint. Home was restyled (rounded cards, a streak pill, unlocked
-tracks first then a "Coming soon" group) — HomeScreen only; other screens keep
-the original look.
+track name and hint. Home was restyled first (rounded cards, a streak pill,
+unlocked tracks first then a "Coming soon" group); that `radius.lg` rounded-card
+language was then extended to ExamPicker, SubjectPicker, Subject and Result's
+primary buttons, and Progress's stats card, so the app now reads as one design
+system rather than Home-plus-everything-else. Quiz itself keeps its original,
+denser layout — it's the one screen where screen space is at a premium (a
+question, options, the progress rail and now a countdown), so it wasn't
+touched cosmetically, only functionally (see the Random test note below).
 
 **SubjectPicker also offers a "Random test"**, above the subject list, for
 every exam that reaches that screen (every exam in the app has 2+ subjects, so
@@ -78,6 +83,15 @@ replacing) the existing per-subject "Start practice" / "Longer set" flow.
 Unlike `buildSubjectQuiz`, it is **uniform random, not adaptive-weighted** —
 deliberately, since a random test is meant to feel like an exam paper, not
 another practice set biased toward weak topics.
+
+**Random test is timed; regular practice is not.** Length scales with the exam
+— `Math.min(30, Math.max(12, subjects.length * 4))` questions — paced at 60
+seconds each, so a 6-subject Government exam gets a longer test than a
+2-subject School grade. `QuizScreen` accepts an optional `timeLimitSeconds`
+route param; when present it shows a countdown (turning red under 30 seconds)
+and auto-submits to Result when it hits zero, reading answers from a ref so the
+submit can't fire with a stale answer set. Quizzes started from `SubjectScreen`
+never pass this param, so ordinary practice stays untimed.
 
 **Shared question pool.** Subjects use the same id across exams (`physics` is one
 pool, drawn on by JEE, NEET and Class 11–12); the `exam` field on a question is
@@ -93,8 +107,9 @@ Working today:
 
 - Home screen with track list, locked "coming soon" tiles, streak display
 - Subject screen: a launch pad — question count + "Start practice" (10) / "Longer set" (20)
-- SubjectPicker: a "Random test" (20 questions, evenly sampled across every
-  subject in the exam) above the per-subject list, for exam-wide mock practice
+- SubjectPicker: a timed "Random test" (12–30 questions scaled to the exam's
+  subject count, evenly sampled across all of them) above the per-subject list,
+  for exam-wide mock practice
 - Quiz player handling MCQ, multi-select, and numerical entry with tolerance
 - LaTeX rendering through KaTeX in a self-sizing WebView
 - Scoring with per-question negative marking
@@ -132,7 +147,18 @@ src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
 src/screens/                Home, ExamPicker, SubjectPicker, Subject, Quiz, Result, Progress
+tests/                       node:test — quiz.js logic + content structural checks
 ```
+
+**Run tests with `npm test`** (`node --test`, no framework dependency added — see
+`tests/support/loadEsm.js`, which transpiles `quiz.js`'s ES-module syntax with
+the `@babel/core` already in devDependencies rather than pulling in Jest).
+`tests/quiz.test.js` covers grading, scoring, adaptive/random selection and
+`excludeIds` handling; `tests/data-integrity.test.js` re-checks the structural
+invariants (unique ids, 4 well-formed options, valid `correct_option_ids`,
+every taxonomy subject non-empty, answer position spread) that were being
+verified ad hoc with one-off `node -e` scripts during content batches — now
+they run on every change instead of only when someone remembers to check.
 
 **`src/lib/quiz.js` is the single data boundary.** It is the only module that knows
 where questions come from. Moving to Firestore means rewriting that file; screens
@@ -294,7 +320,9 @@ means no Mac is required.
    forcing signup before the first quiz kills retention.
 2. Move questions to Firestore, keep local caching for offline use
 3. Cloud Function serving questions without the answer key
-4. Timed mock tests with full paper structure
+4. ~~Timed mock tests~~ — done as "Random test" (see Navigation section) for a
+   mixed, timed set per exam; still missing a real paper structure (sections,
+   per-section timing, official marks scheme per exam)
 5. Free tier limits and Play Billing for Pro
 6. Report triage — auto-hide a question once reports arrive
 
@@ -311,7 +339,15 @@ means no Mac is required.
   subjects (4 new streams + 3 more per original stream) — top up and review keys
 - School/Engineering/CAT/Commerce/Humanities/Govt-new questions are all
   plain-text MCQ — no numericals, no LaTeX yet
-- No test suite
+- UPSC/MPSC reuse SSC's generic Quant/Reasoning/GA pools — a placeholder fit,
+  not real UPSC/MPSC content (no Ethics, no optional subjects, no essay)
+- Answer keys have been self-checked during authoring and are covered by
+  structural tests (`tests/data-integrity.test.js`), but **no independent human
+  review pass has happened yet** — still required before any store release,
+  per the Constraints section above
+- `correct_option_ids` still ships in the client bundle (see Constraints) —
+  this needs a Firebase project to fix (roadmap #1–3) and can't be done from
+  the coding environment alone
 
 ---
 
