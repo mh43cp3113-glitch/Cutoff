@@ -14,6 +14,7 @@ const {
   countForSubject,
   getPlayableExams,
   getTracks,
+  getQuestionById,
 } = quiz;
 
 const mcq = (overrides = {}) => ({
@@ -174,4 +175,10 @@ test('getPlayableExams() only returns unlocked exams/subjects with live content'
       }
     }
   }
+});
+
+test('getQuestionById() finds a real question and returns null for an unknown id', () => {
+  const [first] = questionsForSubject('physics');
+  assert.equal(getQuestionById(first.id).id, first.id);
+  assert.equal(getQuestionById('not_a_real_id'), null);
 });

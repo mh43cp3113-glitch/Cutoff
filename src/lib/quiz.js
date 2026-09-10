@@ -21,6 +21,12 @@ export function getSubject(trackId, examId, subjectId) {
   return getExam(trackId, examId)?.subjects.find((s) => s.id === subjectId) || null;
 }
 
+/** Looks a question up by id — used to show a reported question's own text
+ * instead of its bare id (Progress screen's reported-questions list). */
+export function getQuestionById(id) {
+  return questions.find((q) => q.id === id) || null;
+}
+
 function live(q) {
   return q.status === 'live';
 }
