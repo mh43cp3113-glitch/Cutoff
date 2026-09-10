@@ -1,11 +1,11 @@
 # Cutoff
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
-Android, iOS and the web from one codebase. All five tracks are now unlocked —
-Entrance (JEE Main, NEET), Class 11–12 Science, Government exams, School (Class
-1–10) and Engineering — with a ~870-question bank. Coverage is uneven by design:
-the Science subjects have 70–100 questions each, the newer tracks ~10 per subject
-as a first batch to be topped up.
+Android, iOS and the web from one codebase. All five tracks are unlocked, spanning
+87 subject pools and ~1275 questions. Coverage is uneven by design: the original
+Science subjects have 70–100 questions each; everything added since (Government's
+extra subjects, Commerce, Humanities, CAT, School, and most of Engineering) is a
+~10-question first batch per subject, to be topped up over time.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -24,23 +24,31 @@ polish.
 
 **Tracks.** All five are unlocked:
 
-- **Entrance** — JEE Main, NEET (CAT still locked). Shared pools: `physics`,
-  `chemistry`, `maths`, `biology`.
-- **Class 11–12** — Science. Same four shared pools.
-- **Government exams** — SSC CGL, Banking, RRB NTPC. Shared pools across the
-  three exams: `quant`, `reasoning`, `general_awareness`. General Awareness is
-  deliberately static GK only (polity, history, geography, science, economy) —
-  no current affairs, so it doesn't rot.
+- **Entrance** — JEE Main, NEET, and now **CAT** (Quant Ability, VARC, DILR).
+  Shared pools: `physics`, `chemistry`, `maths`, `biology` across JEE/NEET/Science.
+- **Class 11–12** — Science (shares the four pools above), plus **Commerce**
+  (Accountancy, Business Studies, Economics) and **Humanities** (History,
+  Political Science, Geography) — each a new exam with its own three subjects.
+- **Government exams** — SSC CGL, Banking, RRB NTPC. Six shared pools across the
+  three exams: `quant`, `reasoning`, `general_awareness`, plus `english`,
+  `gen_science`, `computer_awareness`. General Awareness is deliberately static
+  GK only (polity, history, geography, science, economy) — no current affairs,
+  so it doesn't rot.
 - **School (Class 1–10)** — exam level is the grade (`class_1` … `class_10`);
   subjects are Mathematics and Science. **Pools are per-grade, not shared**:
   subject ids are `s_math_<grade>` / `s_sci_<grade>`, so Class 3 Maths and Class 9
   Maths are separate pools. No negative marking.
-- **Engineering** — exam level is the stream (CSE, ECE, Mechanical, Civil,
-  Electrical); each stream has four core subjects with their own pools
-  (`cse_dsa`, `mech_thermo`, …). GATE-style marking (+2 / −0.5). Questions are
-  conceptual, not numerical.
+- **Engineering** — exam level is the stream. The original five (CSE, ECE,
+  Mechanical, Civil, Electrical) now each carry seven core subjects
+  (`cse_dsa`, `mech_thermo`, …) instead of four, plus four new streams — IT,
+  Chemical, Aerospace, Instrumentation — with three subjects each. **One pool,
+  `eng_maths` (Engineering Mathematics), is shared across all nine streams** —
+  the one deliberate exception to "each stream has its own pools" in
+  Engineering. GATE-style marking (+2 / −0.5). Questions are conceptual, not
+  numerical.
 
-School still to come: Commerce/Arts for 11–12, and the remaining boards.
+Still missing: Class 1–10 boards beyond CBSE-style Maths/Science, and English
+as a School subject.
 
 **Navigation.** category (track) → exam → subject, chosen explicitly:
 Home → ExamPicker → SubjectPicker → Subject → Quiz. A step is skipped only when
@@ -93,7 +101,7 @@ subscriptions, timed mock tests, and the school / engineering / govt tracks.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                design tokens
-src/data/questions.json     ~870 original questions across all five tracks
+src/data/questions.json     ~1275 original questions across 87 subject pools
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -229,12 +237,16 @@ leave the rest locked.
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
 standard textbook facts and computations, `source: "original"`. The bank is
-~870 questions: Science 70–100 per subject, Government ~50 per subject, School
-and Engineering ~10 per subject (a first batch — needs topping up to ~20, and
-the answer keys there especially need a review pass). Spot-check answer keys
-before any store release. The correct option is spread
-evenly across the four slots by construction (the app does not shuffle options at
-runtime), so the answer isn't always in the same place.
+~1275 questions across 87 subject pools: the original Science subjects have
+70–100 each; Government's original three subjects have ~50 each; everything
+else — School, all of Engineering, CAT, Commerce, Humanities, and Government's
+three newer subjects — is a **~10-question first batch, not a finished bank**.
+Topping each of those up to ~20+ and reviewing the answer keys (especially the
+niche Engineering streams: Chemical, Aerospace, Instrumentation) is real,
+outstanding work — don't treat the presence of a pool as equivalent to it being
+vetted. Spot-check answer keys before any store release. The correct option is
+spread evenly across the four slots by construction (the app does not shuffle
+options at runtime), so the answer isn't always in the same place.
 
 **Don't put "JEE" or "NEET" in the app's store name.** Play treats exam names as
 third-party marks and it's a common rejection reason.
@@ -268,9 +280,12 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank ~870: Science 70–100/subject, Government ~50/subject, School +
-  Engineering ~10/subject (first batch, top up to ~20 and review the keys)
-- School/Engineering questions are all plain-text MCQ — no numericals, no LaTeX yet
+- Question bank ~1275 across 87 pools: Science 70–100/subject and Government's
+  original 3 subjects ~50/subject are solid; everything else (School, all of
+  Engineering incl. the 4 new streams, CAT, Commerce, Humanities, Government's
+  3 newer subjects) is a ~10/subject first batch — top up to ~20+ and review keys
+- School/Engineering/CAT/Commerce/Humanities/Govt-new questions are all
+  plain-text MCQ — no numericals, no LaTeX yet
 - No test suite
 
 ---

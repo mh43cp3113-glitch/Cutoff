@@ -3,7 +3,7 @@
     {
       "id": "entrance",
       "name": "Entrance exams",
-      "hint": "JEE, NEET",
+      "hint": "JEE, NEET, CAT",
       "locked": false,
       "exams": [
         {
@@ -26,13 +26,22 @@
             { "id": "biology", "name": "Biology", "locked": false }
           ]
         },
-        { "id": "cat", "name": "CAT", "locked": true, "subjects": [] }
+        {
+          "id": "cat",
+          "name": "CAT",
+          "locked": false,
+          "subjects": [
+            { "id": "cat_quant", "name": "Quantitative Ability", "locked": false },
+            { "id": "cat_varc", "name": "Verbal Ability & Reading Comprehension", "locked": false },
+            { "id": "cat_dilr", "name": "Data Interpretation & Logical Reasoning", "locked": false }
+          ]
+        }
       ]
     },
     {
       "id": "stream",
       "name": "Class 11 and 12",
-      "hint": "Science stream",
+      "hint": "Science, Commerce, Humanities",
       "locked": false,
       "exams": [
         {
@@ -45,6 +54,26 @@
             { "id": "maths", "name": "Mathematics", "locked": false },
             { "id": "biology", "name": "Biology", "locked": false }
           ]
+        },
+        {
+          "id": "commerce_11_12",
+          "name": "Commerce",
+          "locked": false,
+          "subjects": [
+            { "id": "com_acc", "name": "Accountancy", "locked": false },
+            { "id": "com_bst", "name": "Business Studies", "locked": false },
+            { "id": "com_eco", "name": "Economics", "locked": false }
+          ]
+        },
+        {
+          "id": "humanities_11_12",
+          "name": "Humanities",
+          "locked": false,
+          "subjects": [
+            { "id": "hum_his", "name": "History", "locked": false },
+            { "id": "hum_pol", "name": "Political Science", "locked": false },
+            { "id": "hum_geo", "name": "Geography", "locked": false }
+          ]
         }
       ]
     },
@@ -54,46 +83,96 @@
       "hint": "Maths and Science, every grade",
       "locked": false,
       "exams": [
-        { "id": "class_1", "name": "Class 1", "locked": false, "subjects": [
-          { "id": "s_math_1", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_1", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_2", "name": "Class 2", "locked": false, "subjects": [
-          { "id": "s_math_2", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_2", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_3", "name": "Class 3", "locked": false, "subjects": [
-          { "id": "s_math_3", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_3", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_4", "name": "Class 4", "locked": false, "subjects": [
-          { "id": "s_math_4", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_4", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_5", "name": "Class 5", "locked": false, "subjects": [
-          { "id": "s_math_5", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_5", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_6", "name": "Class 6", "locked": false, "subjects": [
-          { "id": "s_math_6", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_6", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_7", "name": "Class 7", "locked": false, "subjects": [
-          { "id": "s_math_7", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_7", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_8", "name": "Class 8", "locked": false, "subjects": [
-          { "id": "s_math_8", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_8", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_9", "name": "Class 9", "locked": false, "subjects": [
-          { "id": "s_math_9", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_9", "name": "Science", "locked": false }
-        ] },
-        { "id": "class_10", "name": "Class 10", "locked": false, "subjects": [
-          { "id": "s_math_10", "name": "Mathematics", "locked": false },
-          { "id": "s_sci_10", "name": "Science", "locked": false }
-        ] }
+        {
+          "id": "class_1",
+          "name": "Class 1",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_1", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_1", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_2",
+          "name": "Class 2",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_2", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_2", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_3",
+          "name": "Class 3",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_3", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_3", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_4",
+          "name": "Class 4",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_4", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_4", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_5",
+          "name": "Class 5",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_5", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_5", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_6",
+          "name": "Class 6",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_6", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_6", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_7",
+          "name": "Class 7",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_7", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_7", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_8",
+          "name": "Class 8",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_8", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_8", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_9",
+          "name": "Class 9",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_9", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_9", "name": "Science", "locked": false }
+          ]
+        },
+        {
+          "id": "class_10",
+          "name": "Class 10",
+          "locked": false,
+          "subjects": [
+            { "id": "s_math_10", "name": "Mathematics", "locked": false },
+            { "id": "s_sci_10", "name": "Science", "locked": false }
+          ]
+        }
       ]
     },
     {
@@ -102,36 +181,125 @@
       "hint": "B.Tech core subjects by stream",
       "locked": false,
       "exams": [
-        { "id": "cse", "name": "Computer Science", "locked": false, "subjects": [
-          { "id": "cse_dsa", "name": "Data Structures & Algorithms", "locked": false },
-          { "id": "cse_os", "name": "Operating Systems", "locked": false },
-          { "id": "cse_dbms", "name": "Database Systems", "locked": false },
-          { "id": "cse_cn", "name": "Computer Networks", "locked": false }
-        ] },
-        { "id": "ece", "name": "Electronics & Communication", "locked": false, "subjects": [
-          { "id": "ece_de", "name": "Digital Electronics", "locked": false },
-          { "id": "ece_sns", "name": "Signals & Systems", "locked": false },
-          { "id": "ece_ac", "name": "Analog Circuits", "locked": false },
-          { "id": "ece_comm", "name": "Communication Systems", "locked": false }
-        ] },
-        { "id": "mech", "name": "Mechanical", "locked": false, "subjects": [
-          { "id": "mech_thermo", "name": "Thermodynamics", "locked": false },
-          { "id": "mech_fm", "name": "Fluid Mechanics", "locked": false },
-          { "id": "mech_som", "name": "Strength of Materials", "locked": false },
-          { "id": "mech_tom", "name": "Theory of Machines", "locked": false }
-        ] },
-        { "id": "civil", "name": "Civil", "locked": false, "subjects": [
-          { "id": "civil_sa", "name": "Structural Analysis", "locked": false },
-          { "id": "civil_geo", "name": "Geotechnical Engineering", "locked": false },
-          { "id": "civil_hyd", "name": "Fluid Mechanics & Hydraulics", "locked": false },
-          { "id": "civil_survey", "name": "Surveying", "locked": false }
-        ] },
-        { "id": "eee", "name": "Electrical", "locked": false, "subjects": [
-          { "id": "eee_network", "name": "Network Theory", "locked": false },
-          { "id": "eee_machines", "name": "Electrical Machines", "locked": false },
-          { "id": "eee_power", "name": "Power Systems", "locked": false },
-          { "id": "eee_control", "name": "Control Systems", "locked": false }
-        ] }
+        {
+          "id": "cse",
+          "name": "Computer Science",
+          "locked": false,
+          "subjects": [
+            { "id": "cse_dsa", "name": "Data Structures & Algorithms", "locked": false },
+            { "id": "cse_os", "name": "Operating Systems", "locked": false },
+            { "id": "cse_dbms", "name": "Database Systems", "locked": false },
+            { "id": "cse_cn", "name": "Computer Networks", "locked": false },
+            { "id": "cse_toc", "name": "Theory of Computation", "locked": false },
+            { "id": "cse_cd", "name": "Compiler Design", "locked": false },
+            { "id": "cse_dl", "name": "Digital Logic", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "ece",
+          "name": "Electronics & Communication",
+          "locked": false,
+          "subjects": [
+            { "id": "ece_de", "name": "Digital Electronics", "locked": false },
+            { "id": "ece_sns", "name": "Signals & Systems", "locked": false },
+            { "id": "ece_ac", "name": "Analog Circuits", "locked": false },
+            { "id": "ece_comm", "name": "Communication Systems", "locked": false },
+            { "id": "ece_emt", "name": "Electromagnetic Theory", "locked": false },
+            { "id": "ece_micro", "name": "Microprocessors", "locked": false },
+            { "id": "ece_cs", "name": "Control Systems", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "mech",
+          "name": "Mechanical",
+          "locked": false,
+          "subjects": [
+            { "id": "mech_thermo", "name": "Thermodynamics", "locked": false },
+            { "id": "mech_fm", "name": "Fluid Mechanics", "locked": false },
+            { "id": "mech_som", "name": "Strength of Materials", "locked": false },
+            { "id": "mech_tom", "name": "Theory of Machines", "locked": false },
+            { "id": "mech_md", "name": "Machine Design", "locked": false },
+            { "id": "mech_mfg", "name": "Manufacturing Processes", "locked": false },
+            { "id": "mech_ht", "name": "Heat Transfer", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "civil",
+          "name": "Civil",
+          "locked": false,
+          "subjects": [
+            { "id": "civil_sa", "name": "Structural Analysis", "locked": false },
+            { "id": "civil_geo", "name": "Geotechnical Engineering", "locked": false },
+            { "id": "civil_hyd", "name": "Fluid Mechanics & Hydraulics", "locked": false },
+            { "id": "civil_survey", "name": "Surveying", "locked": false },
+            { "id": "civil_rcc", "name": "RCC & Steel Design", "locked": false },
+            { "id": "civil_te", "name": "Transportation Engineering", "locked": false },
+            { "id": "civil_env", "name": "Environmental Engineering", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "eee",
+          "name": "Electrical",
+          "locked": false,
+          "subjects": [
+            { "id": "eee_network", "name": "Network Theory", "locked": false },
+            { "id": "eee_machines", "name": "Electrical Machines", "locked": false },
+            { "id": "eee_power", "name": "Power Systems", "locked": false },
+            { "id": "eee_control", "name": "Control Systems", "locked": false },
+            { "id": "eee_pe", "name": "Power Electronics", "locked": false },
+            { "id": "eee_measure", "name": "Electrical Measurements", "locked": false },
+            { "id": "eee_ef", "name": "Electromagnetic Fields", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "it",
+          "name": "Information Technology",
+          "locked": false,
+          "subjects": [
+            { "id": "it_web", "name": "Web Technologies", "locked": false },
+            { "id": "it_se", "name": "Software Engineering", "locked": false },
+            { "id": "it_is", "name": "Information Security", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "chem",
+          "name": "Chemical",
+          "locked": false,
+          "subjects": [
+            { "id": "chem_ret", "name": "Reaction Engineering", "locked": false },
+            { "id": "chem_mt", "name": "Mass Transfer", "locked": false },
+            { "id": "chem_thermo", "name": "Chemical Thermodynamics", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "aero",
+          "name": "Aerospace",
+          "locked": false,
+          "subjects": [
+            { "id": "aero_aero", "name": "Aerodynamics", "locked": false },
+            { "id": "aero_prop", "name": "Propulsion", "locked": false },
+            { "id": "aero_fm", "name": "Flight Mechanics", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        },
+        {
+          "id": "ei",
+          "name": "Instrumentation",
+          "locked": false,
+          "subjects": [
+            { "id": "ei_sensors", "name": "Transducers & Sensors", "locked": false },
+            { "id": "ei_pc", "name": "Process Control", "locked": false },
+            { "id": "ei_ii", "name": "Industrial Instrumentation", "locked": false },
+            { "id": "eng_maths", "name": "Engineering Mathematics", "locked": false }
+          ]
+        }
       ]
     },
     {
@@ -147,7 +315,10 @@
           "subjects": [
             { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
             { "id": "reasoning", "name": "Reasoning", "locked": false },
-            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+            { "id": "general_awareness", "name": "General Awareness", "locked": false },
+            { "id": "english", "name": "English Language", "locked": false },
+            { "id": "gen_science", "name": "General Science", "locked": false },
+            { "id": "computer_awareness", "name": "Computer Awareness", "locked": false }
           ]
         },
         {
@@ -157,7 +328,10 @@
           "subjects": [
             { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
             { "id": "reasoning", "name": "Reasoning", "locked": false },
-            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+            { "id": "general_awareness", "name": "General Awareness", "locked": false },
+            { "id": "english", "name": "English Language", "locked": false },
+            { "id": "gen_science", "name": "General Science", "locked": false },
+            { "id": "computer_awareness", "name": "Computer Awareness", "locked": false }
           ]
         },
         {
@@ -167,7 +341,10 @@
           "subjects": [
             { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
             { "id": "reasoning", "name": "Reasoning", "locked": false },
-            { "id": "general_awareness", "name": "General Awareness", "locked": false }
+            { "id": "general_awareness", "name": "General Awareness", "locked": false },
+            { "id": "english", "name": "English Language", "locked": false },
+            { "id": "gen_science", "name": "General Science", "locked": false },
+            { "id": "computer_awareness", "name": "Computer Awareness", "locked": false }
           ]
         }
       ]
