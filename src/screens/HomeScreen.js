@@ -1,11 +1,22 @@
 import React from 'react';
-import { View, Text, Pressable, ScrollView } from 'react-native';
+import { View, Text, Pressable, ScrollView, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { getTracks, getPlayableExams } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import Logo from '../components/Logo';
 import { useTheme } from '../theme';
 import packageJson from '../../package.json';
+
+const TRACK_ICONS = {
+  entrance: 'school-outline',
+  stream: 'book-outline',
+  school: 'library-outline',
+  engineering: 'construct-outline',
+  govt: 'business-outline',
+};
+
+const DESKTOP_BREAKPOINT = 820;
 
 // category (track) -> exam -> subject. Home only makes the first choice; it
 // hands off to ExamPicker / SubjectPicker for the rest, skipping a step only
@@ -29,7 +40,7 @@ export function routeIntoTrack(navigation, trackId) {
   }
 }
 
-function TrackCard({ track, open, onPress }) {
+function TrackCard({ track, open, onPress, wide }) {
   const { color, type, space, radius, shadow } = useTheme();
   return (
     <Pressable
@@ -44,30 +55,38 @@ function TrackCard({ track, open, onPress }) {
         borderWidth: 1,
         borderColor: open ? color.rule : 'transparent',
         borderRadius: radius.lg,
-        paddingVertical: space.md,
-        paddingHorizontal: space.md,
+        padding: space.md,
         marginBottom: space.sm,
         opacity: open ? (pressed ? 0.7 : 1) : 0.5,
+        ...(wide ? { flexBasis: '48%', flexGrow: 1 } : null),
         ...(open ? shadow.card : null),
       })}
     >
-      {open && (
-        <View
-          style={{
-            width: 3,
-            alignSelf: 'stretch',
-            borderRadius: 2,
-            backgroundColor: color.ink,
-            marginRight: space.md,
-          }}
+      <View
+        style={{
+          width: 44,
+          height: 44,
+          borderRadius: radius.md,
+          backgroundColor: open ? color.accentSoft : color.rule,
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginRight: space.md,
+        }}
+      >
+        <Ionicons
+          name={TRACK_ICONS[track.id] || 'ellipse-outline'}
+          size={22}
+          color={open ? color.accent : color.locked}
         />
-      )}
+      </View>
       <View style={{ flex: 1 }}>
-        <Text style={[type.title, !open && { color: color.locked }]}>{track.name}</Text>
+        <Text style={[type.title, { fontSize: 18 }, !open && { color: color.locked }]}>
+          {track.name}
+        </Text>
         <Text style={[type.small, { marginTop: 2 }]}>{track.hint}</Text>
       </View>
       {open ? (
-        <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
+        <Ionicons name="chevron-forward" size={20} color={color.inkSoft} style={{ marginLeft: space.sm }} />
       ) : (
         <Text
           style={{
@@ -88,6 +107,8 @@ function TrackCard({ track, open, onPress }) {
 
 export default function HomeScreen({ navigation }) {
   const { color, type, space, radius } = useTheme();
+  const { width } = useWindowDimensions();
+  const isDesktop = width >= DESKTOP_BREAKPOINT;
   const tracks = getTracks();
   const { streak, attempts, ready, profile } = useProgress();
 
@@ -97,7 +118,15 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['top']}>
-      <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+      <ScrollView
+        contentContainerStyle={{
+          padding: space.md,
+          paddingBottom: space.xl,
+          maxWidth: isDesktop ? 900 : undefined,
+          width: isDesktop ? '100%' : undefined,
+          alignSelf: isDesktop ? 'center' : undefined,
+        }}
+      >
         {/* Brand header */}
         <View
           style={{
@@ -114,7 +143,7 @@ export default function HomeScreen({ navigation }) {
             accessibilityLabel="Your progress"
             hitSlop={8}
             style={({ pressed }) => ({
-              backgroundColor: color.ink,
+              backgroundColor: color.accent,
               borderRadius: radius.pill,
               paddingVertical: 7,
               paddingHorizontal: 14,
@@ -138,14 +167,17 @@ export default function HomeScreen({ navigation }) {
         </Text>
 
         {/* Unlocked tracks */}
-        {openTracks.map(({ track, open }) => (
-          <TrackCard
-            key={track.id}
-            track={track}
-            open={open}
-            onPress={() => routeIntoTrack(navigation, track.id)}
-          />
-        ))}
+        <View style={isDesktop ? { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm } : null}>
+          {openTracks.map(({ track, open }) => (
+            <TrackCard
+              key={track.id}
+              track={track}
+              open={open}
+              wide={isDesktop}
+              onPress={() => routeIntoTrack(navigation, track.id)}
+            />
+          ))}
+        </View>
 
         {/* Locked tracks */}
         {lockedTracks.length > 0 && (
@@ -165,9 +197,11 @@ export default function HomeScreen({ navigation }) {
             >
               Coming soon
             </Text>
-            {lockedTracks.map(({ track, open }) => (
-              <TrackCard key={track.id} track={track} open={open} onPress={() => {}} />
-            ))}
+            <View style={isDesktop ? { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm } : null}>
+              {lockedTracks.map(({ track, open }) => (
+                <TrackCard key={track.id} track={track} open={open} wide={isDesktop} onPress={() => {}} />
+              ))}
+            </View>
           </>
         )}
 

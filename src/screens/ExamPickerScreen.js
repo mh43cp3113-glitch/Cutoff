@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { getTrack, getPlayableExams } from '../lib/quiz';
 import { useTheme } from '../theme';
 
@@ -53,7 +54,7 @@ export default function ExamPickerScreen({ route, navigation }) {
                 {exam.subjects.map((s) => s.subjectName).join(' · ')}
               </Text>
             </View>
-            <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
+            <Ionicons name="chevron-forward" size={20} color={color.inkSoft} style={{ marginLeft: space.sm }} />
           </Pressable>
         ))}
       </ScrollView>

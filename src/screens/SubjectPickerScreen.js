@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { getTrack, getExam, getPlayableExams, buildExamQuiz } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { useTheme } from '../theme';
@@ -52,7 +53,7 @@ export default function SubjectPickerScreen({ route, navigation }) {
         <Pressable
           onPress={startRandomTest}
           style={({ pressed }) => ({
-            backgroundColor: color.ink,
+            backgroundColor: color.accent,
             borderRadius: radius.lg,
             padding: space.md,
             marginBottom: space.lg,
@@ -91,7 +92,7 @@ export default function SubjectPickerScreen({ route, navigation }) {
             })}
           >
             <Text style={[type.title, { flex: 1 }]}>{s.subjectName}</Text>
-            <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
+            <Ionicons name="chevron-forward" size={20} color={color.inkSoft} style={{ marginLeft: space.sm }} />
           </Pressable>
         ))}
       </ScrollView>

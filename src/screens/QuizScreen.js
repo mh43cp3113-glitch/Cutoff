@@ -9,6 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import MathText from '../components/MathText';
 import ProgressRail from '../components/ProgressRail';
 import ScratchPad from '../components/ScratchPad';
@@ -169,6 +170,14 @@ export default function QuizScreen({ route, navigation }) {
           ) : (
             question.options.map((option) => {
               const selected = (answer || []).includes(option.id);
+              const isMulti = question.question_type === 'multi_select';
+              const iconName = selected
+                ? isMulti
+                  ? 'checkbox'
+                  : 'radio-button-on'
+                : isMulti
+                  ? 'square-outline'
+                  : 'radio-button-off';
               return (
                 <Pressable
                   key={option.id}
@@ -177,24 +186,18 @@ export default function QuizScreen({ route, navigation }) {
                     flexDirection: 'row',
                     alignItems: 'flex-start',
                     borderWidth: 1,
-                    borderColor: selected ? color.ink : color.rule,
-                    backgroundColor: selected ? color.rule : color.card,
+                    borderColor: selected ? color.accent : color.rule,
+                    backgroundColor: selected ? color.accentSoft : color.card,
                     borderRadius: radius.sm,
                     padding: space.md,
                     marginBottom: space.sm,
                   }}
                 >
-                  <View
-                    style={{
-                      width: 22,
-                      height: 22,
-                      borderRadius: question.question_type === 'multi_select' ? 4 : 11,
-                      borderWidth: 1.5,
-                      borderColor: selected ? color.ink : color.rule,
-                      backgroundColor: selected ? color.ink : 'transparent',
-                      marginRight: space.sm,
-                      marginTop: 1,
-                    }}
+                  <Ionicons
+                    name={iconName}
+                    size={22}
+                    color={selected ? color.accent : color.inkSoft}
+                    style={{ marginRight: space.sm, marginTop: 1 }}
                   />
                   <View style={{ flex: 1 }}>
                     <MathText
@@ -241,7 +244,7 @@ export default function QuizScreen({ route, navigation }) {
               flex: 1,
               paddingVertical: space.md,
               borderRadius: radius.sm,
-              backgroundColor: color.ink,
+              backgroundColor: color.accent,
               alignItems: 'center',
             }}
           >

@@ -60,7 +60,7 @@ export default function SubjectScreen({ route, navigation }) {
               disabled={disabled}
               onPress={() => start(len)}
               style={({ pressed }) => ({
-                backgroundColor: primary ? color.ink : color.card,
+                backgroundColor: primary ? color.accent : color.card,
                 borderWidth: primary ? 0 : 1,
                 borderColor: color.rule,
                 borderRadius: radius.lg,

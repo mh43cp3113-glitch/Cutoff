@@ -1,35 +1,48 @@
-// Visual direction: a physics lab notebook. Pale ruled paper, deep petrol ink,
-// and colour reserved strictly for signal (right / wrong / flagged) — never
-// decoration. Dark mode inverts the paper (pale ink on dark paper) rather than
-// introducing a different visual language — same notebook, read at night.
+// Visual direction: warm and a little more alive than a form — cream paper,
+// warm brown ink, one olive-brown accent carrying every interactive/progress
+// signal (selection, CTAs, the progress rail), plus the original
+// correct/wrong/flag trio for grading. Dark mode inverts the paper (pale ink
+// on warm dark brown) rather than introducing a different visual language.
 import { useColorScheme } from 'react-native';
 
 const light = {
-  paper: '#EDF0EC', // page
-  card: '#F7F9F6', // raised surface
-  rule: '#C6D0C9', // grid + hairlines
-  ink: '#1B2A2E', // primary text
-  inkSoft: '#5E6F72', // secondary text
-  correct: '#0B6E4F',
-  wrong: '#B23A2E',
-  flag: '#E5A400', // bookmarked / needs review
-  locked: '#AAB6AF',
+  paper: '#FBF6EF', // page
+  card: '#FFFFFF', // raised surface
+  rule: '#E9E0D2', // grid + hairlines
+  ink: '#2E2620', // primary text
+  inkSoft: '#8C7C6A', // secondary text
+  accent: '#8A6D3F', // selection, CTAs, progress — the one interactive colour
+  accentSoft: '#F1E4D0', // accent tinted onto a surface (selected option bg)
+  correct: '#3F7D4A',
+  wrong: '#C1453A',
+  flag: '#D98C2B', // bookmarked / needs review
+  locked: '#C9BEAE',
 };
 
-// Signal colours are brightened relative to their light-mode values, not for
-// decoration but because the light-mode greens/reds are too dark to meet
-// contrast against a near-black page — the same signal, legible at night.
+// Signal and accent colours are brightened relative to their light-mode
+// values, not for decoration but because the light-mode versions are too dark
+// to meet contrast against a near-black page — the same colours, legible at
+// night.
 const dark = {
-  paper: '#11171A',
-  card: '#1A2226',
-  rule: '#33403F',
-  ink: '#E8ECEA',
-  inkSoft: '#93A29E',
-  correct: '#3FBF8F',
+  paper: '#20180F',
+  card: '#2C2216',
+  rule: '#4A3C28',
+  ink: '#F3EAE0',
+  inkSoft: '#B3A392',
+  accent: '#C9A66B',
+  accentSoft: '#3D3220',
+  correct: '#5FBF71',
   wrong: '#E2685A',
   flag: '#F0B84D',
-  locked: '#5B6A67',
+  locked: '#6B5D4D',
 };
+
+// A warm hero gradient for the Result score ring and Landing's header — see
+// GradientBackdrop usage in those screens. Three stops, light-to-dark or
+// warm-to-cool, always ending back near the page colour so it blends out
+// rather than hard-cutting into the rest of the screen.
+const gradientLight = ['#FBEFDD', '#F3D9C7', '#EAD3DE'];
+const gradientDark = ['#3A2A1C', '#402A28', '#332338'];
 
 function buildType(c) {
   return {
@@ -51,7 +64,7 @@ export const radius = { sm: 6, md: 10, lg: 16, pill: 999 };
 // box-shadow.
 const shadowLight = {
   card: {
-    shadowColor: '#0F1A1C',
+    shadowColor: '#2E2013',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.08,
     shadowRadius: 6,
@@ -84,5 +97,6 @@ export function useTheme() {
     space,
     radius,
     shadow: isDark ? shadowDark : shadowLight,
+    gradient: isDark ? gradientDark : gradientLight,
   };
 }

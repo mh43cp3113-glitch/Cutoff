@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 import MathText from '../components/MathText';
+import ScoreRing from '../components/ScoreRing';
 import { scoreAttempt, grade } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
 import { useTheme } from '../theme';
@@ -76,7 +78,7 @@ function ReportControl({ questionId }) {
 }
 
 export default function ResultScreen({ route, navigation }) {
-  const { color, type, space, radius, shadow } = useTheme();
+  const { color, type, space, radius, shadow, gradient } = useTheme();
   const { questionList, answers, label } = route.params;
   const { score, max, correctCount, total } = scoreAttempt(questionList, answers);
   const { recordAttempt } = useProgress();
@@ -93,13 +95,25 @@ export default function ResultScreen({ route, navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
-        <Text style={[type.small]}>{label}</Text>
-        <Text style={[type.display, { marginTop: space.xs }]}>
-          {score} out of {max}
-        </Text>
-        <Text style={[type.small, { marginTop: space.xs, marginBottom: space.lg }]}>
-          {correctCount} of {total} correct. Negative marking applied where the exam uses it.
-        </Text>
+        <LinearGradient
+          colors={gradient}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={{
+            borderRadius: radius.lg,
+            padding: space.lg,
+            alignItems: 'center',
+            marginBottom: space.lg,
+          }}
+        >
+          <Text style={type.small}>{label}</Text>
+          <View style={{ marginTop: space.sm }}>
+            <ScoreRing score={score} max={max} />
+          </View>
+          <Text style={[type.small, { marginTop: space.md, textAlign: 'center' }]}>
+            {correctCount} of {total} correct. Negative marking applied where the exam uses it.
+          </Text>
+        </LinearGradient>
 
         {questionList.map((question, i) => {
           const answer = answers[i];
@@ -153,7 +167,7 @@ export default function ResultScreen({ route, navigation }) {
         <Pressable
           onPress={() => navigation.popToTop()}
           style={{
-            backgroundColor: color.ink,
+            backgroundColor: color.accent,
             borderRadius: radius.lg,
             padding: space.md,
             alignItems: 'center',

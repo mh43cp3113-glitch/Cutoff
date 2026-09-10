@@ -3,8 +3,8 @@ import { View, Pressable } from 'react-native';
 import { useTheme } from '../theme';
 
 // Borrowed from the OMR sheet every candidate already knows: one cell per
-// question, filled as you go. Answered cells are solid ink, the current cell is
-// outlined, untouched cells stay hairline.
+// question, filled as you go. Answered cells are solid accent, the current
+// cell is taller, untouched cells stay hairline.
 
 export default function ProgressRail({ total, current, answered, onJump }) {
   const { color } = useTheme();
@@ -23,7 +23,7 @@ export default function ProgressRail({ total, current, answered, onJump }) {
               flex: 1,
               height: 6,
               borderRadius: 1,
-              backgroundColor: isAnswered ? color.ink : color.rule,
+              backgroundColor: isAnswered ? color.accent : color.rule,
               borderWidth: isCurrent ? 0 : 0,
               opacity: isCurrent ? 1 : isAnswered ? 0.85 : 0.6,
               transform: [{ scaleY: isCurrent ? 2 : 1 }],

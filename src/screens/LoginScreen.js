@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import Logo from '../components/Logo';
 import { useProgress } from '../lib/ProgressContext';
 import { useTheme } from '../theme';
@@ -29,7 +30,7 @@ export default function LoginScreen({ navigation }) {
       >
         <View style={{ padding: space.md }}>
           <Pressable onPress={() => navigation.goBack()} hitSlop={8} style={{ alignSelf: 'flex-start' }}>
-            <Text style={[type.small, { fontSize: 22, color: color.inkSoft }]}>‹</Text>
+            <Ionicons name="chevron-back" size={24} color={color.inkSoft} />
           </Pressable>
         </View>
 
@@ -64,7 +65,7 @@ export default function LoginScreen({ navigation }) {
             onPress={submit}
             style={{
               marginTop: space.md,
-              backgroundColor: color.ink,
+              backgroundColor: color.accent,
               borderRadius: radius.lg,
               padding: space.md,
               alignItems: 'center',

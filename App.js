@@ -1,5 +1,5 @@
-import React from 'react';
-import { Platform, View } from 'react-native';
+import React, { useState } from 'react';
+import { Platform, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -18,18 +18,37 @@ import { ProgressProvider, useProgress } from './src/lib/ProgressContext';
 import { useTheme } from './src/theme';
 
 const Stack = createNativeStackNavigator();
+const DESKTOP_BREAKPOINT = 820;
 
-// On the web the app runs as a responsive site: full-bleed on a phone browser,
-// and centred in a phone-width column on a wider screen so the layout — tuned
-// for a handset — never stretches awkwardly across a desktop monitor.
-function AppFrame({ children }) {
+// Screens with their own desktop layout (a real multi-column/wide design, not
+// just a stretched phone screen) get the wide frame on a desktop-width
+// browser. Everything else — Quiz above all, mid-question is no time to be
+// redesigning layout — keeps the phone-width column at any viewport size.
+const WIDE_SCREENS = new Set(['Landing', 'Home']);
+
+function activeRouteName(state) {
+  if (!state) return undefined;
+  const route = state.routes[state.index];
+  return route.state ? activeRouteName(route.state) : route.name;
+}
+
+// On the web the app runs as a responsive site: full-bleed on a phone
+// browser, and — for the screens built for it — a real wide desktop layout
+// on a larger one. Everything else still centres in a phone-width column so
+// a mobile-tuned layout never stretches awkwardly across a desktop monitor.
+function AppFrame({ children, routeName }) {
   const { color, isDark } = useTheme();
+  const { width } = useWindowDimensions();
   if (Platform.OS !== 'web') return children;
+
+  const isDesktop = width >= DESKTOP_BREAKPOINT;
+  const wide = isDesktop && WIDE_SCREENS.has(routeName);
+
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: isDark ? '#05080A' : '#DCE1DC',
+        backgroundColor: isDark ? '#120C08' : '#E9DFCE',
         alignItems: 'center',
       }}
     >
@@ -37,7 +56,7 @@ function AppFrame({ children }) {
         style={{
           flex: 1,
           width: '100%',
-          maxWidth: 480,
+          maxWidth: wide ? 1100 : 480,
           backgroundColor: color.paper,
           borderLeftWidth: 1,
           borderRightWidth: 1,
@@ -131,6 +150,7 @@ function RootNavigator() {
 
 export default function App() {
   const { color, isDark } = useTheme();
+  const [routeName, setRouteName] = useState('Landing');
 
   const navTheme = {
     ...DefaultTheme,
@@ -148,8 +168,11 @@ export default function App() {
     <SafeAreaProvider>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <ProgressProvider>
-        <AppFrame>
-        <NavigationContainer theme={navTheme}>
+        <AppFrame routeName={routeName}>
+        <NavigationContainer
+          theme={navTheme}
+          onStateChange={(state) => setRouteName(activeRouteName(state))}
+        >
           <RootNavigator />
         </NavigationContainer>
         </AppFrame>
