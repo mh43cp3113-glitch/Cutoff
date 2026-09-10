@@ -132,12 +132,24 @@ Working today:
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
 - Local sign-in/out: a display name only, stored on-device (`ProgressContext`'s
-  `profile`/`signIn`/`signOut`, UI in Progress screen's `AccountSection`). This
-  is **not real authentication** — nothing is verified, nothing syncs, it only
-  exists so a student sees their name and "log out" does something real.
+  `profile`/`signIn`/`signOut`, logout UI in Progress screen's `AccountSection`).
+  This is **not real authentication** — nothing is verified, nothing syncs, it
+  only exists so a student sees their name and "log out" does something real.
   Explicitly **no Google/OAuth sign-in** (asked for, then declined once the
   Firebase-project blocker was explained) — don't add one without being asked
   again with real OAuth client IDs in hand.
+- **The app is gated behind that name** — `App.js`'s `RootNavigator` renders
+  either a Landing → Login stack or the full Home-and-onward stack, switching
+  on whether `profile` is set (React Navigation's standard auth-split pattern:
+  swapping which screens exist, not mounting everything and redirecting — this
+  gets the stack reset on both sign-in and sign-out for free). `ready` from
+  `ProgressContext` gates a blank frame first, so it never flashes Landing then
+  immediately Home while AsyncStorage hydrates. Existing on-device progress
+  (streak, topic stats) is untouched by this gate — it's keyed independently of
+  `profile`, so it's still there the moment someone types a name.
+  `LandingScreen.js` is the marketing-ish intro (wordmark, tagline, three
+  highlight cards, "Get started"); `LoginScreen.js` is just the name field.
+  Neither has a header — `Login` has its own back arrow instead.
 
 Not built yet: real authentication (Google/OAuth, or anything server-verified),
 any backend (so reports don't leave the device, and the local profile above
@@ -159,7 +171,8 @@ src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
 src/components/Logo.js      brand wordmark — Home header/footer only
-src/screens/                Home, ExamPicker, SubjectPicker, Subject, Quiz, Result, Progress
+src/screens/                Landing, Login, Home, ExamPicker, SubjectPicker,
+                             Subject, Quiz, Result, Progress
 tests/                       node:test — quiz.js logic + content structural checks
 ```
 
