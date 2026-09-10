@@ -89,7 +89,7 @@ function TrackCard({ track, open, onPress }) {
 export default function HomeScreen({ navigation }) {
   const { color, type, space, radius } = useTheme();
   const tracks = getTracks();
-  const { streak, attempts, ready } = useProgress();
+  const { streak, attempts, ready, profile } = useProgress();
 
   const withOpen = tracks.map((t) => ({ track: t, open: getPlayableExams(t.id).length > 0 }));
   const openTracks = withOpen.filter((t) => t.open);
@@ -128,7 +128,9 @@ export default function HomeScreen({ navigation }) {
         </View>
 
         {/* Page heading */}
-        <Text style={[type.display, { marginTop: space.lg }]}>Practice</Text>
+        <Text style={[type.display, { marginTop: space.lg }]}>
+          {ready && profile ? `Hey, ${profile.name.split(' ')[0]}` : 'Practice'}
+        </Text>
         <Text style={[type.small, { marginTop: space.xs, marginBottom: space.lg }]}>
           {ready && attempts.length > 0
             ? `${attempts.length} quiz${attempts.length === 1 ? '' : 'zes'} done · pick up where you left off`

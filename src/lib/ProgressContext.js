@@ -17,6 +17,9 @@ import {
   loadReports,
   saveReport,
   resetProgress,
+  loadProfile,
+  saveProfile,
+  clearProfile,
 } from './storage';
 
 const ProgressContext = createContext(null);
@@ -29,26 +32,42 @@ export function ProgressProvider({ children }) {
   const [attempts, setAttempts] = useState([]);
   const [streak, setStreak] = useState(EMPTY_STREAK);
   const [reports, setReports] = useState({});
+  const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [stats, history, s, r] = await Promise.all([
+      const [stats, history, s, r, p] = await Promise.all([
         loadTopicStats(),
         loadAttempts(),
         loadStreak(),
         loadReports(),
+        loadProfile(),
       ]);
       if (cancelled) return;
       setTopicStats(stats);
       setAttempts(history);
       setStreak(s);
       setReports(r);
+      setProfile(p);
       setReady(true);
     })();
     return () => {
       cancelled = true;
     };
+  }, []);
+
+  /** Local-only display name — see storage.js. Not real authentication. */
+  const signIn = useCallback(async (name) => {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    const next = await saveProfile({ name: trimmed, signedInAt: new Date().toISOString() });
+    setProfile(next);
+  }, []);
+
+  const signOut = useCallback(async () => {
+    await clearProfile();
+    setProfile(null);
   }, []);
 
   /**
@@ -111,8 +130,24 @@ export function ProgressProvider({ children }) {
       recordAttempt,
       reportQuestion,
       clearAll,
+      profile,
+      signIn,
+      signOut,
     }),
-    [ready, topicStats, attempts, streak, reports, reportedIds, recordAttempt, reportQuestion, clearAll]
+    [
+      ready,
+      topicStats,
+      attempts,
+      streak,
+      reports,
+      reportedIds,
+      recordAttempt,
+      reportQuestion,
+      clearAll,
+      profile,
+      signIn,
+      signOut,
+    ]
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

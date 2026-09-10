@@ -1,9 +1,114 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, ScrollView, Pressable, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useProgress } from '../lib/ProgressContext';
 import { getQuestionById } from '../lib/quiz';
 import { useTheme } from '../theme';
+
+function AccountSection() {
+  const { color, type, space, radius, shadow } = useTheme();
+  const { profile, signIn, signOut } = useProgress();
+  const [name, setName] = useState('');
+
+  if (profile) {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          backgroundColor: color.card,
+          borderWidth: 1,
+          borderColor: color.rule,
+          borderRadius: radius.lg,
+          padding: space.md,
+          marginBottom: space.lg,
+          ...shadow.card,
+        }}
+      >
+        <View
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: radius.pill,
+            backgroundColor: color.ink,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: space.md,
+          }}
+        >
+          <Text style={{ color: color.paper, fontWeight: '700', fontSize: 16 }}>
+            {profile.name.trim().charAt(0).toUpperCase()}
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text style={[type.body, { fontWeight: '600' }]}>{profile.name}</Text>
+          <Text style={[type.small, { marginTop: 1 }]}>Signed in on this device only</Text>
+        </View>
+        <Pressable onPress={signOut} hitSlop={8}>
+          <Text style={[type.small, { color: color.wrong, fontWeight: '700' }]}>Log out</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  return (
+    <View
+      style={{
+        backgroundColor: color.card,
+        borderWidth: 1,
+        borderColor: color.rule,
+        borderRadius: radius.lg,
+        padding: space.md,
+        marginBottom: space.lg,
+        ...shadow.card,
+      }}
+    >
+      <Text style={[type.body, { fontWeight: '600' }]}>Sign in</Text>
+      <Text style={[type.small, { marginTop: 2, marginBottom: space.sm }]}>
+        Just a name for this device — nothing syncs anywhere yet.
+      </Text>
+      <View style={{ flexDirection: 'row', gap: space.sm }}>
+        <TextInput
+          value={name}
+          onChangeText={setName}
+          placeholder="Your name"
+          placeholderTextColor={color.locked}
+          onSubmitEditing={() => {
+            signIn(name);
+            setName('');
+          }}
+          returnKeyType="done"
+          style={{
+            flex: 1,
+            borderWidth: 1,
+            borderColor: color.rule,
+            borderRadius: radius.sm,
+            paddingHorizontal: space.md,
+            paddingVertical: space.sm,
+            color: color.ink,
+            fontSize: 15,
+          }}
+        />
+        <Pressable
+          disabled={!name.trim()}
+          onPress={() => {
+            signIn(name);
+            setName('');
+          }}
+          style={{
+            paddingHorizontal: space.md,
+            justifyContent: 'center',
+            borderRadius: radius.sm,
+            backgroundColor: color.ink,
+            opacity: name.trim() ? 1 : 0.4,
+          }}
+        >
+          <Text style={{ color: color.paper, fontWeight: '600' }}>Go</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
 
 function Stat({ value, label }) {
   const { color, type } = useTheme();
@@ -42,6 +147,8 @@ export default function ProgressScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.paper }} edges={['bottom']}>
       <ScrollView contentContainerStyle={{ padding: space.md, paddingBottom: space.xl }}>
+        <AccountSection />
+
         <View
           style={{
             flexDirection: 'row',
