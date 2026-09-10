@@ -111,6 +111,8 @@ Working today:
   subject count, evenly sampled across all of them) above the per-subject list,
   for exam-wide mock practice
 - Quiz player handling MCQ, multi-select, and numerical entry with tolerance
+- A "Rough work" scratchpad below every question — freehand touch drawing for
+  calculations, cleared automatically when the question changes
 - LaTeX rendering through KaTeX in a self-sizing WebView
 - Scoring with per-question negative marking
 - Result screen with per-question review and explanations
@@ -249,6 +251,15 @@ effects in development and would otherwise double-count every topic.
 **WebViews only for LaTeX.** Each one is an expensive instance and a question
 screen can hold five. Plain text takes the `<Text>` path.
 
+**ScratchPad draws with rotated `View` rectangles, not SVG.** `PanResponder`
+records touch points per stroke; each consecutive pair becomes a short `View`
+sized to the distance between them and rotated to the angle between them,
+positioned by its centre (so `transform: rotate` behaves identically on native
+and web with no `transformOrigin` needed). This avoids adding
+`react-native-svg` or a Skia dependency for what is, so far, just freehand
+scratch marks — revisit if this ever needs undo/redo, real pen pressure, or
+saving a drawing.
+
 **KaTeX ships vendored, not from a CDN.** `src/vendor/katex/` holds KaTeX 0.16.9
 (`katex.min.js`, `auto-render.min.js`, `katex.min.css`) as JS modules exporting
 the file contents as strings, with `.woff2` fonts inlined as base64 `data:` URIs
@@ -293,19 +304,13 @@ asset (native cold-start still flashes the light splash image) and real-device
 verification — only checked via web build so far, same caveat as the rest of
 the UI.
 
-**Brand mark:** `src/components/Logo.js` renders the wordmark as "Cut│off" — a
-thin ink rule (45% opacity, no new colour) splitting the name in two, meant to
-read as the qualifying line on a scorecard rather than decoration. `size="lg"`
-in the Home header, `size="sm" muted` in Home's footer alongside the app
-version. It isn't used on any other screen — inner screens show contextual
-titles (an exam or subject name), not the app's own name.
-
-**Brand mark:** `src/components/Logo.js` renders the wordmark as "Cut│off" — a
-thin ink rule (45% opacity, no new colour) splitting the name in two, meant to
-read as the qualifying line on a scorecard rather than decoration. `size="lg"`
-in the Home header, `size="sm" muted` in Home's footer alongside the app
-version. It isn't used on any other screen — inner screens show contextual
-titles (an exam or subject name), not the app's own name.
+**Brand mark:** `src/components/Logo.js` renders a plain caps wordmark,
+"CUTOFF" — no divider glyph, no new colour, just ink at full or muted opacity.
+`size="lg"` (28pt) in the Home header, `size="sm" muted` (16pt) in Home's
+footer alongside the app version. It isn't used on any other screen — inner
+screens show contextual titles (an exam or subject name), not the app's own
+name. (An earlier version split the name with a thin rule — "Cut│off" — that
+was dropped for a plainer, larger wordmark.)
 
 **Elevation:** `theme.js` exports `shadow.card`, one soft shadow (shadowColor
 `#0F1A1C`, low opacity, small radius; `elevation: 2` for Android) applied to
