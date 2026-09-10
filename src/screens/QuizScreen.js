@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -13,10 +13,48 @@ import MathText from '../components/MathText';
 import ProgressRail from '../components/ProgressRail';
 import { color, type, space, radius } from '../theme';
 
+function formatClock(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
 export default function QuizScreen({ route, navigation }) {
-  const { questionList, label } = route.params;
+  const { questionList, label, timeLimitSeconds } = route.params;
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(() => questionList.map(() => null));
+  const [remaining, setRemaining] = useState(timeLimitSeconds ?? null);
+
+  // The countdown effect only ever runs once and must not submit a stale
+  // answer set, so it reads the latest answers from a ref rather than closing
+  // over the `answers` state from whichever render set it up.
+  const answersRef = useRef(answers);
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+  const submittedRef = useRef(false);
+
+  useEffect(() => {
+    if (timeLimitSeconds == null) return undefined;
+    const id = setInterval(() => {
+      setRemaining((r) => {
+        if (r <= 1) {
+          clearInterval(id);
+          if (!submittedRef.current) {
+            submittedRef.current = true;
+            navigation.replace('Result', {
+              questionList,
+              answers: answersRef.current,
+              label,
+            });
+          }
+          return 0;
+        }
+        return r - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [timeLimitSeconds]);
 
   const question = questionList[index];
   const answer = answers[index];
@@ -44,6 +82,7 @@ export default function QuizScreen({ route, navigation }) {
   };
 
   const finish = () => {
+    submittedRef.current = true;
     navigation.replace('Result', { questionList, answers, label });
   };
 
@@ -60,11 +99,34 @@ export default function QuizScreen({ route, navigation }) {
             answered={answers}
             onJump={setIndex}
           />
-          <Text style={[type.small, { marginTop: space.sm }]}>
-            Question {index + 1} of {questionList.length}
-            {question.question_type === 'multi_select' ? ' · select all that apply' : ''}
-            {question.question_type === 'numerical' ? ' · type your answer' : ''}
-          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: space.sm,
+            }}
+          >
+            <Text style={type.small}>
+              Question {index + 1} of {questionList.length}
+              {question.question_type === 'multi_select' ? ' · select all that apply' : ''}
+              {question.question_type === 'numerical' ? ' · type your answer' : ''}
+            </Text>
+            {remaining !== null && (
+              <Text
+                style={[
+                  type.small,
+                  {
+                    fontWeight: '700',
+                    fontVariant: ['tabular-nums'],
+                    color: remaining <= 30 ? color.wrong : color.ink,
+                  },
+                ]}
+              >
+                {formatClock(remaining)}
+              </Text>
+            )}
+          </View>
         </View>
 
         <ScrollView

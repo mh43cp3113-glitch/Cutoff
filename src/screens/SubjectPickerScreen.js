@@ -5,7 +5,15 @@ import { getTrack, getExam, getPlayableExams, buildExamQuiz } from '../lib/quiz'
 import { useProgress } from '../lib/ProgressContext';
 import { color, type, space, radius } from '../theme';
 
-const RANDOM_TEST_LENGTH = 20;
+// A random test scales with how many subjects the exam has — enough per
+// subject to feel representative, capped so a wide exam (e.g. an 8-subject
+// Engineering stream) doesn't turn into a marathon. Paced at roughly a minute
+// per question, matching how the average_time_seconds fields across the bank
+// tend to run.
+const PER_SUBJECT = 4;
+const MIN_LENGTH = 12;
+const MAX_LENGTH = 30;
+const SECONDS_PER_QUESTION = 60;
 
 export default function SubjectPickerScreen({ route, navigation }) {
   const { trackId, examId } = route.params;
@@ -21,12 +29,19 @@ export default function SubjectPickerScreen({ route, navigation }) {
     });
   }, [navigation, exam, track]);
 
+  const targetLength = Math.min(
+    MAX_LENGTH,
+    Math.max(MIN_LENGTH, subjects.length * PER_SUBJECT)
+  );
+  const estimatedMinutes = Math.round((targetLength * SECONDS_PER_QUESTION) / 60);
+
   const startRandomTest = () => {
-    const questionList = buildExamQuiz(trackId, examId, RANDOM_TEST_LENGTH, reportedIds);
+    const questionList = buildExamQuiz(trackId, examId, targetLength, reportedIds);
     if (!questionList.length) return;
     navigation.navigate('Quiz', {
       questionList,
       label: exam ? `${exam.name} · Random test` : 'Random test',
+      timeLimitSeconds: questionList.length * SECONDS_PER_QUESTION,
     });
   };
 
@@ -47,7 +62,7 @@ export default function SubjectPickerScreen({ route, navigation }) {
             Random test
           </Text>
           <Text style={{ fontSize: 13, marginTop: 2, color: color.rule }}>
-            A mixed set pulling from every subject below
+            Timed · about {estimatedMinutes} min · mixed from every subject below
           </Text>
         </Pressable>
 
@@ -61,16 +76,19 @@ export default function SubjectPickerScreen({ route, navigation }) {
               navigation.navigate('Subject', { trackId, examId, subjectId: s.subjectId })
             }
             style={({ pressed }) => ({
+              flexDirection: 'row',
+              alignItems: 'center',
               backgroundColor: color.card,
               borderWidth: 1,
               borderColor: color.rule,
-              borderRadius: radius.md,
+              borderRadius: radius.lg,
               padding: space.md,
               marginBottom: space.sm,
               opacity: pressed ? 0.7 : 1,
             })}
           >
-            <Text style={type.title}>{s.subjectName}</Text>
+            <Text style={[type.title, { flex: 1 }]}>{s.subjectName}</Text>
+            <Text style={{ fontSize: 22, color: color.inkSoft, marginLeft: space.sm }}>›</Text>
           </Pressable>
         ))}
       </ScrollView>
