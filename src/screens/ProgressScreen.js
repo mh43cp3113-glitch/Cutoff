@@ -34,7 +34,7 @@ function AccountSection() {
           width: 40,
           height: 40,
           borderRadius: radius.pill,
-          backgroundColor: color.ink,
+          backgroundColor: color.accent,
           alignItems: 'center',
           justifyContent: 'center',
           marginRight: space.md,
@@ -59,7 +59,7 @@ function Stat({ value, label }) {
   const { color, type } = useTheme();
   return (
     <View style={{ flex: 1 }}>
-      <Text style={{ fontSize: 24, fontWeight: '700', color: color.ink, letterSpacing: -0.4 }}>
+      <Text style={{ fontSize: 24, fontWeight: '700', color: color.accent, letterSpacing: -0.4 }}>
         {value}
       </Text>
       <Text style={[type.small, { marginTop: 2 }]}>{label}</Text>
