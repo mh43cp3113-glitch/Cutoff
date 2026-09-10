@@ -2,13 +2,11 @@
 
 Exam practice app for Indian competitive exams. React Native via Expo, targeting
 Android, iOS and the web from one codebase. All five tracks are unlocked, spanning
-87 subject pools and ~1675 questions. Coverage is uneven by design: the original
-Science subjects (70–100 each), Government's original 3 subjects (~50 each),
-School (20 each) and the original 20 Engineering subjects (20 each) are solid.
-The rest — CAT, Commerce, Humanities, Government's 3 newer subjects, Engineering
-Mathematics, and the newer Engineering subjects/streams (40 pools in total) — are
-still a ~10-question first batch, to be topped up the same way School and the
-original Engineering subjects just were.
+87 subject pools and ~2073 questions — **every pool now has 20+ questions**, so
+there's no more "first batch" tier to call out. Depth still varies (Science
+70–100/subject, Government's original 3 subjects ~50/subject, everything else
+~20/subject), which is fine — 20 is enough for both practice lengths (10/20) and
+a Random test to draw from without every session feeling identical.
 
 This file is the project's working memory. Claude Code reads it automatically at
 the start of a session — keep it current when decisions change.
@@ -162,7 +160,7 @@ doesn't either), and subscriptions.
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
 src/theme.js                useTheme() hook — colour/type/shadow, light + dark
-src/data/questions.json     ~1675 original questions across 87 subject pools
+src/data/questions.json     ~2073 original questions across 87 subject pools
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
@@ -386,19 +384,28 @@ leave the rest locked.
 **Never copy questions from published books or other apps.** It's infringement and
 the fastest route to removal from the Play Store. Write them, license them, or
 commission them. Every question in `questions.json` is original — written from
-standard textbook facts and computations, `source: "original"`. The bank is
-~1675 questions across 87 subject pools. Solid (20+ questions each): the
-original Science subjects (70–100 each), Government's original 3 subjects
-(~50 each), all of School (20 each), and the 20 original Engineering subjects
-(20 each). Still a **~10-question first batch, not a finished bank**: CAT,
-Commerce, Humanities, Government's 3 newer subjects, Engineering Mathematics,
-and the 27 newer Engineering subjects (3 more per original stream, plus the 4
-new streams). Topping those up to 20+ and reviewing the answer keys (especially
-the niche Engineering streams: Chemical, Aerospace, Instrumentation) is real,
-outstanding work — don't treat the presence of a pool as equivalent to it being
-vetted. Spot-check answer keys before any store release. The correct option is
-spread evenly across the four slots by construction (the app does not shuffle
-options at runtime), so the answer isn't always in the same place.
+standard, current-syllabus textbook facts and computations, `source: "original"`.
+"Current syllabus" means the standard, presently-taught curriculum for each
+subject/grade/exam — not current-affairs content. This matters most for
+Government's General Awareness pool, which is **deliberately static GK only**
+(polity, history, geography, science, economy) with no current-affairs
+questions, so it can't go stale — see the Tracks section above. If that
+"relevant to this year" bar is ever meant to include current affairs instead,
+that's a real policy change (it reintroduces the staleness problem this design
+avoided) and should be a deliberate decision, not an assumption.
+
+The bank is ~2073 questions across 87 subject pools, and **every pool now has at
+least 20 questions** — Science and Government's original three subjects run
+much deeper (70–100 and ~50 respectively), everything else sits around 20.
+Depth is no longer the open item; **an independent human review of the answer
+keys is** — I've self-checked every question while authoring and
+`tests/data-integrity.test.js` catches structural bugs, but nobody else has
+verified the facts, especially in the niche Engineering streams (Chemical,
+Aerospace, Instrumentation) and the humanities/commerce content, which lean
+more on recalled facts than the STEM content's clean derivations. Spot-check
+answer keys before any store release. The correct option is spread evenly
+across the four slots by construction (the app does not shuffle options at
+runtime), so the answer isn't always in the same place.
 
 **Don't put "JEE" or "NEET" in the app's store name.** Play treats exam names as
 third-party marks and it's a common rejection reason.
@@ -434,11 +441,9 @@ means no Mac is required.
 
 - Progress is device-only; it doesn't follow a user to a new phone
 - Reports are stored locally only — no backend to receive them yet
-- Question bank ~1675 across 87 pools. Solid (20+/subject): Science (70–100),
-  Government's original 3 subjects (~50), School (20), original 20 Engineering
-  subjects (20). Still a ~10/subject first batch: CAT, Commerce, Humanities,
-  Government's 3 newer subjects, Engineering Maths, and 27 newer Engineering
-  subjects (4 new streams + 3 more per original stream) — top up and review keys
+- Question bank ~2073 across 87 pools, every pool at 20+ questions (Science and
+  Government's original 3 subjects run deeper, 70–100 and ~50 respectively) —
+  depth is no longer the gap, an independent answer-key review still is
 - School/Engineering/CAT/Commerce/Humanities/Govt-new questions are all
   plain-text MCQ — no numericals, no LaTeX yet
 - UPSC/MPSC reuse SSC's generic Quant/Reasoning/GA pools — a placeholder fit,
