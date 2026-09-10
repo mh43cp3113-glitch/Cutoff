@@ -131,9 +131,17 @@ Working today:
 - Web target: runs in a browser as a responsive mobile-first site (full-bleed on
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
+- Local sign-in/out: a display name only, stored on-device (`ProgressContext`'s
+  `profile`/`signIn`/`signOut`, UI in Progress screen's `AccountSection`). This
+  is **not real authentication** — nothing is verified, nothing syncs, it only
+  exists so a student sees their name and "log out" does something real.
+  Explicitly **no Google/OAuth sign-in** (asked for, then declined once the
+  Firebase-project blocker was explained) — don't add one without being asked
+  again with real OAuth client IDs in hand.
 
-Not built yet: authentication, any backend (so reports don't leave the device),
-subscriptions, timed mock tests, and the school / engineering / govt tracks.
+Not built yet: real authentication (Google/OAuth, or anything server-verified),
+any backend (so reports don't leave the device, and the local profile above
+doesn't either), and subscriptions.
 
 ---
 
