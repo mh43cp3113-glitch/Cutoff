@@ -118,7 +118,9 @@ Working today:
   random test is uniform random instead, by design
 - Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak, reports
 - Progress screen: streak (current + longest), overall accuracy, recent quizzes,
-  reported-questions list, and a two-step "reset progress"
+  reported-questions list (shows the question's own text via `getQuestionById`,
+  not its bare id — that was a real bug, fixed this pass), and a two-step
+  "reset progress"
 - Working report button: a reported question is stored locally (with reasons) and
   dropped from that device's future quizzes (`buildSubjectQuiz` takes an
   `excludeIds` set); each report carries `sync: false` for a later push
@@ -137,7 +139,7 @@ subscriptions, timed mock tests, and the school / engineering / govt tracks.
 
 ```
 App.js                      navigation stack, wrapped in ProgressProvider
-src/theme.js                design tokens
+src/theme.js                useTheme() hook — colour/type/shadow, light + dark
 src/data/questions.json     ~1675 original questions across 87 subject pools
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
@@ -274,6 +276,30 @@ red incorrect, amber flagged — and never used as decoration. The one bold elem
 is the OMR-style progress rail, borrowed from the answer sheet every candidate
 already knows.
 
+**Dark mode.** `theme.js` exports one hook, `useTheme()` — `{ color, type, space,
+radius, shadow, isDark }` — and that hook is the *only* way any component should
+read a token. There is no static `color`/`type` export any more; a component
+that imports the plain object instead of calling the hook won't re-render when
+the OS-level scheme flips, which is exactly the bug this replaces. Dark mode
+inverts the palette (pale ink on near-black paper) rather than introducing a
+second visual language, and the signal colours (`correct`/`wrong`/`flag`) are
+independently *brightened* for dark mode — not decoration, just what's needed
+to hold contrast against a near-black page. `app.json`'s `userInterfaceStyle`
+is `"automatic"` so native picks up the OS setting; the web build follows
+`prefers-color-scheme` the same way via `useColorScheme()`. Given the audience
+is students studying at night (see Audience above), this is a real usability
+fix, not a cosmetic one. Two things this doesn't cover yet: a dark splash-screen
+asset (native cold-start still flashes the light splash image) and real-device
+verification — only checked via web build so far, same caveat as the rest of
+the UI.
+
+**Brand mark:** `src/components/Logo.js` renders the wordmark as "Cut│off" — a
+thin ink rule (45% opacity, no new colour) splitting the name in two, meant to
+read as the qualifying line on a scorecard rather than decoration. `size="lg"`
+in the Home header, `size="sm" muted` in Home's footer alongside the app
+version. It isn't used on any other screen — inner screens show contextual
+titles (an exam or subject name), not the app's own name.
+
 **Brand mark:** `src/components/Logo.js` renders the wordmark as "Cut│off" — a
 thin ink rule (45% opacity, no new colour) splitting the name in two, meant to
 read as the qualifying line on a scorecard rather than decoration. `size="lg"`
@@ -364,6 +390,13 @@ means no Mac is required.
 - `correct_option_ids` still ships in the client bundle (see Constraints) —
   this needs a Firebase project to fix (roadmap #1–3) and can't be done from
   the coding environment alone
+- Dark mode has no dark splash-screen asset yet — native cold start still
+  briefly shows the light splash image before the themed UI mounts
+- No haptic/visual feedback on answer selection beyond the border/background
+  change, and accessibility labels only exist on Home — every other screen's
+  buttons announce as generic "button" to a screen reader
+- The "pick up where you left off" copy on Home implies a resume-in-progress-
+  quiz feature that doesn't exist; nothing currently saves mid-quiz state
 
 ---
 
