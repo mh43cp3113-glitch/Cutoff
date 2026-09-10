@@ -102,6 +102,39 @@ export function buildSubjectQuiz(subjectId, count = 10, topicStats = {}, exclude
   return shuffle(scored.slice(0, count).map((s) => s.q));
 }
 
+/**
+ * A mixed "random test" pulling proportionally from every unlocked subject in
+ * one exam — e.g. a JEE Main mock spanning Physics, Chemistry and Maths in one
+ * sitting, rather than one subject at a time. Unlike buildSubjectQuiz,
+ * selection is uniform random per subject, not weighted by topic accuracy:
+ * this is meant to feel like a real mixed paper, not another practice set.
+ */
+export function buildExamQuiz(trackId, examId, count = 20, excludeIds) {
+  const exam = getExam(trackId, examId);
+  if (!exam) return [];
+  const subjectIds = (exam.subjects || []).filter((s) => !s.locked).map((s) => s.id);
+  if (!subjectIds.length) return [];
+
+  const perSubject = Math.max(1, Math.floor(count / subjectIds.length));
+  const pools = {};
+  const picked = [];
+  subjectIds.forEach((id) => {
+    const pool = shuffle(questionsForSubject(id, excludeIds));
+    pools[id] = pool;
+    picked.push(...pool.slice(0, perSubject));
+  });
+
+  if (picked.length < count) {
+    const pickedIds = new Set(picked.map((q) => q.id));
+    const leftover = subjectIds
+      .flatMap((id) => pools[id].slice(perSubject))
+      .filter((q) => !pickedIds.has(q.id));
+    picked.push(...shuffle(leftover).slice(0, count - picked.length));
+  }
+
+  return shuffle(picked.slice(0, count));
+}
+
 /** Grade one response. `answer` is an array of option ids, or a number. */
 export function grade(question, answer) {
   if (answer === null || answer === undefined) return false;

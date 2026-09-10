@@ -305,7 +305,7 @@
     {
       "id": "govt",
       "name": "Government exams",
-      "hint": "SSC, banking, railways",
+      "hint": "SSC, banking, railways, UPSC, MPSC",
       "locked": false,
       "exams": [
         {
@@ -337,6 +337,32 @@
         {
           "id": "rrb_ntpc",
           "name": "Railways (RRB NTPC)",
+          "locked": false,
+          "subjects": [
+            { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
+            { "id": "reasoning", "name": "Reasoning", "locked": false },
+            { "id": "general_awareness", "name": "General Awareness", "locked": false },
+            { "id": "english", "name": "English Language", "locked": false },
+            { "id": "gen_science", "name": "General Science", "locked": false },
+            { "id": "computer_awareness", "name": "Computer Awareness", "locked": false }
+          ]
+        },
+        {
+          "id": "upsc",
+          "name": "UPSC Civil Services",
+          "locked": false,
+          "subjects": [
+            { "id": "quant", "name": "Quantitative Aptitude", "locked": false },
+            { "id": "reasoning", "name": "Reasoning", "locked": false },
+            { "id": "general_awareness", "name": "General Awareness", "locked": false },
+            { "id": "english", "name": "English Language", "locked": false },
+            { "id": "gen_science", "name": "General Science", "locked": false },
+            { "id": "computer_awareness", "name": "Computer Awareness", "locked": false }
+          ]
+        },
+        {
+          "id": "mpsc",
+          "name": "MPSC",
           "locked": false,
           "subjects": [
             { "id": "quant", "name": "Quantitative Aptitude", "locked": false },

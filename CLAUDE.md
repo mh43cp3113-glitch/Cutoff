@@ -32,11 +32,14 @@ polish.
 - **Class 11–12** — Science (shares the four pools above), plus **Commerce**
   (Accountancy, Business Studies, Economics) and **Humanities** (History,
   Political Science, Geography) — each a new exam with its own three subjects.
-- **Government exams** — SSC CGL, Banking, RRB NTPC. Six shared pools across the
-  three exams: `quant`, `reasoning`, `general_awareness`, plus `english`,
-  `gen_science`, `computer_awareness`. General Awareness is deliberately static
-  GK only (polity, history, geography, science, economy) — no current affairs,
-  so it doesn't rot.
+- **Government exams** — SSC CGL, Banking, RRB NTPC, **UPSC Civil Services,
+  MPSC**. Six shared pools across all five exams: `quant`, `reasoning`,
+  `general_awareness`, plus `english`, `gen_science`, `computer_awareness`.
+  UPSC/MPSC reuse the same six pools rather than getting dedicated content
+  (no Ethics/optional-subject papers, no essay) — General Awareness's static
+  GK (polity, history, geography, science, economy) covers their General
+  Studies angle reasonably well, but it's a rough fit, not a tailored one.
+  General Awareness deliberately excludes current affairs, so it doesn't rot.
 - **School (Class 1–10)** — exam level is the grade (`class_1` … `class_10`);
   subjects are Mathematics and Science. **Pools are per-grade, not shared**:
   subject ids are `s_math_<grade>` / `s_sci_<grade>`, so Class 3 Maths and Class 9
@@ -65,6 +68,17 @@ track name and hint. Home was restyled (rounded cards, a streak pill, unlocked
 tracks first then a "Coming soon" group) — HomeScreen only; other screens keep
 the original look.
 
+**SubjectPicker also offers a "Random test"**, above the subject list, for
+every exam that reaches that screen (every exam in the app has 2+ subjects, so
+none currently skip straight from ExamPicker to Subject). It calls
+`buildExamQuiz(trackId, examId, count, excludeIds)` in `quiz.js`, which samples
+close to evenly across every unlocked subject in that exam and shuffles the
+result — a mixed mock spanning the whole exam, sitting alongside (not
+replacing) the existing per-subject "Start practice" / "Longer set" flow.
+Unlike `buildSubjectQuiz`, it is **uniform random, not adaptive-weighted** —
+deliberately, since a random test is meant to feel like an exam paper, not
+another practice set biased toward weak topics.
+
 **Shared question pool.** Subjects use the same id across exams (`physics` is one
 pool, drawn on by JEE, NEET and Class 11–12); the `exam` field on a question is
 metadata, never a practice filter. `questionsForSubject(subjectId)` in `quiz.js`
@@ -79,11 +93,14 @@ Working today:
 
 - Home screen with track list, locked "coming soon" tiles, streak display
 - Subject screen: a launch pad — question count + "Start practice" (10) / "Longer set" (20)
+- SubjectPicker: a "Random test" (20 questions, evenly sampled across every
+  subject in the exam) above the per-subject list, for exam-wide mock practice
 - Quiz player handling MCQ, multi-select, and numerical entry with tolerance
 - LaTeX rendering through KaTeX in a self-sizing WebView
 - Scoring with per-question negative marking
 - Result screen with per-question review and explanations
-- Adaptive mixed practice weighted by past accuracy
+- Adaptive mixed practice weighted by past accuracy (per-subject); the exam-wide
+  random test is uniform random instead, by design
 - Persistence via AsyncStorage: topic stats, last 50 attempts, daily streak, reports
 - Progress screen: streak (current + longest), overall accuracy, recent quizzes,
   reported-questions list, and a two-step "reset progress"
