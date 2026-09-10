@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTrack, getPlayableExams } from '../lib/quiz';
-import { color, type, space, radius } from '../theme';
+import { color, type, space, radius, shadow } from '../theme';
 
 export default function ExamPickerScreen({ route, navigation }) {
   const { trackId } = route.params;
@@ -43,6 +43,7 @@ export default function ExamPickerScreen({ route, navigation }) {
               padding: space.md,
               marginBottom: space.sm,
               opacity: pressed ? 0.7 : 1,
+              ...shadow.card,
             })}
           >
             <View style={{ flex: 1 }}>

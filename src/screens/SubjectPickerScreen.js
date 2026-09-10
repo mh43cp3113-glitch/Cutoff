@@ -3,7 +3,7 @@ import { Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTrack, getExam, getPlayableExams, buildExamQuiz } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius } from '../theme';
+import { color, type, space, radius, shadow } from '../theme';
 
 // A random test scales with how many subjects the exam has — enough per
 // subject to feel representative, capped so a wide exam (e.g. an 8-subject
@@ -56,6 +56,7 @@ export default function SubjectPickerScreen({ route, navigation }) {
             padding: space.md,
             marginBottom: space.lg,
             opacity: pressed ? 0.85 : 1,
+            ...shadow.card,
           })}
         >
           <Text style={{ fontSize: 17, fontWeight: '650', color: color.paper }}>
@@ -85,6 +86,7 @@ export default function SubjectPickerScreen({ route, navigation }) {
               padding: space.md,
               marginBottom: space.sm,
               opacity: pressed ? 0.7 : 1,
+              ...shadow.card,
             })}
           >
             <Text style={[type.title, { flex: 1 }]}>{s.subjectName}</Text>

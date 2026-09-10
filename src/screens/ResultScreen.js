@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import MathText from '../components/MathText';
 import { scoreAttempt, grade } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius } from '../theme';
+import { color, type, space, radius, shadow } from '../theme';
 
 function answerLabel(question, answer) {
   if (answer === null || answer === undefined || answer === '') return 'Skipped';
@@ -155,6 +155,7 @@ export default function ResultScreen({ route, navigation }) {
             borderRadius: radius.lg,
             padding: space.md,
             alignItems: 'center',
+            ...shadow.card,
           }}
         >
           <Text style={{ color: color.paper, fontWeight: '600', fontSize: 16 }}>

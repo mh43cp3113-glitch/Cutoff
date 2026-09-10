@@ -3,7 +3,7 @@ import { View, Text, Pressable, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getExam, getSubject, countForSubject, buildSubjectQuiz } from '../lib/quiz';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius } from '../theme';
+import { color, type, space, radius, shadow } from '../theme';
 
 const LENGTHS = [10, 20];
 
@@ -66,6 +66,7 @@ export default function SubjectScreen({ route, navigation }) {
                 padding: space.md,
                 marginBottom: space.sm,
                 opacity: disabled ? 0.5 : pressed ? 0.85 : 1,
+                ...(disabled ? null : shadow.card),
               })}
             >
               <Text

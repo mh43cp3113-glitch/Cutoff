@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useProgress } from '../lib/ProgressContext';
-import { color, type, space, radius } from '../theme';
+import { color, type, space, radius, shadow } from '../theme';
 
 function Stat({ value, label }) {
   return (
@@ -48,6 +48,7 @@ export default function ProgressScreen({ navigation }) {
             borderColor: color.rule,
             borderRadius: radius.lg,
             padding: space.md,
+            ...shadow.card,
           }}
         >
           <Stat value={streak.current} label="day streak" />
