@@ -170,7 +170,9 @@ src/lib/ProgressContext.js  progress state, hydrated once at launch
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
-src/components/Logo.js      brand wordmark — Home header/footer only
+src/components/Logo.js      brand wordmark — Home/Landing/Login only
+src/components/ScratchPad.js  touch scratchpad on Quiz, rotated-View strokes
+src/components/ScoreRing.js  SVG circular score ring, used on Result
 src/screens/                Landing, Login, Home, ExamPicker, SubjectPicker,
                              Subject, Quiz, Result, Progress
 tests/                       node:test — quiz.js logic + content structural checks
@@ -272,14 +274,15 @@ effects in development and would otherwise double-count every topic.
 **WebViews only for LaTeX.** Each one is an expensive instance and a question
 screen can hold five. Plain text takes the `<Text>` path.
 
-**ScratchPad draws with rotated `View` rectangles, not SVG.** `PanResponder`
+**ScratchPad draws with rotated `View` rectangles, not SVG** — even though
+`react-native-svg` is now a dependency anyway (for `ScoreRing`). `PanResponder`
 records touch points per stroke; each consecutive pair becomes a short `View`
 sized to the distance between them and rotated to the angle between them,
 positioned by its centre (so `transform: rotate` behaves identically on native
-and web with no `transformOrigin` needed). This avoids adding
-`react-native-svg` or a Skia dependency for what is, so far, just freehand
-scratch marks — revisit if this ever needs undo/redo, real pen pressure, or
-saving a drawing.
+and web with no `transformOrigin` needed). Rebuilding an SVG path string on
+every touch-move event is more churn than appending a `View`, so this stays as
+is — revisit only if it ever needs undo/redo, real pen pressure, or saving a
+drawing.
 
 **KaTeX ships vendored, not from a CDN.** `src/vendor/katex/` holds KaTeX 0.16.9
 (`katex.min.js`, `auto-render.min.js`, `katex.min.css`) as JS modules exporting
@@ -302,44 +305,75 @@ main (needs Settings → Pages → Source: GitHub Actions once). `app.config.js`
 computes `experiments.baseUrl` from `EXPO_PUBLIC_BASE_URL` — the Pages build sets
 it to `/Cutoff`; local dev leaves it empty.
 
-**Design direction:** a physics lab notebook. Pale paper `#EDF0EC`, deep petrol ink
-`#1B2A2E`, hairline rules. Colour is reserved strictly for signal — green correct,
-red incorrect, amber flagged — and never used as decoration. The one bold element
-is the OMR-style progress rail, borrowed from the answer sheet every candidate
-already knows.
+**Design direction (v2 — warm/icon-rich).** The original look was a "physics
+lab notebook": cool grey-green paper, deep petrol ink, colour reserved
+strictly for signal, no icons anywhere. That was explicitly replaced after
+feedback that it read as too plain/form-like, in favour of something warmer
+and more visually alive, closer to modern consumer study-app references:
+cream paper, warm brown ink, **one accent colour** (`color.accent`, an
+olive-brown) carrying every interactive/progress signal — selection state,
+primary buttons, the progress rail, stat numbers — plus the original
+correct/wrong/flag trio for grading, which stayed put since that's real
+signal, not styling. `color.accentSoft` is the accent tinted onto a surface
+(selected-option background, icon-badge fills). The OMR-progress-rail idea
+survived the pivot; it just fills in `accent` instead of plain ink now.
 
 **Dark mode.** `theme.js` exports one hook, `useTheme()` — `{ color, type, space,
-radius, shadow, isDark }` — and that hook is the *only* way any component should
-read a token. There is no static `color`/`type` export any more; a component
-that imports the plain object instead of calling the hook won't re-render when
-the OS-level scheme flips, which is exactly the bug this replaces. Dark mode
-inverts the palette (pale ink on near-black paper) rather than introducing a
-second visual language, and the signal colours (`correct`/`wrong`/`flag`) are
-independently *brightened* for dark mode — not decoration, just what's needed
-to hold contrast against a near-black page. `app.json`'s `userInterfaceStyle`
-is `"automatic"` so native picks up the OS setting; the web build follows
-`prefers-color-scheme` the same way via `useColorScheme()`. Given the audience
-is students studying at night (see Audience above), this is a real usability
-fix, not a cosmetic one. Two things this doesn't cover yet: a dark splash-screen
-asset (native cold-start still flashes the light splash image) and real-device
-verification — only checked via web build so far, same caveat as the rest of
-the UI.
+radius, shadow, gradient, isDark }` — and that hook is the *only* way any
+component should read a token; there is no static `color`/`type` export, so a
+component that imported a plain object instead of calling the hook wouldn't
+re-render when the OS-level scheme flips. Dark mode inverts the palette (pale
+ink on warm near-black paper) rather than introducing a second visual
+language, and `accent`/`correct`/`wrong`/`flag` are independently *brightened*
+for dark mode — contrast, not decoration. `app.json`'s `userInterfaceStyle` is
+`"automatic"` so native picks up the OS setting; web follows
+`prefers-color-scheme` via `useColorScheme()`. Given the audience studies at
+night (see Audience above), this is a real usability fix. Still not covered: a
+dark splash-screen asset, and real-device verification (web-build-only so far,
+same caveat as the rest of the UI).
 
 **Brand mark:** `src/components/Logo.js` renders a plain caps wordmark,
-"CUTOFF" — no divider glyph, no new colour, just ink at full or muted opacity.
-`size="lg"` (28pt) in the Home header, `size="sm" muted` (16pt) in Home's
-footer alongside the app version. It isn't used on any other screen — inner
-screens show contextual titles (an exam or subject name), not the app's own
-name. (An earlier version split the name with a thin rule — "Cut│off" — that
-was dropped for a plainer, larger wordmark.)
+"CUTOFF" — ink-coloured regardless of the accent system, so the wordmark
+itself never competes with interactive colour. `size="lg"` (28pt) in the Home
+and Landing headers, `size="sm" muted` (16pt) in Home's footer and Login.
+Doesn't appear on any other screen — inner screens show contextual titles.
 
-**Elevation:** `theme.js` exports `shadow.card`, one soft shadow (shadowColor
-`#0F1A1C`, low opacity, small radius; `elevation: 2` for Android) applied to
-every raised card and primary button — Home's track cards, ExamPicker,
-SubjectPicker, Subject's practice buttons, Result's CTA, Progress's stats card.
-Before this pass those were flat bordered rectangles; the goal was one
-consistent "surfaces resting on the paper" feel instead of a flat, plain look.
-Quiz is excluded on purpose — see the Random test note above for why.
+**Elevation:** `theme.js` exports `shadow.card`, one soft shadow applied to
+every raised card and primary button. Quiz is excluded on purpose — mid-
+question isn't the moment to add visual noise.
+
+**Icons and imagery — three new dependencies, added deliberately for this
+redesign:**
+- `@expo/vector-icons` for icons (option-selection state, track badges on
+  Home, chevrons, back arrows). **Always import the specific family from its
+  own subpath** — `import Ionicons from '@expo/vector-icons/Ionicons'` — never
+  `import { Ionicons } from '@expo/vector-icons'`. The barrel import pulls in
+  every icon family's font file (~3MB across 19 fonts) into the web bundle
+  regardless of which one is used; the subpath import only bundles Ionicons
+  (390KB). This bit once already — check any new icon usage still does this.
+- `expo-linear-gradient` for the warm hero gradient (`theme.js`'s `gradient`
+  token, three warm stops that blend back toward the page colour) — used
+  behind Result's score ring and Landing's hero section.
+- `react-native-svg`, used by `src/components/ScoreRing.js` — a circular
+  progress ring (score/max as an arc, clamped to 0 so negative marking can't
+  draw it backwards) replacing Result's old plain "score out of max" text.
+
+**Responsive desktop layout.** Still one React Native codebase (no separate
+website was built — that alternative was considered and explicitly declined).
+`App.js`'s `AppFrame` used to hard-clamp every web view to a 480px phone-width
+column regardless of screen size — "responsive" in name only. Now it tracks
+the active route name (via `NavigationContainer`'s `onStateChange` and a
+`getActiveRouteName`-style walk of the nav state) and widens to 1100px **only**
+for screens in `WIDE_SCREENS` (`Landing`, `Home`) on a >=820px viewport;
+everything else — Quiz above all — stays phone-width at any screen size, so a
+mobile-tuned layout never stretches awkwardly across a monitor. Home and
+Landing each also carry their own internal desktop logic (`useWindowDimensions`
++ a local `isDesktop` flag): Home's tracks lay out as a 2-column wrap instead
+of a single column; Landing's highlight cards go in a row and its gradient
+hero gets wider text columns. Extending another screen to the wide frame means
+adding it to `WIDE_SCREENS` *and* giving it its own desktop-width layout logic
+— just adding it to the set without that would stretch a single-column screen
+across the wide frame with a wall of empty space either side.
 
 ---
 
