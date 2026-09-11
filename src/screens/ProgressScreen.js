@@ -11,11 +11,12 @@ import { useTheme } from '../theme';
 // one-frame gap while a sign-out is propagating and this screen is unmounting.
 function AccountSection() {
   const { color, type, space, radius, shadow } = useTheme();
-  const { user, displayName, signOutUser, signOutGuest } = useProgress();
+  const { user, displayName, signOutUser } = useProgress();
 
   if (!displayName) return null;
 
-  const isGuest = !user;
+  const provider = user?.providerData?.[0]?.providerId;
+  const signedInWith = provider === 'google.com' ? 'Signed in with Google' : 'Signed in with email';
 
   return (
     <View
@@ -48,11 +49,9 @@ function AccountSection() {
       </View>
       <View style={{ flex: 1 }}>
         <Text style={[type.body, { fontWeight: '600' }]}>{displayName}</Text>
-        <Text style={[type.small, { marginTop: 1 }]}>
-          {isGuest ? 'Guest — signed in on this device only' : 'Signed in with email'}
-        </Text>
+        <Text style={[type.small, { marginTop: 1 }]}>{signedInWith}</Text>
       </View>
-      <Pressable onPress={isGuest ? signOutGuest : signOutUser} hitSlop={8}>
+      <Pressable onPress={signOutUser} hitSlop={8}>
         <Text style={[type.small, { color: color.wrong, fontWeight: '700' }]}>Log out</Text>
       </Pressable>
     </View>

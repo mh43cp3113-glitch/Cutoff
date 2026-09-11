@@ -9,7 +9,6 @@ const KEYS = {
   attempts: 'progress:attempts:v1',
   streak: 'progress:streak:v1',
   reports: 'progress:reports:v1',
-  profile: 'progress:profile:v1',
 };
 
 const MAX_ATTEMPTS = 50; // keep history bounded; older attempts fall off
@@ -106,23 +105,6 @@ export async function saveReport(questionId, reason) {
   };
   await writeJson(KEYS.reports, next);
   return next;
-}
-
-// A local-only "profile" — a display name, nothing more. There is no backend
-// yet (see roadmap #1-3), so this never leaves the device and isn't real
-// authentication; it exists so the student sees a name instead of being
-// anonymous, and so "log out" has a real effect (clears the name, not the
-// practice history — signing out shouldn't cost you your streak).
-export const loadProfile = () => readJson(KEYS.profile, null);
-export const saveProfile = (profile) => writeJson(KEYS.profile, profile).then(() => profile);
-
-export async function clearProfile() {
-  try {
-    await AsyncStorage.removeItem(KEYS.profile);
-    return true;
-  } catch {
-    return false;
-  }
 }
 
 export async function resetProgress() {

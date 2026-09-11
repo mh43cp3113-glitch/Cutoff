@@ -6,10 +6,13 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
+import { Platform } from 'react-native';
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
   signOut as firebaseSignOut,
   updateProfile as updateFirebaseProfile,
 } from 'firebase/auth';
@@ -25,9 +28,6 @@ import {
   loadReports,
   saveReport,
   resetProgress,
-  loadProfile,
-  saveProfile,
-  clearProfile,
 } from './storage';
 
 const ProgressContext = createContext(null);
@@ -51,6 +51,11 @@ function authErrorMessage(err) {
       return 'Too many attempts — wait a moment and try again.';
     case 'auth/network-request-failed':
       return 'No internet connection — check your network and try again.';
+    case 'auth/popup-closed-by-user':
+    case 'auth/cancelled-popup-request':
+      return null; // the user closed the Google popup themselves — not an error worth showing
+    case 'auth/popup-blocked':
+      return 'Your browser blocked the Google sign-in popup — allow popups for this site and try again.';
     default:
       return 'Something went wrong. Please try again.';
   }
@@ -63,12 +68,9 @@ export function ProgressProvider({ children }) {
   const [streak, setStreak] = useState(EMPTY_STREAK);
   const [reports, setReports] = useState({});
 
-  // Two independent notions of "signed in": a real Firebase account (`user`),
-  // or a device-local guest name (`profile`, unchanged from before Firebase
-  // existed). Either satisfies App.js's RootNavigator gate — a real account
-  // gets real (if currently Auth-only, no Firestore yet) sign-in; a guest
-  // gets in with just a name, since forcing real signup before the first
-  // quiz is a known retention killer (see CLAUDE.md's Product notes).
+  // The only notion of "signed in" — a real Firebase account. There is no
+  // guest mode (removed per direction; it existed briefly to avoid forcing
+  // signup before the first quiz, but that's no longer how this app works).
   const [user, setUser] = useState(null);
   const [authReady, setAuthReady] = useState(false);
 
@@ -83,39 +85,22 @@ export function ProgressProvider({ children }) {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [stats, history, s, r, p] = await Promise.all([
+      const [stats, history, s, r] = await Promise.all([
         loadTopicStats(),
         loadAttempts(),
         loadStreak(),
         loadReports(),
-        loadProfile(),
       ]);
       if (cancelled) return;
       setTopicStats(stats);
       setAttempts(history);
       setStreak(s);
       setReports(r);
-      setProfileState(p);
       setReady(true);
     })();
     return () => {
       cancelled = true;
     };
-  }, []);
-
-  const [profile, setProfileState] = useState(null);
-
-  /** Local-only guest name — see storage.js. Not real authentication. */
-  const signInGuest = useCallback(async (name) => {
-    const trimmed = name.trim();
-    if (!trimmed) return;
-    const next = await saveProfile({ name: trimmed, signedInAt: new Date().toISOString() });
-    setProfileState(next);
-  }, []);
-
-  const signOutGuest = useCallback(async () => {
-    await clearProfile();
-    setProfileState(null);
   }, []);
 
   /** Real Firebase account creation. Throws on failure — callers show authErrorMessage(err). */
@@ -132,6 +117,23 @@ export function ProgressProvider({ children }) {
 
   const signInWithEmail = useCallback(async (email, password) => {
     await signInWithEmailAndPassword(auth, email.trim(), password);
+  }, []);
+
+  /**
+   * Google sign-in via Firebase's own popup flow — this works today with zero
+   * extra setup beyond enabling Google under Authentication in the Firebase
+   * console (already done), because Firebase manages its own OAuth client for
+   * this web flow. It only works on web: React Native has no browser popup,
+   * so native Google sign-in still needs expo-auth-session plus a separate
+   * OAuth client ID from the Google Cloud console — not set up yet.
+   */
+  const signInWithGoogle = useCallback(async () => {
+    if (Platform.OS !== 'web') {
+      const err = new Error('Google sign-in is web-only for now.');
+      err.code = 'auth/operation-not-supported-in-this-environment';
+      throw err;
+    }
+    await signInWithPopup(auth, new GoogleAuthProvider());
   }, []);
 
   const signOutUser = useCallback(async () => {
@@ -187,8 +189,8 @@ export function ProgressProvider({ children }) {
 
   const reportedIds = useMemo(() => new Set(Object.keys(reports)), [reports]);
 
-  const displayName = user?.displayName || user?.email || profile?.name || null;
-  const signedIn = Boolean(user || profile);
+  const displayName = user?.displayName || user?.email || null;
+  const signedIn = Boolean(user);
 
   const value = useMemo(
     () => ({
@@ -202,14 +204,12 @@ export function ProgressProvider({ children }) {
       reportQuestion,
       clearAll,
       user,
-      profile,
       displayName,
       signedIn,
       signUpWithEmail,
       signInWithEmail,
+      signInWithGoogle,
       signOutUser,
-      signInGuest,
-      signOutGuest,
       authErrorMessage,
     }),
     [
@@ -224,14 +224,12 @@ export function ProgressProvider({ children }) {
       reportQuestion,
       clearAll,
       user,
-      profile,
       displayName,
       signedIn,
       signUpWithEmail,
       signInWithEmail,
+      signInWithGoogle,
       signOutUser,
-      signInGuest,
-      signOutGuest,
     ]
   );
 

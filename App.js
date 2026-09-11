@@ -5,7 +5,6 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import LandingScreen from './src/screens/LandingScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import ExamPickerScreen from './src/screens/ExamPickerScreen';
@@ -24,7 +23,7 @@ const DESKTOP_BREAKPOINT = 820;
 // just a stretched phone screen) get the wide frame on a desktop-width
 // browser. Everything else — Quiz above all, mid-question is no time to be
 // redesigning layout — keeps the phone-width column at any viewport size.
-const WIDE_SCREENS = new Set(['Landing', 'Home']);
+const WIDE_SCREENS = new Set(['Home']);
 
 function activeRouteName(state) {
   if (!state) return undefined;
@@ -69,18 +68,18 @@ function AppFrame({ children, routeName }) {
   );
 }
 
-// `signedIn` (see ProgressContext) is true for a real Firebase account OR a
-// device-local guest name — either gets past the gate. Swapping which screens
-// exist based on that flag (rather than always mounting everything and
-// redirecting) is the pattern React Navigation itself recommends for an auth
-// split — it resets the stack for free on both sign-in and sign-out, no
-// manual reset.
+// `signedIn` (see ProgressContext) is true once there's a real Firebase user —
+// there is no guest mode (removed per direction; see ProgressContext). Nobody
+// reaches Home without a real account. Swapping which screens exist based on
+// that flag (rather than always mounting everything and redirecting) is the
+// pattern React Navigation itself recommends for an auth split — it resets
+// the stack for free on both sign-in and sign-out, no manual reset.
 function RootNavigator() {
   const { color } = useTheme();
   const { ready, signedIn } = useProgress();
 
   if (!ready) {
-    // Blank instead of flashing Landing then Home while storage/Firebase Auth
+    // Blank instead of flashing Login then Home while storage/Firebase Auth
     // hydrate (`ready` here is progress-storage-ready AND Firebase's initial
     // auth check having resolved — see ProgressContext).
     return <View style={{ flex: 1, backgroundColor: color.paper }} />;
@@ -95,18 +94,11 @@ function RootNavigator() {
       }}
     >
       {!signedIn ? (
-        <>
-          <Stack.Screen
-            name="Landing"
-            component={LandingScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-        </>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
       ) : (
         <>
           <Stack.Screen
@@ -152,7 +144,7 @@ function RootNavigator() {
 
 export default function App() {
   const { color, isDark } = useTheme();
-  const [routeName, setRouteName] = useState('Landing');
+  const [routeName, setRouteName] = useState('Login');
 
   const navTheme = {
     ...DefaultTheme,
