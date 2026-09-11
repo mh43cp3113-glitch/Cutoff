@@ -129,29 +129,50 @@ Working today:
 - Web target: runs in a browser as a responsive mobile-first site (full-bleed on
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
-- Local sign-in/out: a display name only, stored on-device (`ProgressContext`'s
-  `profile`/`signIn`/`signOut`, logout UI in Progress screen's `AccountSection`).
-  This is **not real authentication** — nothing is verified, nothing syncs, it
-  only exists so a student sees their name and "log out" does something real.
-  Explicitly **no Google/OAuth sign-in** (asked for, then declined once the
-  Firebase-project blocker was explained) — don't add one without being asked
-  again with real OAuth client IDs in hand.
-- **The app is gated behind that name** — `App.js`'s `RootNavigator` renders
+- **Real Firebase Auth (email/password), plus a guest fallback that still
+  exists.** `src/lib/firebase.js` holds the Firebase project config (Firebase's
+  own docs: this config is not a secret — it identifies the project, real
+  access control is Security Rules — safe to commit) and initializes `auth`,
+  using `getReactNativePersistence(AsyncStorage)` on native vs. the browser's
+  own persistence on web. `ProgressContext` exposes both paths: `user` (a real
+  Firebase user, via `signUpWithEmail` / `signInWithEmail` / `signOutUser`) and
+  `profile` (the original device-local guest name, via `signInGuest` /
+  `signOutGuest`, unchanged from before Firebase existed) — `signedIn` is true
+  if *either* is set, and `displayName` reads whichever is active. Guest mode
+  was kept deliberately, not replaced: forcing a real signup before the first
+  quiz is a known retention killer (see Product notes above), so `LoginScreen`
+  offers Log In / Sign Up tabs *and* a one-tap "continue as a guest" fallback
+  that reuses the old flow verbatim.
+  **Still explicitly no Google/OAuth button** — needs a real OAuth client ID
+  from this same Firebase/GCP project, which doesn't exist yet. Don't add a
+  Google button without one in hand (a non-functional button is worse than none).
+  **Important nuance the signup copy says out loud:** a real account does not
+  yet mean synced progress. `topicStats`/`attempts`/`streak`/`reports` are
+  still `AsyncStorage`-only (see Architecture), completely independent of
+  `user` — so today, signing up buys you a persistent login (survives a
+  reinstall, in principle — unverified on a real device, see below) but *not*
+  progress that follows you to a new device. That needs Firestore
+  (roadmap #2), not yet built.
+  **Also needs one more manual step in the Firebase console**, not yet done as
+  far as this file knows: **Authentication → Sign-in method → enable
+  Email/Password** (only Google was enabled per the setup steps given). Without
+  it, `createUserWithEmailAndPassword` fails with `auth/operation-not-allowed`.
+- **The app is gated behind `signedIn`** — `App.js`'s `RootNavigator` renders
   either a Landing → Login stack or the full Home-and-onward stack, switching
-  on whether `profile` is set (React Navigation's standard auth-split pattern:
-  swapping which screens exist, not mounting everything and redirecting — this
-  gets the stack reset on both sign-in and sign-out for free). `ready` from
-  `ProgressContext` gates a blank frame first, so it never flashes Landing then
-  immediately Home while AsyncStorage hydrates. Existing on-device progress
-  (streak, topic stats) is untouched by this gate — it's keyed independently of
-  `profile`, so it's still there the moment someone types a name.
+  on `signedIn` (React Navigation's standard auth-split pattern: swapping which
+  screens exist, not mounting everything and redirecting — this gets the stack
+  reset on both sign-in and sign-out for free). `ready` (progress-storage
+  hydrated *and* Firebase's initial `onAuthStateChanged` callback having fired)
+  gates a blank frame first, so it never flashes Landing then immediately Home.
+  Existing on-device progress is untouched by this gate — see the nuance above.
   `LandingScreen.js` is the marketing-ish intro (wordmark, tagline, three
-  highlight cards, "Get started"); `LoginScreen.js` is just the name field.
-  Neither has a header — `Login` has its own back arrow instead.
+  highlight cards, "Get started"); `LoginScreen.js` holds all three modes
+  (login/signup/guest). Neither has a header — `Login` has its own back arrow.
 
-Not built yet: real authentication (Google/OAuth, or anything server-verified),
-any backend (so reports don't leave the device, and the local profile above
-doesn't either), and subscriptions.
+Not built yet: Google/OAuth sign-in (needs client IDs from the Firebase/GCP
+project — see above), phone OTP, Firestore (so a real account's progress still
+doesn't follow it anywhere, and reports still don't leave the device), a Cloud
+Function to stop shipping answer keys to the client, and subscriptions.
 
 ---
 
@@ -164,7 +185,8 @@ src/data/questions.json     ~2073 original questions across 87 subject pools
 src/data/taxonomy.json      navigation tree with locked branches
 src/lib/quiz.js             question queries, adaptive selection, grading
 src/lib/storage.js          AsyncStorage reads and writes
-src/lib/ProgressContext.js  progress state, hydrated once at launch
+src/lib/ProgressContext.js  progress state + auth (user/profile), hydrated once
+src/lib/firebase.js         Firebase app/auth init — config is not a secret
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
@@ -425,9 +447,13 @@ means no Mac is required.
 
 ## Roadmap
 
-1. Firebase Auth — Google sign-in, phone OTP, guest mode. Guest mode matters:
-   forcing signup before the first quiz kills retention.
-2. Move questions to Firestore, keep local caching for offline use
+1. ~~Firebase Auth~~ — **email/password and guest mode done**; Google sign-in
+   and phone OTP still need real credentials (Google/GCP OAuth client IDs) —
+   see the Current State note above for exactly what's missing.
+2. Move progress (topic stats, attempts, streak, reports) and questions to
+   Firestore, keep local caching for offline use — this is what actually makes
+   a real account (vs. guest) worth having; right now signing up buys a
+   persistent login but not synced progress
 3. Cloud Function serving questions without the answer key
 4. ~~Timed mock tests~~ — done as "Random test" (see Navigation section) for a
    mixed, timed set per exam; still missing a real paper structure (sections,
@@ -453,8 +479,16 @@ means no Mac is required.
   review pass has happened yet** — still required before any store release,
   per the Constraints section above
 - `correct_option_ids` still ships in the client bundle (see Constraints) —
-  this needs a Firebase project to fix (roadmap #1–3) and can't be done from
-  the coding environment alone
+  fixing this needs Firestore + a Cloud Function (roadmap #2–3). **A Firebase
+  project now exists** (`cutoff-3113`, see `src/lib/firebase.js`), so this is
+  no longer blocked on "no project" — it just hasn't been built yet
+- Firebase Auth's native persistence (`getReactNativePersistence`) is wired
+  per the SDK's documented pattern but **unverified on a real device** — this
+  project's native build has never been run outside a web build, same
+  long-standing caveat as everything else UI-related
+- The Firebase console needs **Email/Password enabled** under Authentication →
+  Sign-in method (only Google was enabled per the original setup steps) or
+  sign-up/log-in will fail with `auth/operation-not-allowed`
 - Dark mode has no dark splash-screen asset yet — native cold start still
   briefly shows the light splash image before the themed UI mounts
 - No haptic/visual feedback on answer selection beyond the border/background
@@ -467,18 +501,25 @@ means no Mac is required.
 
 ## Immediate next step
 
-The client app is feature-complete for what it can do offline (practice flows,
-adaptive mixing, scoring, review, progress, reports, web + native). The two things
-left are both backend, and both need your Firebase project:
+Firebase Auth (email/password + guest) is done. The Firebase project
+(`cutoff-3113`) now exists, so what's left is no longer blocked on "no
+backend" — it's just not built yet:
 
-1. **Firebase Auth + Firestore** (roadmap 1–3) — so progress and reports follow the
-   user, and the answer key stops shipping to the device.
-2. **Timed mock tests** (roadmap 4) — can be built client-side but wants a real
-   paper structure and question volume first.
+1. Enable **Email/Password** in the Firebase console (Authentication →
+   Sign-in method) — sign-up/log-in will fail without this one manual step.
+2. **Firestore** for progress/reports (roadmap #2) — this is what makes a real
+   account actually worth more than a guest; right now it isn't.
+3. **A Cloud Function to stop shipping `correct_option_ids`** to the client
+   (roadmap #3) — the last real security gap before any store release.
+4. **Google sign-in** — needs real OAuth client IDs from the same Firebase/GCP
+   project (Google Cloud Console → APIs & Services → Credentials). Don't add
+   the button before that exists.
 
-Still worth doing on hardware before any of that: run in Expo Go and confirm LaTeX
-renders correctly on a real device — the WebView font/encoding last mile on real
-Android/iOS hasn't been checked, though the pipeline is verified headless.
+Still worth doing on hardware before any of that: run in Expo Go and confirm
+(a) LaTeX renders correctly on a real device — the WebView font/encoding last
+mile on real Android/iOS hasn't been checked, though the pipeline is verified
+headless — and (b) that Firebase Auth's native persistence actually survives
+an app restart, which is untested outside a web build.
 
 ```bash
 npm install
