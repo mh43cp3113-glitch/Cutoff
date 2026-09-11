@@ -69,18 +69,20 @@ function AppFrame({ children, routeName }) {
   );
 }
 
-// There is no real authentication (see ProgressContext / storage.js) — `profile`
-// is just a device-local display name. But it still gates the app: nobody
-// reaches Home until they've named themselves. Swapping which screens exist
-// based on `profile` (rather than always mounting everything and redirecting)
-// is the pattern React Navigation itself recommends for an auth split — it
-// resets the stack for free on both sign-in and sign-out, no manual reset.
+// `signedIn` (see ProgressContext) is true for a real Firebase account OR a
+// device-local guest name — either gets past the gate. Swapping which screens
+// exist based on that flag (rather than always mounting everything and
+// redirecting) is the pattern React Navigation itself recommends for an auth
+// split — it resets the stack for free on both sign-in and sign-out, no
+// manual reset.
 function RootNavigator() {
   const { color } = useTheme();
-  const { ready, profile } = useProgress();
+  const { ready, signedIn } = useProgress();
 
   if (!ready) {
-    // Blank instead of flashing Landing then Home while storage hydrates.
+    // Blank instead of flashing Landing then Home while storage/Firebase Auth
+    // hydrate (`ready` here is progress-storage-ready AND Firebase's initial
+    // auth check having resolved — see ProgressContext).
     return <View style={{ flex: 1, backgroundColor: color.paper }} />;
   }
 
@@ -92,7 +94,7 @@ function RootNavigator() {
         contentStyle: { backgroundColor: color.paper },
       }}
     >
-      {!profile ? (
+      {!signedIn ? (
         <>
           <Stack.Screen
             name="Landing"

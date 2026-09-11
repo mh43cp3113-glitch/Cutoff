@@ -6,14 +6,16 @@ import { getQuestionById } from '../lib/quiz';
 import { useTheme } from '../theme';
 
 // Progress only exists inside the signed-in half of the app (see App.js's
-// RootNavigator), so `profile` is always set here — there's no "not signed
+// RootNavigator), so `signedIn` is always true here — there's no "not signed
 // in" state to render. The null check is just a defensive guard against the
-// one-frame gap while signOut() is propagating and this screen is unmounting.
+// one-frame gap while a sign-out is propagating and this screen is unmounting.
 function AccountSection() {
   const { color, type, space, radius, shadow } = useTheme();
-  const { profile, signOut } = useProgress();
+  const { user, displayName, signOutUser, signOutGuest } = useProgress();
 
-  if (!profile) return null;
+  if (!displayName) return null;
+
+  const isGuest = !user;
 
   return (
     <View
@@ -41,14 +43,16 @@ function AccountSection() {
         }}
       >
         <Text style={{ color: color.paper, fontWeight: '700', fontSize: 16 }}>
-          {profile.name.trim().charAt(0).toUpperCase()}
+          {displayName.trim().charAt(0).toUpperCase()}
         </Text>
       </View>
       <View style={{ flex: 1 }}>
-        <Text style={[type.body, { fontWeight: '600' }]}>{profile.name}</Text>
-        <Text style={[type.small, { marginTop: 1 }]}>Signed in on this device only</Text>
+        <Text style={[type.body, { fontWeight: '600' }]}>{displayName}</Text>
+        <Text style={[type.small, { marginTop: 1 }]}>
+          {isGuest ? 'Guest — signed in on this device only' : 'Signed in with email'}
+        </Text>
       </View>
-      <Pressable onPress={signOut} hitSlop={8}>
+      <Pressable onPress={isGuest ? signOutGuest : signOutUser} hitSlop={8}>
         <Text style={[type.small, { color: color.wrong, fontWeight: '700' }]}>Log out</Text>
       </Pressable>
     </View>

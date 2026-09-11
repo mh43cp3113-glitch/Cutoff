@@ -6,6 +6,14 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
+import {
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut as firebaseSignOut,
+  updateProfile as updateFirebaseProfile,
+} from 'firebase/auth';
+import { auth } from './firebase';
 import { updateTopicStats } from './quiz';
 import {
   loadTopicStats,
@@ -26,13 +34,51 @@ const ProgressContext = createContext(null);
 
 const EMPTY_STREAK = { current: 0, longest: 0, lastActiveDate: null };
 
+// Firebase error codes -> copy a student can actually act on.
+function authErrorMessage(err) {
+  switch (err?.code) {
+    case 'auth/email-already-in-use':
+      return 'That email already has an account — try logging in instead.';
+    case 'auth/invalid-email':
+      return 'That doesn\'t look like a valid email address.';
+    case 'auth/weak-password':
+      return 'Password must be at least 6 characters.';
+    case 'auth/user-not-found':
+    case 'auth/wrong-password':
+    case 'auth/invalid-credential':
+      return 'Email or password is incorrect.';
+    case 'auth/too-many-requests':
+      return 'Too many attempts — wait a moment and try again.';
+    case 'auth/network-request-failed':
+      return 'No internet connection — check your network and try again.';
+    default:
+      return 'Something went wrong. Please try again.';
+  }
+}
+
 export function ProgressProvider({ children }) {
   const [ready, setReady] = useState(false);
   const [topicStats, setTopicStats] = useState({});
   const [attempts, setAttempts] = useState([]);
   const [streak, setStreak] = useState(EMPTY_STREAK);
   const [reports, setReports] = useState({});
-  const [profile, setProfile] = useState(null);
+
+  // Two independent notions of "signed in": a real Firebase account (`user`),
+  // or a device-local guest name (`profile`, unchanged from before Firebase
+  // existed). Either satisfies App.js's RootNavigator gate — a real account
+  // gets real (if currently Auth-only, no Firestore yet) sign-in; a guest
+  // gets in with just a name, since forcing real signup before the first
+  // quiz is a known retention killer (see CLAUDE.md's Product notes).
+  const [user, setUser] = useState(null);
+  const [authReady, setAuthReady] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+      setAuthReady(true);
+    });
+    return unsubscribe;
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,7 +95,7 @@ export function ProgressProvider({ children }) {
       setAttempts(history);
       setStreak(s);
       setReports(r);
-      setProfile(p);
+      setProfileState(p);
       setReady(true);
     })();
     return () => {
@@ -57,17 +103,39 @@ export function ProgressProvider({ children }) {
     };
   }, []);
 
-  /** Local-only display name — see storage.js. Not real authentication. */
-  const signIn = useCallback(async (name) => {
+  const [profile, setProfileState] = useState(null);
+
+  /** Local-only guest name — see storage.js. Not real authentication. */
+  const signInGuest = useCallback(async (name) => {
     const trimmed = name.trim();
     if (!trimmed) return;
     const next = await saveProfile({ name: trimmed, signedInAt: new Date().toISOString() });
-    setProfile(next);
+    setProfileState(next);
   }, []);
 
-  const signOut = useCallback(async () => {
+  const signOutGuest = useCallback(async () => {
     await clearProfile();
-    setProfile(null);
+    setProfileState(null);
+  }, []);
+
+  /** Real Firebase account creation. Throws on failure — callers show authErrorMessage(err). */
+  const signUpWithEmail = useCallback(async (email, password, name) => {
+    const credential = await createUserWithEmailAndPassword(auth, email.trim(), password);
+    if (name?.trim()) {
+      await updateFirebaseProfile(credential.user, { displayName: name.trim() });
+    }
+    // updateProfile mutates the server record but not always the cached
+    // client object in every SDK version — re-read to be sure `user` carries
+    // the display name immediately rather than waiting for the next refresh.
+    setUser({ ...auth.currentUser });
+  }, []);
+
+  const signInWithEmail = useCallback(async (email, password) => {
+    await signInWithEmailAndPassword(auth, email.trim(), password);
+  }, []);
+
+  const signOutUser = useCallback(async () => {
+    await firebaseSignOut(auth);
   }, []);
 
   /**
@@ -119,9 +187,12 @@ export function ProgressProvider({ children }) {
 
   const reportedIds = useMemo(() => new Set(Object.keys(reports)), [reports]);
 
+  const displayName = user?.displayName || user?.email || profile?.name || null;
+  const signedIn = Boolean(user || profile);
+
   const value = useMemo(
     () => ({
-      ready,
+      ready: ready && authReady,
       topicStats,
       attempts,
       streak,
@@ -130,12 +201,20 @@ export function ProgressProvider({ children }) {
       recordAttempt,
       reportQuestion,
       clearAll,
+      user,
       profile,
-      signIn,
-      signOut,
+      displayName,
+      signedIn,
+      signUpWithEmail,
+      signInWithEmail,
+      signOutUser,
+      signInGuest,
+      signOutGuest,
+      authErrorMessage,
     }),
     [
       ready,
+      authReady,
       topicStats,
       attempts,
       streak,
@@ -144,9 +223,15 @@ export function ProgressProvider({ children }) {
       recordAttempt,
       reportQuestion,
       clearAll,
+      user,
       profile,
-      signIn,
-      signOut,
+      displayName,
+      signedIn,
+      signUpWithEmail,
+      signInWithEmail,
+      signOutUser,
+      signInGuest,
+      signOutGuest,
     ]
   );
 

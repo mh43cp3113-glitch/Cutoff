@@ -110,7 +110,7 @@ export default function HomeScreen({ navigation }) {
   const { width } = useWindowDimensions();
   const isDesktop = width >= DESKTOP_BREAKPOINT;
   const tracks = getTracks();
-  const { streak, attempts, ready, profile } = useProgress();
+  const { streak, attempts, ready, displayName } = useProgress();
 
   const withOpen = tracks.map((t) => ({ track: t, open: getPlayableExams(t.id).length > 0 }));
   const openTracks = withOpen.filter((t) => t.open);
@@ -158,7 +158,7 @@ export default function HomeScreen({ navigation }) {
 
         {/* Page heading */}
         <Text style={[type.display, { marginTop: space.lg }]}>
-          {ready && profile ? `Hey, ${profile.name.split(' ')[0]}` : 'Practice'}
+          {ready && displayName ? `Hey, ${displayName.split(' ')[0].split('@')[0]}` : 'Practice'}
         </Text>
         <Text style={[type.small, { marginTop: space.xs, marginBottom: space.lg }]}>
           {ready && attempts.length > 0
