@@ -129,47 +129,51 @@ Working today:
 - Web target: runs in a browser as a responsive mobile-first site (full-bleed on
   a phone, phone-width centred column on desktop). `npm run web` / `npm run
   build:web`. AsyncStorage falls back to localStorage on web.
-- **Real Firebase Auth (email/password), plus a guest fallback that still
-  exists.** `src/lib/firebase.js` holds the Firebase project config (Firebase's
+- **Real Firebase Auth — email/password and Google, no guest mode, no Landing
+  page.** `src/lib/firebase.js` holds the Firebase project config (Firebase's
   own docs: this config is not a secret — it identifies the project, real
   access control is Security Rules — safe to commit) and initializes `auth`,
   using `getReactNativePersistence(AsyncStorage)` on native vs. the browser's
-  own persistence on web. `ProgressContext` exposes both paths: `user` (a real
-  Firebase user, via `signUpWithEmail` / `signInWithEmail` / `signOutUser`) and
-  `profile` (the original device-local guest name, via `signInGuest` /
-  `signOutGuest`, unchanged from before Firebase existed) — `signedIn` is true
-  if *either* is set, and `displayName` reads whichever is active. Guest mode
-  was kept deliberately, not replaced: forcing a real signup before the first
-  quiz is a known retention killer (see Product notes above), so `LoginScreen`
-  offers Log In / Sign Up tabs *and* a one-tap "continue as a guest" fallback
-  that reuses the old flow verbatim.
-  **Still explicitly no Google/OAuth button** — needs a real OAuth client ID
-  from this same Firebase/GCP project, which doesn't exist yet. Don't add a
-  Google button without one in hand (a non-functional button is worse than none).
+  own persistence on web. `ProgressContext` exposes `user` (the Firebase user,
+  or null) via `signUpWithEmail` / `signInWithEmail` / `signInWithGoogle` /
+  `signOutUser`; `signedIn` and `displayName` derive from `user` alone.
+  **Guest mode and `LandingScreen.js` were both removed per direction** — an
+  earlier pass added a device-local guest fallback (reasoning: forcing signup
+  before the first quiz kills retention) and a marketing-style intro screen;
+  both were explicitly cut. `LoginScreen` is now the app's *only*
+  unauthenticated screen — no header, no back arrow (nothing to go back to),
+  Log In / Sign Up tabs, a "Continue/Sign up with Google" button, then email
+  + password below a divider. If guest mode or a landing page is ever wanted
+  again, that reasoning is still sound — it just isn't what was asked for now.
+  **Google sign-in works today on web with no extra setup beyond enabling
+  Google in the Firebase console** (already done): `signInWithPopup(auth, new
+  GoogleAuthProvider())` uses Firebase's own managed OAuth client for this
+  flow, which is a different, simpler path from the `expo-auth-session` +
+  manual Google Cloud OAuth-client-ID approach native would need. **On native,
+  `signInWithGoogle` deliberately throws** (`Platform.OS !== 'web'` guard) —
+  there's no browser popup on native, and that separate client-ID setup hasn't
+  happened. Native is untested anyway (see the recurring caveat), so this
+  isn't a regression, just an honest boundary.
   **Important nuance the signup copy says out loud:** a real account does not
   yet mean synced progress. `topicStats`/`attempts`/`streak`/`reports` are
   still `AsyncStorage`-only (see Architecture), completely independent of
-  `user` — so today, signing up buys you a persistent login (survives a
-  reinstall, in principle — unverified on a real device, see below) but *not*
-  progress that follows you to a new device. That needs Firestore
-  (roadmap #2), not yet built.
-  **Also needs one more manual step in the Firebase console**, not yet done as
-  far as this file knows: **Authentication → Sign-in method → enable
-  Email/Password** (only Google was enabled per the setup steps given). Without
-  it, `createUserWithEmailAndPassword` fails with `auth/operation-not-allowed`.
+  `user` — so today, signing up buys a persistent login (survives a reinstall,
+  in principle — unverified on a real device, see below) but *not* progress
+  that follows you to a new device. That needs Firestore (roadmap #2).
+  **Needs one more manual step in the Firebase console**, not yet done as far
+  as this file knows: **Authentication → Sign-in method → enable
+  Email/Password** (only Google was enabled per the original setup steps).
+  Without it, `createUserWithEmailAndPassword` fails with
+  `auth/operation-not-allowed`.
 - **The app is gated behind `signedIn`** — `App.js`'s `RootNavigator` renders
-  either a Landing → Login stack or the full Home-and-onward stack, switching
-  on `signedIn` (React Navigation's standard auth-split pattern: swapping which
+  either just `Login`, or the full Home-and-onward stack, switching on
+  `signedIn` (React Navigation's standard auth-split pattern: swapping which
   screens exist, not mounting everything and redirecting — this gets the stack
   reset on both sign-in and sign-out for free). `ready` (progress-storage
   hydrated *and* Firebase's initial `onAuthStateChanged` callback having fired)
-  gates a blank frame first, so it never flashes Landing then immediately Home.
-  Existing on-device progress is untouched by this gate — see the nuance above.
-  `LandingScreen.js` is the marketing-ish intro (wordmark, tagline, three
-  highlight cards, "Get started"); `LoginScreen.js` holds all three modes
-  (login/signup/guest). Neither has a header — `Login` has its own back arrow.
+  gates a blank frame first, so it never flashes Login then immediately Home.
 
-Not built yet: Google/OAuth sign-in (needs client IDs from the Firebase/GCP
+Not built yet: Google/OAuth sign-in on native (needs client IDs from the Firebase/GCP
 project — see above), phone OTP, Firestore (so a real account's progress still
 doesn't follow it anywhere, and reports still don't leave the device), a Cloud
 Function to stop shipping answer keys to the client, and subscriptions.
@@ -190,11 +194,11 @@ src/lib/firebase.js         Firebase app/auth init — config is not a secret
 src/components/MathText.js  LaTeX renderer — WebView per formula (native)
 src/components/MathText.web.js  LaTeX renderer — KaTeX into the DOM (web override)
 src/components/ProgressRail.js
-src/components/Logo.js      brand wordmark — Home/Landing/Login only
+src/components/Logo.js      brand mark (book icon + wordmark) — Home/Login only
 src/components/ScratchPad.js  touch scratchpad on Quiz, rotated-View strokes
 src/components/ScoreRing.js  SVG circular score ring, used on Result
-src/screens/                Landing, Login, Home, ExamPicker, SubjectPicker,
-                             Subject, Quiz, Result, Progress
+src/screens/                Login, Home, ExamPicker, SubjectPicker, Subject,
+                             Quiz, Result, Progress
 tests/                       node:test — quiz.js logic + content structural checks
 ```
 
@@ -352,11 +356,12 @@ night (see Audience above), this is a real usability fix. Still not covered: a
 dark splash-screen asset, and real-device verification (web-build-only so far,
 same caveat as the rest of the UI).
 
-**Brand mark:** `src/components/Logo.js` renders a plain caps wordmark,
-"CUTOFF" — ink-coloured regardless of the accent system, so the wordmark
-itself never competes with interactive colour. `size="lg"` (28pt) in the Home
-and Landing headers, `size="sm" muted` (16pt) in Home's footer and Login.
-Doesn't appear on any other screen — inner screens show contextual titles.
+**Brand mark:** `src/components/Logo.js` pairs an Ionicons `"book"` glyph with
+the caps wordmark "CUTOFF" — both ink-coloured regardless of the accent
+system, so the mark itself never competes with interactive colour. `size="lg"`
+(28pt text / 30pt icon) on Login's header, `size="sm" muted` (16pt / 18pt) in
+Home's footer. Doesn't appear on any other screen — inner screens show
+contextual titles.
 
 **Elevation:** `theme.js` exports `shadow.card`, one soft shadow applied to
 every raised card and primary button. Quiz is excluded on purpose — mid-
@@ -373,7 +378,8 @@ redesign:**
   (390KB). This bit once already — check any new icon usage still does this.
 - `expo-linear-gradient` for the warm hero gradient (`theme.js`'s `gradient`
   token, three warm stops that blend back toward the page colour) — used
-  behind Result's score ring and Landing's hero section.
+  behind Result's score ring. (It also backed Landing's hero section before
+  Landing was removed — `gradient` is still there for Result to use.)
 - `react-native-svg`, used by `src/components/ScoreRing.js` — a circular
   progress ring (score/max as an arc, clamped to 0 so negative marking can't
   draw it backwards) replacing Result's old plain "score out of max" text.
@@ -384,16 +390,17 @@ website was built — that alternative was considered and explicitly declined).
 column regardless of screen size — "responsive" in name only. Now it tracks
 the active route name (via `NavigationContainer`'s `onStateChange` and a
 `getActiveRouteName`-style walk of the nav state) and widens to 1100px **only**
-for screens in `WIDE_SCREENS` (`Landing`, `Home`) on a >=820px viewport;
+for screens in `WIDE_SCREENS` (currently just `Home`) on a >=820px viewport;
 everything else — Quiz above all — stays phone-width at any screen size, so a
-mobile-tuned layout never stretches awkwardly across a monitor. Home and
-Landing each also carry their own internal desktop logic (`useWindowDimensions`
-+ a local `isDesktop` flag): Home's tracks lay out as a 2-column wrap instead
-of a single column; Landing's highlight cards go in a row and its gradient
-hero gets wider text columns. Extending another screen to the wide frame means
-adding it to `WIDE_SCREENS` *and* giving it its own desktop-width layout logic
-— just adding it to the set without that would stretch a single-column screen
-across the wide frame with a wall of empty space either side.
+mobile-tuned layout never stretches awkwardly across a monitor. Home also
+carries its own internal desktop logic (`useWindowDimensions` + a local
+`isDesktop` flag): its tracks lay out as a 2-column wrap instead of a single
+column above the breakpoint. (Landing used to be in `WIDE_SCREENS` too, with
+its own two-column hero; removed along with the screen itself.) Extending
+another screen to the wide frame means adding it to `WIDE_SCREENS` *and*
+giving it its own desktop-width layout logic — just adding it to the set
+without that would stretch a single-column screen across the wide frame with
+a wall of empty space either side.
 
 ---
 
@@ -447,13 +454,13 @@ means no Mac is required.
 
 ## Roadmap
 
-1. ~~Firebase Auth~~ — **email/password and guest mode done**; Google sign-in
-   and phone OTP still need real credentials (Google/GCP OAuth client IDs) —
-   see the Current State note above for exactly what's missing.
+1. ~~Firebase Auth~~ — **email/password and Google (web) done, no guest mode**;
+   Google on native and phone OTP still need real credentials/setup — see the
+   Current State note above for exactly what's missing.
 2. Move progress (topic stats, attempts, streak, reports) and questions to
    Firestore, keep local caching for offline use — this is what actually makes
-   a real account (vs. guest) worth having; right now signing up buys a
-   persistent login but not synced progress
+   an account worth having; right now signing up buys a persistent login but
+   not synced progress
 3. Cloud Function serving questions without the answer key
 4. ~~Timed mock tests~~ — done as "Random test" (see Navigation section) for a
    mixed, timed set per exam; still missing a real paper structure (sections,
@@ -501,19 +508,21 @@ means no Mac is required.
 
 ## Immediate next step
 
-Firebase Auth (email/password + guest) is done. The Firebase project
-(`cutoff-3113`) now exists, so what's left is no longer blocked on "no
-backend" — it's just not built yet:
+Firebase Auth (email/password + Google on web) is done, no guest mode, no
+Landing page — `LoginScreen` is the app's sole unauthenticated screen. The
+Firebase project (`cutoff-3113`) now exists, so what's left is no longer
+blocked on "no backend" — it's just not built yet:
 
 1. Enable **Email/Password** in the Firebase console (Authentication →
    Sign-in method) — sign-up/log-in will fail without this one manual step.
-2. **Firestore** for progress/reports (roadmap #2) — this is what makes a real
-   account actually worth more than a guest; right now it isn't.
+2. **Firestore** for progress/reports (roadmap #2) — this is what makes an
+   account actually worth having; right now it isn't (see the nuance above).
 3. **A Cloud Function to stop shipping `correct_option_ids`** to the client
    (roadmap #3) — the last real security gap before any store release.
-4. **Google sign-in** — needs real OAuth client IDs from the same Firebase/GCP
-   project (Google Cloud Console → APIs & Services → Credentials). Don't add
-   the button before that exists.
+4. **Google sign-in on native** — needs real OAuth client IDs from the same
+   Firebase/GCP project (Google Cloud Console → APIs & Services →
+   Credentials) plus `expo-auth-session`; the web flow already works without
+   this via Firebase's own popup-based OAuth.
 
 Still worth doing on hardware before any of that: run in Expo Go and confirm
 (a) LaTeX renders correctly on a real device — the WebView font/encoding last
